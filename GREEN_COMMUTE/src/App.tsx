@@ -1,7 +1,17 @@
-export const App = () => {
+import { ThemeProvider, Typography } from '@mui/material'
+import { StyledEngineProvider } from '@mui/styled-engine'
+
+import React from 'react'
+import theme from './theme/theme'
+
+export function App() {
   return (
-    <>
-      <h1>React TypeScript Webpack Starter Template</h1>
-    </>
-  );
-};
+    <StyledEngineProvider injectFirst>
+      <ThemeProvider theme={theme}>
+        <Typography variant="h1" color="primary.main">
+          Hello,this is BC47 GREEN_COMMUTE
+        </Typography>
+      </ThemeProvider>
+    </StyledEngineProvider>
+  )
+}
