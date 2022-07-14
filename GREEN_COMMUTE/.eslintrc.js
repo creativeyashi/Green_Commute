@@ -33,4 +33,10 @@ module.exports = {
     '@typescript-eslint/explicit-module-boundary-types': 'off',
     semi: 0,
   },
+
+plugins: ["jest"],
+env: {
+"jest/globals": true
+}
+
 }
