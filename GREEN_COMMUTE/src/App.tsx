@@ -9,7 +9,7 @@ export function App() {
     <StyledEngineProvider injectFirst>
       <ThemeProvider theme={theme}>
         <Typography variant="h1" color="primary.main">
-          Hello,this is BC47 GREEN_COMMUTE
+          Hello,This is BC47 GREEN_COMMUTE
         </Typography>
       </ThemeProvider>
     </StyledEngineProvider>
