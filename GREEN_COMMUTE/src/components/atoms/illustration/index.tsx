@@ -3,18 +3,15 @@ import React from 'react';
 
 export interface illustrationProps{
     source?:string,
-    className?:string,
     style?:React.CSSProperties;
 
 }
 
 
-export const IllustrationComp = (props:any) => {
-    const {source,style,className } =props;
+export const Image = (props:any) => {
+    const {source,style } =props;
   return (
-    
-      <img src={source} alt="illustration" className={className}  style={style}/>
-    
+      <img src={source} alt="illustration" style={style}/>
   );
 };
 

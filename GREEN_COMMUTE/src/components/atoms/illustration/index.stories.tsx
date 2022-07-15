@@ -1,4 +1,4 @@
-import { IllustrationComp, illustrationProps} from "./index";
+import { Image, illustrationProps} from "./index";
 import { Story } from "@storybook/react";
 import Work from '../../assets/image/Work.png';
 import Stay from '../../assets/image/Entry-image.png';
@@ -7,11 +7,11 @@ import Job from '../../assets/image/Skills.png';
 export default{
 
     title: 'Atom/illustration',
-    component: IllustrationComp
+    component: Image
 
 };
 
-const Template : Story<illustrationProps> = (args) => <IllustrationComp {...args} />;
+const Template : Story<illustrationProps> = (args) => <Image {...args} />;
 
 export const WorkComp = Template.bind({});
 WorkComp.args={

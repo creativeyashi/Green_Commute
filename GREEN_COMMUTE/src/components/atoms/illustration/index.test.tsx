@@ -1,15 +1,16 @@
 import { render, screen } from "@testing-library/react";
-import { IllustrationComp } from "../illustration/index";
-import '@testing-library/jest-dom'
+import { Image } from "../illustration/index";
+import '@testing-library/jest-dom';
+import Work from '../../../assets/image/Work.png';
 
-describe('illustration Test', () => {
-  
-    test('illustration Skill ', () => {
-      
-      render(<IllustrationComp source="../../assets/image/Skills.png" />)
-      const skill = screen.getByRole('img')
-     
-      expect(skill).toBeInTheDocument()
-    })
-    
-  })
+it('renders illustration', () => {
+  render(
+    <Image
+      source={Work}
+    />,
+  );
+
+  const img = document.querySelector("img") as HTMLImageElement;
+  expect(img).toHaveAttribute('src',Work);
+ 
+});
