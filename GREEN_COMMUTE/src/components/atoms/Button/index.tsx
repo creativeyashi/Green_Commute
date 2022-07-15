@@ -1,5 +1,5 @@
 import React from 'react'
-import { Button } from '@mui/material'
+import Button from '@mui/material/Button'
 
 export interface ButtonIconProps {
   startIcon?: React.ReactNode
@@ -11,7 +11,7 @@ export interface ButtonIconProps {
   className?: string
 }
 
-export const ButtonComponent = (props: any) => {
+export const Buttons = (props: any) => {
   const { startIcon, endIcon, variant, className, children, onClick, style } =
     props
   return (
