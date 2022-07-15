@@ -1,12 +1,12 @@
 import { Story } from '@storybook/react'
-import { ButtonComponent, ButtonIconProps } from '.'
+import { Buttons, ButtonIconProps } from '.'
 
 export default {
   title: 'Atom/Button',
   component: ButtonComponent,
 }
 
-const Template: Story<ButtonIconProps> = (args) => <ButtonComponent {...args} />
+const Template: Story<ButtonIconProps> = (args) => <Buttons {...args} />
 
 export const Save = Template.bind({})
 Save.args = {
@@ -59,9 +59,6 @@ Skip.args = {
   children: 'Skip',
   style: {
     display: 'inline-block',
-    // flexDirection: 'row',
-    // justifyContent: 'center',
-    // alignItems: 'center',
     padding: '0px 0px 10px 0px',
     textTransform: 'none',
     borderBottom: '4px solid #30A193',
