@@ -17,4 +17,34 @@ module.exports = {
       "process.env.name": JSON.stringify("dev"),
     }),
   ],
+  module: {
+    rules: [
+      {
+        test: /\.(ts|tsx|gif)$/,
+
+        exclude: /node_modules/,
+        use: 'ts-loader',
+      },
+      {
+        test: /\.svg$/,
+        use: ['@svgr/webpack'],
+      },
+      {
+        test: /\.css$/i,
+        use: ['style-loader', 'css-loader'],
+      },
+      //manually added
+      {
+        test: /\.(png|jp(e*)g|svg|gif)$/,
+        use: [
+          {
+            loader: 'file-loader',
+            options: {
+              name: 'images/[hash]-[name].[ext]',
+            },
+          },
+        ],
+      },
+    ],
+  },
 };
