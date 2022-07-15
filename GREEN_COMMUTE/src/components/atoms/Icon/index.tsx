@@ -1,13 +1,13 @@
 import React from 'react';
 
-interface props{
+interface Props{
   source:string;
 }
 
-function Icons(props:props) {
+function Icon(props:Props) {
   return (
     <img src={props.source} alt="try"></img>
   );
 }
 
-export default Icons;
+export default Icon;
