@@ -21,6 +21,7 @@ module.exports = {
     'eslint:recommended',
     'eslint-config-zemoso',
     'plugin:storybook/recommended',
+    'plugin:jest/recommended',
   ],
   rules: {
     'no-unused-vars': 'off',
