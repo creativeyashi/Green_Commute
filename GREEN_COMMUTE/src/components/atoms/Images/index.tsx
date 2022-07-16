@@ -1,11 +1,11 @@
 import React from 'react'
-export interface MapProps {
+export interface ImageProps {
   source: string
 }
 
-const MapComponent: React.FC<MapProps> = (props) => {
+const Image: React.FC<ImageProps> = (props) => {
   const { source } = props
   return <img src={source} alt="map" />
 }
 
-export default MapComponent
+export default Image

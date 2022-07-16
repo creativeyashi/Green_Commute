@@ -4,14 +4,14 @@ import Stay from '../../../assets/image/Entry-image.png'
 import Job from '../../../assets/image/Skills.png'
 import Map from '../../../assets/image/Map.png'
 import Logo from '../../../assets/icons/logo.svg'
-import MapComponent, { MapProps } from './index'
+import Image, { ImageProps } from './index'
 
 export default {
   title: 'Atom/Images',
-  component: MapComponent,
+  component: Image,
 }
 
-const Template: Story<MapProps> = (args) => <MapComponent {...args} />
+const Template: Story<ImageProps> = (args) => <Image {...args} />
 
 export const WorkIllustration = Template.bind({})
 WorkIllustration.args = {

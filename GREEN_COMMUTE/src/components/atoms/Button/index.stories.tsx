@@ -29,11 +29,7 @@ Save.args = {
 
 export const Next = Template.bind({})
 Next.args = {
-<<<<<<< HEAD
   variant: 'contained',
-=======
-  variant:'contained',
->>>>>>> changes in button stories
   children: 'Next',
   style: {
     padding: '12px 60px 12px 60px',
@@ -89,11 +85,7 @@ Back.args = {
 
 export const Okay = Template.bind({})
 Okay.args = {
-<<<<<<< HEAD
   variant: 'contained',
-=======
-  variant:'contained',
->>>>>>> changes in button stories
   children: 'OKAY',
   style: {
     padding: '12px 60px 12px 60px',
