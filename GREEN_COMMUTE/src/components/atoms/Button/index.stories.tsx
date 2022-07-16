@@ -3,7 +3,7 @@ import { Buttons, ButtonIconProps } from '.'
 
 export default {
   title: 'Atom/Button',
-  component: ButtonComponent,
+  component: Buttons,
 }
 
 const Template: Story<ButtonIconProps> = (args) => <Buttons {...args} />
