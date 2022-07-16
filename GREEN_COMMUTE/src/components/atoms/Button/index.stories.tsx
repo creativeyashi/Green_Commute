@@ -10,14 +10,10 @@ const Template: Story<ButtonIconProps> = (args) => <Buttons {...args} />
 
 export const Save = Template.bind({})
 Save.args = {
+  variant: "outlined",
   children: 'Save',
   style: {
-    display: 'inline-block',
-    flexDirection: 'row',
-    justifyContent: 'center',
-    alignItems: 'center',
     padding: '8px 32px 8px 32px',
-    gap: '10px',
     textTransform: 'none',
     borderRadius: '8px',
     border: '1px solid lightgray',
@@ -33,14 +29,10 @@ Save.args = {
 
 export const Next = Template.bind({})
 Next.args = {
+  variant: "contained",
   children: 'Next',
   style: {
-    display: 'inline-block',
-    flexDirection: 'row',
-    justifyContent: 'center',
-    alignItems: 'center',
     padding: '12px 60px 12px 60px',
-    gap: '10px',
     textTransform: 'none',
     borderRadius: '8px',
     fontFamily: 'Montserrat',
@@ -73,14 +65,10 @@ Skip.args = {
 
 export const Back = Template.bind({})
 Back.args = {
+  variant: "outlined",
   children: 'Back',
   style: {
-    display: 'inline-block',
-    flexDirection: 'row',
-    justifyContent: 'center',
-    alignItems: 'center',
-    padding: '12px 80px 12px 50px',
-    gap: '10px',
+    padding: '12px 50px 12px 50px',
     textTransform: 'none',
     borderRadius: '8px',
     border: '1px solid lightgray',
@@ -97,14 +85,10 @@ Back.args = {
 
 export const Okay = Template.bind({})
 Okay.args = {
+  variant: "contained",
   children: 'OKAY',
   style: {
-    display: 'inline-block',
-    flexDirection: 'row',
-    justifyContent: 'center',
-    alignItems: 'center',
     padding: '12px 60px 12px 60px',
-    gap: '10px',
     textTransform: 'none',
     borderRadius: '8px',
     fontFamily: 'Montserrat',
@@ -113,7 +97,6 @@ Okay.args = {
     fontWeight: '700',
     fontSize: '12px',
     lineHeight: '16px',
-    borderColor: 'green',
     backgroundColor: '#30A193',
   },
 }
