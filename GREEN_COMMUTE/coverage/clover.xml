@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<coverage generated="1658036986014" clover="3.2.0">
+  <project timestamp="1658036986014" name="All files">
+    <metrics statements="13" coveredstatements="13" conditionals="0" coveredconditionals="0" methods="3" coveredmethods="3" elements="16" coveredelements="16" complexity="0" loc="13" ncloc="13" packages="3" files="3" classes="3"/>
+    <package name="components.atoms.Icon">
+      <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+      <file name="index.tsx" path="/home/sohails/Music/bootcamp_47_greencommute/GREEN_COMMUTE/src/components/atoms/Icon/index.tsx">
+        <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+        <line num="8" count="6" type="stmt"/>
+      </file>
+    </package>
+    <package name="components.molecules.uploadSuccess">
+      <metrics statements="7" coveredstatements="7" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2"/>
+      <file name="index.tsx" path="/home/sohails/Music/bootcamp_47_greencommute/GREEN_COMMUTE/src/components/molecules/uploadSuccess/index.tsx">
+        <metrics statements="7" coveredstatements="7" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2"/>
+        <line num="16" count="1" type="stmt"/>
+        <line num="32" count="1" type="stmt"/>
+        <line num="33" count="4" type="stmt"/>
+        <line num="34" count="3" type="stmt"/>
+        <line num="35" count="3" type="stmt"/>
+        <line num="36" count="3" type="stmt"/>
+        <line num="38" count="3" type="stmt"/>
+      </file>
+    </package>
+    <package name="theme">
+      <metrics statements="5" coveredstatements="5" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+      <file name="theme.ts" path="/home/sohails/Music/bootcamp_47_greencommute/GREEN_COMMUTE/src/theme/theme.ts">
+        <metrics statements="5" coveredstatements="5" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+        <line num="3" count="1" type="stmt"/>
+        <line num="7" count="1" type="stmt"/>
+        <line num="11" count="1" type="stmt"/>
+        <line num="38" count="1" type="stmt"/>
+        <line num="139" count="1" type="stmt"/>
+      </file>
+    </package>
+  </project>
+</coverage>
