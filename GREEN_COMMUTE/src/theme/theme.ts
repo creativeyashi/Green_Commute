@@ -138,8 +138,13 @@ export default theme
 export const EXTRA_COLORS = {
   shade: {
     '300': 'linear-gradient(155.94deg, #EFFEFF 6.2%, #E9FFF4 52.61%)',
+    '700': '#FFFFFF',
   },
   primary: {
     '1000': '#EFFFFD',
+  },
+  accent: {
+    '100': '#ED8F02',
+    '200': '#FF725E',
   },
 }
