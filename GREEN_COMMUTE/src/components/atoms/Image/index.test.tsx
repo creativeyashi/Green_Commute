@@ -1,9 +1,9 @@
-import { render, screen } from "@testing-library/react";
-import { Image } from "../illustration/index";
+import { render } from "@testing-library/react";
+import { Image } from "./index";
 import '@testing-library/jest-dom';
 import Work from '../../../assets/image/Work.png';
 
-it('renders illustration', () => {
+it('renders Image', () => {
   render(
     <Image
       source={Work}

@@ -1,4 +1,4 @@
-import { Image, illustrationProps} from "./index";
+import { Image, ImageProps} from "./index";
 import { Story } from "@storybook/react";
 import Work from '../../assets/image/Work.png';
 import Stay from '../../assets/image/Entry-image.png';
@@ -11,7 +11,7 @@ export default{
 
 };
 
-const Template : Story<illustrationProps> = (args) => <Image {...args} />;
+const Template : Story<ImageProps> = (args) => <Image {...args} />;
 
 export const WorkComp = Template.bind({});
 WorkComp.args={
