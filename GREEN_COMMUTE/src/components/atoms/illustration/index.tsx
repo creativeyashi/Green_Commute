@@ -8,7 +8,7 @@ export interface illustrationProps{
 }
 
 
-export const Image = (props:any) => {
+export const illustration = (props:any) => {
     const {source,style } =props;
   return (
       <img src={source} alt="illustration" style={style}/>
