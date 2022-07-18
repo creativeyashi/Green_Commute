@@ -1,12 +1,12 @@
 import { Story } from '@storybook/react'
-import { Buttons, ButtonIconProps } from '.'
+import MuiButton,{ButtonIconProps} from '.'
 
 export default {
   title: 'Atom/Button',
-  component: Buttons,
+  component: MuiButton,
 }
 
-const Template: Story<ButtonIconProps> = (args) => <Buttons {...args} />
+const Template: Story<ButtonIconProps> = (args) => <MuiButton {...args} />
 
 export const Save = Template.bind({})
 Save.args = {

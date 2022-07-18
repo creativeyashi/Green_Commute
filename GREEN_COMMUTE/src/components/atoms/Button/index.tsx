@@ -4,16 +4,15 @@ import  Button  from '@mui/material/Button'
 export interface ButtonIconProps {
   startIcon?: React.ReactNode
   endIcon?: React.ReactNode
-  variant?: string
+  variant?: "text" | "outlined" | "contained" | undefined
   style?: React.CSSProperties
   children?: React.ReactNode
   onClick?: () => void
   className?: string
 }
 
-export const Buttons = (props: any) => {
-  const { startIcon, endIcon, variant, className, children, onClick, style } =
-    props
+ const MuiButton: React.FC<ButtonIconProps> = (props ) => {
+  const { startIcon, endIcon, variant, className, children, onClick, style } =  props
   return (
     <Button
       startIcon={startIcon}
@@ -27,3 +26,5 @@ export const Buttons = (props: any) => {
     </Button>
   )
 }
+
+export default MuiButton
