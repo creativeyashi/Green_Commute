@@ -21,6 +21,7 @@ module.exports = {
     'eslint:recommended',
     'eslint-config-zemoso',
     'plugin:storybook/recommended',
+    'plugin:jest/recommended',
   ],
   rules: {
     'no-unused-vars': 'off',
@@ -32,8 +33,17 @@ module.exports = {
     '@typescript-eslint/explicit-module-boundary-types': 'off',
     semi: 0,
   },
+<<<<<<< HEAD
   plugins: ["jest"],
     env: {
     "jest/globals": true
   }
+=======
+
+plugins: ["jest"],
+env: {
+"jest/globals": true
+}
+
+>>>>>>> 97a5d162c8c4b24defa15558ae190ecf6fb33dbd
 }
