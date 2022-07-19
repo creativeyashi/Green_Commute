@@ -4,7 +4,7 @@ import Icon from '../../atoms/Icon'
 import Typography from '@mui/material/Typography'
 import rupee from '../../../assets/icons/rupee.svg'
 type ListItemProps = {
-  icon: any
+  icon: string
   cname: string
   price: string
 }
