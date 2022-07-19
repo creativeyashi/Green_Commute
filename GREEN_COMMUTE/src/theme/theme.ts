@@ -150,6 +150,13 @@ const theme = createTheme({
       fontWeight: 500,
       lineHeight: '30px',
     },
+    h3: {
+      fontFamily: 'Montserrat',
+      fontStyle: 'normal',
+      fontSize: '20px',
+      fontWeight: 500,
+      lineHeight: '30px',
+    },
     subtitle1: {
       fontFamily: 'Montserrat',
       fontStyle: 'normal',
