@@ -8,7 +8,7 @@ import IconComponent from "../../../components/atoms/Icon/index";
 import Swap from "../../../assets/icons/swap.svg";
 import { EXTRA_COLORS } from "../../../theme/theme";
 import { COMMON_ROUTES } from "../../utils/constant";
-import Button from "./iconButton";
+import Button from "../../atoms/Button/index";
 
 export type CommonRoutesProps = {
   location1: string;
@@ -45,7 +45,7 @@ const CommonRotes: React.FC<CommonRoutesProps> = (props) => {
           width: "359px",
           left: "23px",
           top: "249px",
-          backgroundColor: EXTRA_COLORS.neutralShade["700"],
+          backgroundColor: EXTRA_COLORS.shade["700"],
         }}
       >
         <Grid container sx={{ paddingY: "18px", paddingLeft: "12px" }}>

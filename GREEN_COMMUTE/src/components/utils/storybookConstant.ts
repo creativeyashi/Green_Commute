@@ -1,4 +1,4 @@
-import { CardProps } from '../molecules/CabJobCard/index';
+import { CardProps } from '../molecules/JobCard/index';
 import Myntra from '../../assets/icons/myntra.svg';
 export const JobDetail: CardProps = {
   id: 1,
