@@ -1,16 +1,16 @@
 import { Story } from '@storybook/react'
-import MuiButton,{ButtonIconProps} from '.'
+import Button, { ButtonIconProps } from '.'
 
 export default {
   title: 'Atom/Button',
-  component: MuiButton,
+  component: Button,
 }
 
-const Template: Story<ButtonIconProps> = (args) => <MuiButton {...args} />
+const Template: Story<ButtonIconProps> = (args) => <Button {...args} />
 
 export const Save = Template.bind({})
 Save.args = {
-  variant: "outlined",
+  variant: 'outlined',
   children: 'Save',
   style: {
     padding: '8px 32px 8px 32px',
@@ -29,7 +29,7 @@ Save.args = {
 
 export const Next = Template.bind({})
 Next.args = {
-  variant: "contained",
+  variant: 'contained',
   children: 'Next',
   style: {
     padding: '12px 60px 12px 60px',
@@ -65,7 +65,7 @@ Skip.args = {
 
 export const Back = Template.bind({})
 Back.args = {
-  variant: "outlined",
+  variant: 'outlined',
   children: 'Back',
   style: {
     padding: '12px 50px 12px 50px',
@@ -85,7 +85,7 @@ Back.args = {
 
 export const Okay = Template.bind({})
 Okay.args = {
-  variant: "contained",
+  variant: 'contained',
   children: 'OKAY',
   style: {
     padding: '12px 60px 12px 60px',
