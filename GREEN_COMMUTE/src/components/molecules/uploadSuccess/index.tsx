@@ -7,8 +7,7 @@ import Modal from '@mui/material/Modal'
 import Fade from '@mui/material/Fade'
 import SuccessImage from '../../../assets/image/Success.png'
 import { makeStyles } from '@mui/styles'
-// import Close from '../../../assets/icons/close.svg'
-import theme from '../../../theme/theme'
+import theme, { EXTRA_COLORS } from '../../../theme/theme'
 
 export type UploadSuccessProps = {
   name: string
@@ -26,6 +25,13 @@ const useStyles = makeStyles({
     justifyContent: 'center',
     display: 'flex',
     padding: '8px',
+  },
+  btn: {
+    background: `${theme.palette.primary.light}`,
+    width: '156px',
+  },
+  btnTxt: {
+    color: `${EXTRA_COLORS.shade[700]}`,
   },
 })
 
@@ -58,14 +64,7 @@ const UploadSuccess: React.FC<UploadSuccessProps> = (props) => {
               rowSpacing={1}
               columnSpacing={{ xs: 1, sm: 2, md: 3 }}
             >
-              <Grid item xs={12}>
-                {/* <img
-                  src={Close}
-                  alt=""
-                  style={{ float: 'right' }}
-                  onClick={handleClose}
-                /> */}
-              </Grid>
+              <Grid item xs={12}></Grid>
               <Grid item xs={12} className={classes.innerDiv}>
                 <img src={SuccessImage} alt="" />
               </Grid>
@@ -74,14 +73,11 @@ const UploadSuccess: React.FC<UploadSuccessProps> = (props) => {
               </Grid>
               <Grid item xs={12} className={classes.innerDiv}>
                 <Button
-                  style={{
-                    background: `${theme.palette.primary.light}`,
-                    width: '156px',
-                  }}
+                  className={classes.btn}
                   onClick={handleClose}
                   data-testid="okay-btn"
                 >
-                  <Typography variant="caption" color={'#fff'}>
+                  <Typography variant="caption" className={classes.btnTxt}>
                     OKAY
                   </Typography>
                 </Button>
