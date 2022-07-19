@@ -6,7 +6,7 @@ import Job from '../../assets/image/Skills.png';
 
 export default{
 
-    title: 'Atom/illustration',
+    title: 'Atom/Image',
     component: Image
 
 };
