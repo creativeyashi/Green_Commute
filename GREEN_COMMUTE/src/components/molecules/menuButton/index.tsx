@@ -1,6 +1,8 @@
+import { StayPrimaryLandscape } from '@mui/icons-material'
 import { Typography } from '@mui/material'
 import { makeStyles } from '@mui/styles'
 import React from 'react'
+import theme from '../../../theme/theme'
 import Icon from '../../atoms/Icon'
 
 export interface MenuButtonProps {
@@ -9,6 +11,7 @@ export interface MenuButtonProps {
   className?: string
   variant?: 'caption' | 'h1' | 'h2'
   onClick?: () => void
+  
 }
 
 const useStyle = makeStyles({
@@ -25,7 +28,7 @@ const useStyle = makeStyles({
     fontFamily: 'Montserrat',
   },
   icons: {
-    color: 'green',
+
     backgroundColor: '#F7F7F7',
     alignSelf: 'center',
   },
@@ -36,7 +39,7 @@ export const MenuButton = (props: MenuButtonProps) => {
   const style = useStyle()
   return (
     <div className={style.main}>
-      <div className={style.icons}>
+      <div className={style.icons} >
         <Icon source={Source} />
       </div>
       <Typography
