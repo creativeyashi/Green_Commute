@@ -29,4 +29,4 @@ const Button: React.FC<ButtonIconProps> = (props) => {
   )
 }
 
-export default MuiButton
+export default Button
