@@ -1,8 +1,8 @@
 import { Image, ImageProps} from "./index";
 import { Story } from "@storybook/react";
-import Work from '../../assets/image/Work.png';
-import Stay from '../../assets/image/Entry-image.png';
-import Job from '../../assets/image/Skills.png';
+import Work from '../../../assets/image/Work.png';
+import Stay from '../../../assets/image/Entry-image.png';
+import Job from '../../../assets/image/Skills.png';
 
 export default{
 
