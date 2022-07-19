@@ -1,8 +1,7 @@
-import { StayPrimaryLandscape } from '@mui/icons-material'
+
 import { Typography } from '@mui/material'
 import { makeStyles } from '@mui/styles'
 import React from 'react'
-import theme from '../../../theme/theme'
 import Icon from '../../atoms/Icon'
 
 export interface MenuButtonProps {
