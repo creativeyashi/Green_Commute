@@ -1,8 +1,9 @@
 import * as React from 'react'
 import CloseIcon from '@mui/icons-material/Close'
-import Chip from '@mui/material/Chip'
+import MuiChip from '@mui/material/Chip'
 import { makeStyles } from '@mui/styles'
 import Typography from '@mui/material/Typography'
+import theme, { EXTRA_COLORS } from '../../../theme/theme'
 
 export type MuiChipProp = {
   onClick?: () => void
@@ -15,19 +16,22 @@ export type MuiChipProp = {
 const useStyles = makeStyles({
   root: {
     borderRadius: '8px',
-    background: '#E8FFFC',
+    background: `${EXTRA_COLORS.shade[400]}`,
+  },
+  label: {
+    color: `${theme.palette.text.primary}`,
   },
 })
 
-const Chips: React.FC<MuiChipProp> = (props) => {
-  const { label = 'UI/UX Designer', onDelete, onClick, variant, size } = props
+const Chip: React.FC<MuiChipProp> = (props) => {
+  const { label, onDelete, onClick, variant, size } = props
   const classes = useStyles()
   return (
-    <Chip
+    <MuiChip
       className={classes.root}
       data-testid="MuiChip"
       label={
-        <Typography variant="caption2" color="#373C38">
+        <Typography variant="caption2" className={classes.label}>
           {label}
         </Typography>
       }
@@ -39,4 +43,4 @@ const Chips: React.FC<MuiChipProp> = (props) => {
     />
   )
 }
-export default Chips
+export default Chip
