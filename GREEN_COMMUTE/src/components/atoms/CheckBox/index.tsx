@@ -5,6 +5,8 @@ import { BpCheckedIcon, BpIcon } from './icon'
 interface CheckBoxComponentProps {
   value?: string
   checked?: boolean
+  name?: string
+  onChange?: (event: React.ChangeEvent<HTMLInputElement>) => void
 }
 
 export default function CheckBoxComponent(props: CheckBoxComponentProps) {
@@ -13,7 +15,8 @@ export default function CheckBoxComponent(props: CheckBoxComponentProps) {
       <Checkbox
         checked={props.checked}
         value={props.value}
-        name="radio-button"
+        onChange={props.onChange}
+        name={props.name}
         inputProps={{ 'aria-label': 'A' }}
         checkedIcon={<BpCheckedIcon />}
         icon={<BpIcon />}
