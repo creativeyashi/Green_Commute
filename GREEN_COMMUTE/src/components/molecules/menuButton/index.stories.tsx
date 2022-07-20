@@ -24,7 +24,6 @@ DashBoard.args = {
   title: 'Dashboard',
   variant: 'caption',
   Source: Dashboard,
-  
 }
 
 export const FindJobs = Template.bind({})
