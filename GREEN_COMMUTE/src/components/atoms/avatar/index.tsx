@@ -1,14 +1,11 @@
-import { Avatar } from '@mui/material'
+import MuiAvatar from '@mui/material/Avatar';
 import React from 'react'
 import avatar from '../../../assets/icons/Avatar.svg';
 
 
-function AvatarComp({name}:any) {
+function Avatar({name}:any) {
     return (
-        
-        <Avatar src={avatar} data-testid="avatar" >{name}</Avatar>
-        
+        <MuiAvatar src={avatar} data-testid="avatar" >{name}</MuiAvatar>
     );
-}
-
-export default AvatarComp
+ }
+export default Avatar

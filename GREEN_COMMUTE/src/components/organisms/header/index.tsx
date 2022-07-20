@@ -6,12 +6,65 @@ import message from "../../../assets/icons/message.svg";
 import notifications from "../../../assets/icons/notifications.svg";
 import location from "../../../assets/icons/location 2.svg";
 import AvatarComp from "../../atoms/avatar";
+
+
+import { makeStyles } from '@mui/styles'
+
+const useStyles = makeStyles({
+  default:{
+    minHeight: 0, padding: 0
+  },
+  root: {
+    position: "absolute",
+     
+        top: 0,
+        right: 0,
+        justifyContent: "space-between",
+        alignItems: "center",
+  },
+  typography: {
+
+    marginLeft: "40px", display: "flex", alignItems: "center"
+  },
+  logo:{
+      fontFamily: "Neucha",
+      color: `#ffff`,
+      fontSize: "24px",
+      lineHeight: "32px",
+      marginLeft: "4px",
+  },
+  Avatar:{
+    display: "flex",
+    marginRight: "40px",
+    justifyContent: "space-evenly",
+    alignItems: "center",
+    width: "12%",
+  },
+  body:{
+    color: '#373C38',
+    height: "16px",
+    fontWeight: 500,
+  },
+  container:{
+    display: "flex",
+    alignItems: "center",
+    width: "fit-content",
+    marginRight: "152px",
+    },
+    location:{
+      display: "flex",
+      alignItems: "center",
+      marginTop: "4px",
+      marginRight: "18.25px"
+    }
+    
+})
+
 export interface HeaderPropsType extends GridProps {
   height?: number | string;
   width?: number | string;
   backgroundColor?: string;
   style?: any;
-  padding?: number | string;
   text?: string;
 }
 
@@ -19,43 +72,23 @@ export default ({
   height = "80px",
   width,
   backgroundColor,
-  padding,
   text,
 }: HeaderPropsType) => {
+  const classes = useStyles()
   return (
     <Grid
       container
       data-testid="topnavbar"
-      sx={{
-        position: "absolute",
-        height: height,
-        width: width,
-        top: 0,
-        right: 0,
-        backgroundColor: { backgroundColor },
-        justifyContent: "space-between",
-        alignItems: "center",
-        padding: padding,
-      }}
+      sx={{backgroundColor: { backgroundColor },height:{height},width:{width}}}
+      className={classes.root}
     >
-      <Box sx={{ marginLeft: "40px", display: "flex", alignItems: "center" }}>
+      <Box className={classes.typography}>
         <Box
-          sx={{
-            display: "flex",
-            alignItems: "center",
-            width: "fit-content",
-            marginRight: "152px",
-          }}
+          className={classes.container}
         >
           <Icon source={logo} />
           <Box
-            sx={{
-              fontFamily: "Neucha",
-              color: `#ffff`,
-              fontSize: "24px",
-              lineHeight: "32px",
-              marginLeft: "4px",
-            }}
+           className={classes.logo}
           >
             GREEN COMMUTE
           </Box>
@@ -69,12 +102,7 @@ export default ({
           InputProps={{
             startAdornment: (
               <Box
-                sx={{
-                  display: "flex",
-                  alignItems: "center",
-                  marginTop: "4px",
-                  marginRight: "18.25px"
-                }}
+                className={classes.location}
               >
                 <Icon source={location} />
               </Box>
@@ -93,13 +121,7 @@ export default ({
         ></TextField>
       </Box>
       <Box
-        sx={{
-          display: "flex",
-          marginRight: "40px",
-          justifyContent: "space-evenly",
-          alignItems: "center",
-          width: "12%",
-        }}
+       className={classes.Avatar}
       >
         <Icon source={message} />
         <Icon source={notifications} />
