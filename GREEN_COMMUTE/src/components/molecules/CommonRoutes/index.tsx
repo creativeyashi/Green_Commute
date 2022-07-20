@@ -10,6 +10,67 @@ import { EXTRA_COLORS } from "../../../theme/theme";
 import { COMMON_ROUTES } from "../../utils/constant";
 import Button from "../../atoms/Button/index";
 
+import { makeStyles } from '@mui/styles'
+import { ClassNames } from "@emotion/react";
+
+const useStyles = makeStyles({
+  default:{
+    minHeight: 0, padding: 0
+  },
+  root: {
+    display: "flex",
+    marginY: "18px",
+    flexDirection: "row",
+    alignItems: "flex-start",
+    justifyContent: "flex-start",
+    height: "132px",
+    width: "359px",
+    left: "23px",
+    top: "249px",
+    backgroundColor: `EXTRA_COLORS.shade["700"]`,
+  },
+  typography: {
+
+    borderRadius:"16px",
+    width:"16px",
+    height:"16px",
+     backgroundColor: "#D6D6D6",
+    marginRight:"8px"
+  },
+  division:{
+    backgroundColor: `EXTRA_COLORS.grey[400]`,
+    borderRadius: "50%",
+    width: "4px",
+    marginTop: "2px",
+    height: "4px",
+  },
+  img:{
+    marginBottom: "3.5px",
+    width:"8px",
+    height:"8px"
+  },
+  body:{
+    color: '#373C38',
+    height: "16px",
+    fontWeight: 500,
+  },
+  container:{
+    marginLeft:"10px",
+    marginTop: "6px",
+    marginBottom: "4.75px",
+    },
+    imglocation:{
+     marginTop: "8px", 
+     marginBottom: "0",
+      width:"13.5px",
+      height:"16.5px",
+    },
+    caption:{
+      height: "16px",
+      fontWeight: 500,
+    }
+})
+
 export type CommonRoutesProps = {
   location1: string;
   location2: string;
@@ -17,6 +78,7 @@ export type CommonRoutesProps = {
 
 const CommonRotes: React.FC<CommonRoutesProps> = (props) => {
   const { location1, location2 } = props;
+  const classes = useStyles()
   return (
     <>
       <Button
@@ -24,29 +86,14 @@ const CommonRotes: React.FC<CommonRoutesProps> = (props) => {
       >
         <Typography
           variant="body1"
-          sx={{
-            color: `${EXTRA_COLORS.text.primary}`,
-            height: "16px",
-            fontWeight: 500,
-          }}
+          className={classes.body}
         >
           {COMMON_ROUTES}
         </Typography>
       </Button>
 
       <Paper
-        sx={{
-          display: "flex",
-          marginY: "18px",
-          flexDirection: "row",
-          alignItems: "flex-start",
-          justifyContent: "flex-start",
-          height: "102px",
-          width: "359px",
-          left: "23px",
-          top: "249px",
-          backgroundColor: EXTRA_COLORS.shade["700"],
-        }}
+        className={classes.root}
       >
         <Grid container sx={{ paddingY: "18px", paddingLeft: "12px" }}>
           <Stack direction={"row"}>
@@ -54,19 +101,13 @@ const CommonRotes: React.FC<CommonRoutesProps> = (props) => {
               <Grid container direction="column">
                 <Grid item>
                   <Stack direction={"row"} marginLeft={"4px"}>
-                    <Button sx={{ minHeight: 0, padding: 0 }}>
+                    <Button className={classes.default}>
                       <Box
-                        borderRadius={"16px"}
-                        width={"16px"}
-                        height={"16px"}
-                        sx={{ backgroundColor: "#D6D6D6" }}
-                        marginRight={"8px"}
+                        className={classes.typography}
                       >
                         <img
-                          style={{ marginBottom: "4.5px" }}
+                         className={classes.img}
                           src={FromLocationInsideIcon}
-                          width="8px"
-                          height={"8px"}
                           alt={FromLocationInsideIcon}
                         />
                       </Box>
@@ -74,8 +115,6 @@ const CommonRotes: React.FC<CommonRoutesProps> = (props) => {
                         <Typography
                           sx={{
                             color: `${EXTRA_COLORS.text.primary}`,
-                            height: "16px",
-                            fontWeight: 500,
                           }}
                           variant="caption"
                         >
@@ -93,50 +132,27 @@ const CommonRotes: React.FC<CommonRoutesProps> = (props) => {
                   }}
                 >
                   <Box
-                    marginLeft={"10px"}
-                    sx={{
-                      marginTop: "6px",
-                      marginBottom: "4.75px",
-                    }}
+                   className={classes.container}
                   >
                     <Box
-                      sx={{
-                        backgroundColor: `${EXTRA_COLORS.grey[400]}`,
-                        borderRadius: "50%",
-                        width: "4px",
-                        marginTop: "2px",
-                        height: "4px",
-                      }}
+                      className={classes.division}
                     ></Box>
                     <Box
-                      sx={{
-                        backgroundColor: `${EXTRA_COLORS.grey[400]}`,
-                        borderRadius: "50%",
-                        width: "4px",
-                        marginTop: "2px",
-                        height: "4px",
-                      }}
+                     className={classes.division}
                     ></Box>
                     <Box
-                      sx={{
-                        backgroundColor: `${EXTRA_COLORS.grey[400]}`,
-                        borderRadius: "50%",
-                        width: "4px",
-                        marginTop: "2px",
-                        height: "4px",
-                      }}
+                     className={classes.division}
                     ></Box>
                   </Box>
                 </Grid>
                 <Grid item>
                   <Stack direction={"row"} marginLeft="5.5px">
-                    <Button sx={{ minHeight: 0, padding: 0 }}>
+                    <Button className={classes.default}>
                       <Box marginRight={"8px"}>
                         <img
-                          style={{ marginTop: "8px", marginBottom: "0" }}
+                         
+                         className={classes.imglocation}
                           src={ToLocationIcon}
-                          width="13.5px"
-                          height={"16.5px"}
                           alt={ToLocationIcon}
                         />
                       </Box>
