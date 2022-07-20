@@ -3,9 +3,91 @@ import MoreHorizIcon from '@mui/icons-material/MoreHoriz'
 import theme, { EXTRA_COLORS } from '../../../theme/theme'
 import React, { MouseEventHandler } from 'react'
 import Bus from '../../../assets/icons/BusNew.svg'
-import Bike from '../../../assets/icons/scootyIcon.svg'
+import Bike from '../../../assets/icons/bike.svg'
 import Car from '../../../assets/icons/CabNew.svg'
 import Train from '../../../assets/icons/trainIcon.svg'
+import { makeStyles } from '@mui/styles'
+
+const useStyles = makeStyles({
+  default: {
+    width: '100%',
+  },
+  root: {
+    height: '174px',
+    width: '174px',
+    marginTop: '32px',
+  },
+  typography: {
+    backgroundColor: `${EXTRA_COLORS.shade['700']} !important`,
+    color: `theme.palette.text.secondary`,
+    borderRadius: '12px',
+    display: 'flex',
+    alignItems: 'flex-start',
+    boxSizing: 'border-box',
+    width: '650px',
+    height: '150px',
+    minWidth: '571px',
+    textOverflow: 'ellipsis',
+  },
+  grid: {
+    height: '18px',
+    width: '15px',
+  },
+  box: {
+    width: '100%',
+    height: '100%',
+    textOverflow: 'ellipsis',
+    display: 'flex',
+    flexDirection: 'column',
+    alignItems: 'flex-start',
+    justifyContent: 'flex-start',
+    marginLeft: '21px',
+  },
+  img: {
+    position: 'static',
+    width: '45px',
+    height: '45px',
+    marginTop: '30px',
+    marginLeft: '30px',
+  },
+  body: {
+    fontSize: '20px',
+    lineHeight: '30px',
+    marginTop: '16px',
+  },
+  icon: {
+    height: '80%',
+    marginTop: '27px',
+    alignSelf: 'end',
+    marginRight: '19px',
+  },
+  cardalign: {
+    marginTop: '60px',
+    alignSelf: 'end',
+    marginRight: '19px',
+  },
+  container: {
+    paddingTop: '2%',
+    justifyContent: 'center',
+    height: '75%',
+  },
+  subtitle: {
+    fontSize: '12px',
+    lineHeight: '16px',
+    color: EXTRA_COLORS.accent[200],
+  },
+  subtitle2: {
+    fontSize: '12px',
+    lineHeight: '16px',
+    color: theme.palette.text.secondary,
+  },
+  alignment: {
+    width: '20%',
+    height: '100%',
+    justifyContent: 'flex-end',
+    alignItems: 'flex-end',
+  },
+})
 
 export type CardProps = {
   id: number
@@ -19,138 +101,54 @@ export type CardProps = {
 
 const JobCard: React.FC<CardProps> = (props) => {
   const { companyName, location, time, companyIcon, title, onClick } = props
-
+  const classes = useStyles()
   return (
     <>
-      <Card
-        sx={{
-          backgroundColor: `${EXTRA_COLORS.neutralShade['700']} !important`,
-          borderRadius: '12px',
-          display: 'flex',
-          alignItems: 'flex-start',
-          boxSizing: 'border-box',
-          height: '159px',
-          minWidth: '571px',
-          textOverflow: 'ellipsis',
-        }}
-        onClick={onClick}
-      >
-        <Box
-          sx={{
-            width: '20%',
-            height: '100%',
-            justifyContent: 'flex-end',
-            alignItems: 'flex-end',
-          }}
-        >
-          <img
-            style={{
-              position: 'static',
-              width: '45px',
-              height: '45px',
-              marginTop: '30px',
-              marginLeft: '30px',
-            }}
-            src={companyIcon}
-            alt={''}
-          />
+      <Card className={classes.typography} onClick={onClick}>
+        <Box className={classes.alignment}>
+          <img className={classes.img} src={companyIcon} alt={''} />
         </Box>
 
-        <Box
-          sx={{
-            width: '100%',
-            height: '100%',
-            textOverflow: 'ellipsis',
-            display: 'flex',
-            flexDirection: 'column',
-            alignItems: 'flex-start',
-            justifyContent: 'flex-start',
-            marginLeft: '21px',
-          }}
-        >
-          <Box
-            sx={{
-              paddingTop: '2%',
-              justifyContent: 'center',
-              height: '75%',
-            }}
-          >
+        <Box className={classes.box}>
+          <Box className={classes.container}>
             <Typography
               data-testid="title"
               variant="body2"
-              sx={{
-                fontSize: '20px',
-                lineHeight: '30px',
-                marginTop: '16px',
-              }}
+              className={classes.body}
             >
               {title}
             </Typography>
-            <Typography
-              variant="subtitle2"
-              sx={{
-                fontSize: '12px',
-                lineHeight: '16px',
-                color: EXTRA_COLORS.accent[200],
-              }}
-            >
+            <Typography variant="subtitle2" className={classes.subtitle}>
               {' '}
               {companyName}
             </Typography>
-            <Typography
-              variant="subtitle2"
-              sx={{
-                fontSize: '12px',
-                lineHeight: '16px',
-                color: theme.palette.text.secondary,
-              }}
-            >
+            <Typography variant="subtitle2" className={classes.subtitle2}>
               {location}
             </Typography>
           </Box>
 
           <Grid sx={{ marginBottom: '19' }} container columnGap={4}>
-            <Grid item sx={{ height: '18px', width: '15px' }}>
+            <Grid item className={classes.grid}>
               <img src={Bike} alt="" />
             </Grid>
-            <Grid item sx={{ height: '18px', width: '15px' }}>
+            <Grid item className={classes.grid}>
               <img src={Bus} alt="" />
             </Grid>
-            <Grid item sx={{ height: '18px', width: '15px' }}>
+            <Grid item className={classes.grid}>
               <img src={Car} alt="" />
             </Grid>
-            <Grid item sx={{ height: '18px', width: '15px' }}>
+            <Grid item className={classes.grid}>
               <img src={Train} alt="" />
             </Grid>
           </Grid>
         </Box>
 
-        <Grid container direction="column" sx={{ width: '100%' }}>
-          <Grid
-            item
-            sx={{
-              height: '80%',
-              marginTop: '27px',
-              alignSelf: 'end',
-              marginRight: '19px',
-            }}
-          >
+        <Grid container direction="column" className={classes.default}>
+          <Grid item className={classes.icon}>
             <MoreHorizIcon />
           </Grid>
-          <Grid
-            item
-            sx={{
-              marginTop: '60px',
-              alignSelf: 'end',
-              marginRight: '19px',
-            }}
-          >
-            <Typography
-              variant="caption"
-              sx={{
-                color: theme.palette.text.secondary,
-              }}
-            >
+          <Grid item className={classes.cardalign}>
+            <Typography variant="caption" className={classes.typography.color}>
               {time}
             </Typography>
           </Grid>
