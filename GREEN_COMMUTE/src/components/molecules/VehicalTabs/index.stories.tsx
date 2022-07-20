@@ -1,7 +1,7 @@
 import CustomTabs from "./index";
 import { ComponentStory } from "@storybook/react";
 import Icon from "../../atoms/Icon";
-import bike from "../../../assets/icons/scootyIcon.svg";
+import bike from "../../../assets/icons/bike.svg";
 import bus from "../../../assets/icons/bus.svg";
 import car from "../../../assets/icons/CabNew.svg";
 import train from "../../../assets/icons/trainIcon.svg";
