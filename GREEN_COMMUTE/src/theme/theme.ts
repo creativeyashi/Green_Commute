@@ -227,9 +227,15 @@ export const EXTRA_COLORS = {
     '400': '#30A193',
     '1000': '#EFFFFD',
   },
-
-  grey: {
-    '400': '#D6D6D6',
+  neutralShade: {
+    '300': 'linear-gradient(155.94deg, #EFFEFF 6.2%, #E9FFF4 52.61%)',
+    '200': 'linear-gradient(143.84deg, #E0FFE5 0%, #FFFAEA 102.58%)',
+    '400': '#E8FFFC',
+    '500': '#E7FCE0',
+    '100': '#F5FFF7',
+    '600': '#77EDDF',
+    '700': '#FFFFFF',
+    '800': '#E5E5E5',
   },
   accent: {
     '100': '#ED8F02',
@@ -237,5 +243,8 @@ export const EXTRA_COLORS = {
   },
   text: {
     primary: '#373C38',
+  },
+  grey: {
+    '400': '#D6D6D6',
   },
 }
