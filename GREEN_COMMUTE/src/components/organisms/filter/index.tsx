@@ -76,58 +76,72 @@ const greenCommute = [
     checked: false,
   },
 ]
-const jobType = [
+const menu1 = 'Distance'
+const menu2 = 'Date Posted'
+const menu3 = 'Green Commute'
+const lowerMenu = [
   {
-    name: 'Full time',
-    checked: true,
+    name: 'Job Type',
+    menu: [
+      {
+        name: 'Full time',
+        checked: true,
+      },
+      {
+        name: 'Internship',
+        checked: false,
+      },
+      {
+        name: 'Contract',
+        checked: false,
+      },
+      {
+        name: 'Remote',
+        checked: false,
+      },
+    ],
   },
   {
-    name: 'Internship',
-    checked: false,
+    name: 'Experience Level',
+    menu: [
+      {
+        name: 'Fresher',
+        checked: true,
+      },
+      {
+        name: 'Mid-level',
+        checked: false,
+      },
+      {
+        name: 'Director',
+        checked: false,
+      },
+      {
+        name: 'Executive',
+        checked: false,
+      },
+    ],
   },
   {
-    name: 'Contract',
-    checked: false,
-  },
-  {
-    name: 'Remote',
-    checked: false,
-  },
-]
-const experienceLevel = [
-  {
-    name: 'Fresher',
-    checked: true,
-  },
-  {
-    name: 'Mid-level',
-    checked: false,
-  },
-  {
-    name: 'Director',
-    checked: false,
-  },
-  {
-    name: 'Executive',
-    checked: false,
-  },
-]
-const transport = [
-  {
-    name: 'Metro',
-    checked: true,
-  },
-  {
-    name: 'Bus',
-    checked: true,
-  },
-  {
-    name: 'Car pooling',
-    checked: true,
-  },
-  {
-    name: 'Motor Cycle',
-    checked: true,
+    name: 'Transport',
+    menu: [
+      {
+        name: 'Metro',
+        checked: true,
+      },
+      {
+        name: 'Bus',
+        checked: true,
+      },
+      {
+        name: 'Car pooling',
+        checked: true,
+      },
+      {
+        name: 'Motor Cycle',
+        checked: true,
+      },
+    ],
   },
 ]
 
@@ -206,7 +220,7 @@ export const FilterPopUp = ({ onApply, onClear }: Props) => {
       <Box className={style.firstBox}>
         <Box className={style.first}>
           <div className={style.check}>
-            <Typography variant="body1">Distance</Typography>
+            <Typography variant="body1">{menu1}</Typography>
           </div>
           {distanceData.map((element, index) => {
             switch (element.name) {
@@ -238,7 +252,7 @@ export const FilterPopUp = ({ onApply, onClear }: Props) => {
         </Box>
         <Box>
           <div className={style.check}>
-            <Typography>Date Posted</Typography>
+            <Typography>{menu2}</Typography>
           </div>
           {datePosted.map((element, index) => {
             return (
@@ -253,7 +267,7 @@ export const FilterPopUp = ({ onApply, onClear }: Props) => {
         </Box>
         <Box>
           <div className={style.check}>
-            <Typography>Green Commute</Typography>
+            <Typography>{menu3}</Typography>
           </div>
           {greenCommute.map((element, index) => {
             return (
@@ -267,54 +281,26 @@ export const FilterPopUp = ({ onApply, onClear }: Props) => {
           })}
         </Box>
       </Box>
-
       <Box className={style.firstBox}>
-        <Box className={style.first}>
-          <div className={style.check}>
-            <Typography>Job Type</Typography>
-          </div>
-          {jobType.map((element, index) => {
-            return (
-              <div className={style.check} key={index}>
-                <CheckBoxComponent checked={element.checked} />
-                <Typography variant="body2" className={style.typography}>
-                  {element.name}
-                </Typography>
+        {lowerMenu.map((element, index) => {
+          return (
+            <Box className={style.first} key={index}>
+              <div className={style.check}>
+                <Typography>{element.name}</Typography>
               </div>
-            )
-          })}
-        </Box>
-        <Box>
-          <div className={style.check}>
-            <Typography>Experience Level</Typography>
-          </div>
-          {experienceLevel.map((element, index) => {
-            return (
-              <div className={style.check} key={index}>
-                <CheckBoxComponent checked={element.checked} />
-                <Typography variant="body2" className={style.typography}>
-                  {element.name}
-                </Typography>
-              </div>
-            )
-          })}
-        </Box>
-
-        <Box>
-          <div className={style.check}>
-            <Typography>Transport</Typography>
-          </div>
-          {transport.map((element, index) => {
-            return (
-              <div className={style.check} key={index}>
-                <CheckBoxComponent checked={element.checked} />
-                <Typography variant="body2" className={style.typography}>
-                  {element.name}
-                </Typography>
-              </div>
-            )
-          })}
-        </Box>
+              {element.menu.map((element, index) => {
+                return (
+                  <div className={style.check} key={index}>
+                    <CheckBoxComponent checked={element.checked} />
+                    <Typography variant="body2" className={style.typography}>
+                      {element.name}
+                    </Typography>
+                  </div>
+                )
+              })}
+            </Box>
+          )
+        })}
       </Box>
       <div className={style.footer}>
         <Button

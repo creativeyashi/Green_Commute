@@ -10,7 +10,14 @@ export default {
 
 const Template: ComponentStory<typeof FilterPopUp> = () => (
   <ThemeProvider theme={theme}>
-    <FilterPopUp />
+    <FilterPopUp
+      onApply={function (): void {
+        throw new Error('Function not implemented.')
+      }}
+      onClear={function (): void {
+        throw new Error('Function not implemented.')
+      }}
+    />
   </ThemeProvider>
 )
 
