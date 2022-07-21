@@ -12,6 +12,20 @@ interface Props {
   onClear: () => void
 }
 
+interface Distance {
+  closest: boolean
+  nearest: boolean
+  intermediate: boolean
+  far: boolean
+}
+
+const initialState = {
+  closest: true,
+  nearest: false,
+  intermediate: false,
+  far: false,
+}
+
 const useStyles = makeStyles({
   MainContainer: {
     border: '1px solid green',
@@ -54,16 +68,19 @@ const useStyles = makeStyles({
     float: 'right',
     paddingRight: 10,
   },
+  clearButton: {
+    border: 'none',
+    color: '#4ABAAD',
+  },
+  applyButton: {
+    borderRadius: '8px',
+    color: 'white',
+    backgroundColor: '#30A193',
+  },
 })
 
-const initialState = {
-  closest: true,
-  nearest: false,
-  intermediate: false,
-  far: false,
-}
 export const FilterPopUp = ({ onApply, onClear }: Props) => {
-  const [distance, setDistance] = React.useState(initialState)
+  const [distance, setDistance] = React.useState<Distance>(initialState)
 
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setDistance({
@@ -270,10 +287,7 @@ export const FilterPopUp = ({ onApply, onClear }: Props) => {
       <div className={style.footer}>
         <Button
           variant="outlined"
-          style={{
-            border: 'none',
-            color: '#4ABAAD',
-          }}
+          className={style.clearButton}
           onClick={() => {
             setDistance(initialState)
             onClear()
@@ -283,11 +297,7 @@ export const FilterPopUp = ({ onApply, onClear }: Props) => {
         </Button>
         <Button
           variant="contained"
-          style={{
-            borderRadius: '8px',
-            color: 'white',
-            backgroundColor: '#30A193',
-          }}
+          className={style.applyButton}
           onClick={() => {
             onApply(distance)
           }}
