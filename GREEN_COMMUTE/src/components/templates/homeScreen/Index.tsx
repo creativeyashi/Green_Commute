@@ -41,7 +41,6 @@ const HomeScreenTemplate = ({
     <Grid
       container
       direction="column"
-      // eslint-disable-next-line jsx-a11y/aria-role
       role="home-template"
       className={classes.root}
     >
