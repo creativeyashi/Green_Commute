@@ -1,5 +1,5 @@
 import { Story } from '@storybook/react'
-import Button, { ButtonIconProps } from '.'
+import Button, { ButtonIconProps } from './index'
 
 export default {
   title: 'Atom/Button',
