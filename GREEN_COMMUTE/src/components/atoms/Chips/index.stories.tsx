@@ -4,7 +4,7 @@ import { ComponentStory, ComponentMeta } from '@storybook/react'
 import Chips from './index'
 
 export default {
-  title: 'Atoms/Chip',
+  title: 'Atom/Chip',
   component: Chips,
   argTypes: { onClick: { action: 'clicked' }, onDelete: { action: 'clicked' } },
 } as ComponentMeta<typeof Chips>

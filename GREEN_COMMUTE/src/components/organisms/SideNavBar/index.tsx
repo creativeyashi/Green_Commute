@@ -23,7 +23,7 @@ import {
 } from '../../utils/constant'
 
 import { makeStyles } from '@mui/styles'
-import MenuButton from '../MenuButton/index'
+import MenuButton from '../../molecules/MenuButton/index'
 const classes = makeStyles(() => ({
   root: {
     height: '100%',
