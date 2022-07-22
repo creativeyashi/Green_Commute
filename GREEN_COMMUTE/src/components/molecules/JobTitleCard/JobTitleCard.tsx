@@ -18,12 +18,9 @@ export interface JobTitleProps {
 }
 
 const JobTitleCard: React.FC<JobTitleProps> = ({
-  id,
-  jobTitle,
+ 
   companyLogo,
-  companyName,
-  companyAddress,
-  jobUploadedTime,
+
 }: JobTitleProps) => {
   
   const companyAndAddressStyle = {
@@ -41,7 +38,8 @@ const JobTitleCard: React.FC<JobTitleProps> = ({
 
   const moreIconStyles = {
     paddingLeft: "55px",
-    marginTop: "16px",
+    marginLeft:"-660px",
+    marginTop: "32px",
   };
   return (
     <div data-testid="jobTitleCard">
@@ -63,9 +61,10 @@ const JobTitleCard: React.FC<JobTitleProps> = ({
           <img
             style={{
               position: "static",
-              width: "45px",
-              height: "45px",
+              width: "100px",
+              height: "62px",
               paddingLeft: "20px",
+              marginTop: "14px",
             }}
             src={companyLogo}
             alt={companyLogo}
