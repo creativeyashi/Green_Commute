@@ -60,7 +60,7 @@ declare module '@mui/material/styles' {
     color1?: string
     color2?: string
     color3?: string
-    primary400: string
+    primary400?: string
   }
 }
 

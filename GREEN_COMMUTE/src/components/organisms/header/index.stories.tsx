@@ -1,17 +1,15 @@
-import TopNavbar from ".";
-import { ComponentStory } from "@storybook/react";
-import theme from "../../../theme/theme";
+import TopNavbar from '.'
+import { ComponentStory } from '@storybook/react'
 export default {
-  title: "organisms/Header",
+  title: 'organisms/Header',
   component: TopNavbar,
-};
+}
 
 const Template: ComponentStory<typeof TopNavbar> = (args) => (
   <TopNavbar {...args}></TopNavbar>
-);
-export const topNavBar = Template.bind({});
+)
+export const TopNavBar = Template.bind({})
 
-topNavBar.args = {
-    backgroundColor: `${theme.palette.primary.main}`,
-    text: "East Marredpally, Secunderabad"
+TopNavBar.args = {
+  text: 'East Marredpally, Secunderabad',
 }
