@@ -2,6 +2,7 @@ import { Typography } from '@mui/material'
 import React from 'react'
 import Vector from '../../../assets/image/Vectorshape.png'
 import { makeStyles } from '@mui/styles'
+import theme from '../../../theme/theme'
 
 const useStyles = makeStyles({
   root: {
@@ -30,7 +31,10 @@ const AQI: React.FC<Prop> = (props: Prop) => {
   const classes = useStyles()
   return (
     <div className={classes.root}>
-      <Typography className={classes.typography} color="primary.main">
+      <Typography
+        className={classes.typography}
+        color={`${theme.palette.primary.main}`}
+      >
         {props.AQIIndex}
       </Typography>
     </div>

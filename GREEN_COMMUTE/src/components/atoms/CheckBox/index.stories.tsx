@@ -1,27 +1,26 @@
-import React from "react";
-import { ComponentStory, ComponentMeta } from "@storybook/react";
-import CheckBoxComponent from ".";
+import React from 'react'
+import { ComponentStory, ComponentMeta } from '@storybook/react'
+import CheckBoxComponent from '.'
 
 const CheckBoxComponentStory = {
-  title: "Atom/CheckBox",
+  title: 'Atom/CheckBox',
   component: CheckBoxComponent,
-} as ComponentMeta<typeof CheckBoxComponent>;
+} as ComponentMeta<typeof CheckBoxComponent>
 
 const Template: ComponentStory<typeof CheckBoxComponent> = (args) => (
- 
-    <CheckBoxComponent {...args} />
-);
+  <CheckBoxComponent {...args} />
+)
 
-export const CheckBoxActive = Template.bind({});
+export const CheckBoxActive = Template.bind({})
 CheckBoxActive.args = {
-  checked:true,
-  value:"iamchecked"
-};
+  checked: true,
+  value: 'iamchecked',
+}
 
-export const CheckBoxInactive = Template.bind({});
+export const CheckBoxInactive = Template.bind({})
 CheckBoxInactive.args = {
   checked: false,
-  value: "iamunchecked",
-};
+  value: 'iamunchecked',
+}
 
-export default CheckBoxComponentStory;
+export default CheckBoxComponentStory

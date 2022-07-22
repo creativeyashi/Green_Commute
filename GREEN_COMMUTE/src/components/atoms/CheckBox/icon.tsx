@@ -1,33 +1,33 @@
-import styled from "@emotion/styled";
+import styled from '@emotion/styled'
 
-export const BpIcon = styled("span")(() => ({
-  borderRadius: "5px",
+export const BpIcon = styled('span')(() => ({
+  borderRadius: '5px',
   width: 24,
   height: 24,
-  boxShadow: "inset 0 0 0 2px rgba(16,22,26,.2), inset 0 0 0 rgba(16,22,26,.1)",
-  backgroundColor: "#fff",
+  boxShadow: 'inset 0 0 0 2px rgba(16,22,26,.2), inset 0 0 0 rgba(16,22,26,.1)',
+  backgroundColor: '#fff',
   backgroundImage:
-    "linear-gradient(180deg,hsla(0,0%,100%,.8),hsla(0,0%,100%,0))",
-  ".Mui-focusVisible &": {
-    outline: "2px auto rgba(19,124,189,.6)",
+    'linear-gradient(180deg,hsla(0,0%,100%,.8),hsla(0,0%,100%,0))',
+  '.Mui-focusVisible &': {
+    outline: '2px auto rgba(19,124,189,.6)',
     outlineOffset: 2,
   },
 
-  "input:disabled ~ &": {
-    boxShadow: "gray",
-    background: "rgba(206,217,224,.5)",
+  'input:disabled ~ &': {
+    boxShadow: 'gray',
+    background: 'rgba(206,217,224,.5)',
   },
-}));
+}))
 
 export const BpCheckedIcon = styled(BpIcon)({
-  boxShadow: "inset 0 0 0 2px #fff, inset 0 0 0 rgba(16,22,26,.1)",
+  boxShadow: 'inset 0 0 0 2px #fff, inset 0 0 0 rgba(16,22,26,.1)',
 
-  backgroundColor: "#4ABAAD",
+  backgroundColor: '#4ABAAD',
 
   backgroundImage:
-    "linear-gradient(180deg,hsla(0,0%,100%,.1),hsla(0,0%,100%,0))",
-  "&:before": {
-    display: "block",
+    'linear-gradient(180deg,hsla(0,0%,100%,.1),hsla(0,0%,100%,0))',
+  '&:before': {
+    display: 'block',
     width: 24,
     height: 24,
     backgroundImage:
@@ -36,4 +36,4 @@ export const BpCheckedIcon = styled(BpIcon)({
       "1.003 0 00-1.42 1.42l3 3c.18.18.43.29.71.29s.53-.11.71-.29l5-5A1.003 1.003 0 0012 5z' fill='%23fff'/%3E%3C/svg%3E\")",
     content: '""',
   },
-});
+})
