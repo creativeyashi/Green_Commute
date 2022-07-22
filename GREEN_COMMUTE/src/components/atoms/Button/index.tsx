@@ -1,31 +1,24 @@
 import React from 'react'
-import MuiButton from '@mui/material/Button'
+import {
+  Button as MuiButton,
+  ButtonProps as MuiButtonProps,
+  styled,
+} from '@mui/material'
 
-export interface ButtonIconProps {
-  startIcon?: React.ReactNode
-  endIcon?: React.ReactNode
-  variant?: 'text' | 'outlined' | 'contained' | undefined
-  style?: React.CSSProperties
-  children?: React.ReactNode
-  onClick?: () => void
-  className?: string
-}
-
+const CustomizedButton = styled(MuiButton)(() => ({
+  '&:hover': {
+    boxShadow: 'none',
+  },
+  '&:focusVisible': {
+    boxShadow: 'none',
+  },
+}))
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
-const Button: React.FC<ButtonIconProps> = (props) => {
-  const { startIcon, endIcon, variant, className, children, onClick, style } =
-    props
+const Button: React.FC<MuiButtonProps> = (props) => {
   return (
-    <MuiButton
-      startIcon={startIcon}
-      style={style}
-      endIcon={endIcon}
-      onClick={onClick}
-      variant={variant}
-      className={className}
-    >
-      {children}
-    </MuiButton>
+    <>
+      <CustomizedButton disableRipple {...props}></CustomizedButton>
+    </>
   )
 }
 
