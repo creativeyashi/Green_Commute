@@ -150,5 +150,27 @@
       "description": "A senior developer manages a team of developers and will be expected to encourage creativity and efficiency throughout complex digital projects. Due to the pressurised nature of the role, a robust and organised approach to the work is needed to produce the best solutions.",
       "aboutTheCompany": "Instagram is a photo and video sharing social networking service founded in 2010 by Kevin Systrom and Mike Krieger, and later acquired by American company Facebook Inc., now known as Meta Platforms. The app allows users to upload media that can be edited with filters and organized by hashtags and geographical tagging. Posts can be shared publicly or with preapproved followers."
     }
+  ],
+  "userLocation": [
+    {
+      "id": 1,
+      "location": "Mumbai",
+      "AQI": 894
+    },
+    {
+      "id": 2,
+      "location": "Hyderabad",
+      "AQI": 938
+    },
+    {
+      "id": 3,
+      "location": "Delhi",
+      "AQI": 872
+    },
+    {
+      "id": 4,
+      "location": "Chennai",
+      "AQI": 902
+    }
   ]
 }
