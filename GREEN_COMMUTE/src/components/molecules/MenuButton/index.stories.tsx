@@ -6,7 +6,7 @@ import { DASHBOARD, FIND_JOBS, SAVED_JOBS } from '../../utils/constant'
 import { ComponentStory, ComponentMeta } from '@storybook/react'
 import MenuButton from './index'
 export default {
-  title: 'Organisms/MenuButton',
+  title: 'Molecules/MenuButton',
   component: MenuButton,
 } as ComponentMeta<typeof MenuButton>
 

@@ -148,7 +148,7 @@ const JobCard: React.FC<CardProps> = (props) => {
             <MoreHorizIcon />
           </Grid>
           <Grid item className={classes.cardalign}>
-            <Typography variant="caption" className={classes.typography.color}>
+            <Typography variant="caption" className={classes.typography}>
               {time}
             </Typography>
           </Grid>

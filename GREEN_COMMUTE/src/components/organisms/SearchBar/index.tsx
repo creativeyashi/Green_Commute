@@ -1,12 +1,12 @@
 import { Box, Divider, InputBase, Autocomplete } from '@mui/material'
-import React, { useState } from 'react'
+import React from 'react'
 import theme, { EXTRA_COLORS } from '../../../theme/theme'
 import SearchSkillIcon from '../../../assets/icons/searchSkill.png'
 import SearchIcon from '@mui/icons-material/Search'
 import LocationOnOutlinedIcon from '@mui/icons-material/LocationOnOutlined'
 
 import { makeStyles } from '@mui/styles'
-import { Chip } from '../../atoms/Chips/index.stories'
+// import { Chip } from '../../atoms/Chips/index.stories'
 export type SearchProps = {
   placeholder1: string
   placeholder2: string
@@ -65,12 +65,7 @@ const styles = makeStyles(() => ({
 
 const SearchBar: React.FC<SearchProps> = (props) => {
   const classes = styles()
-  const [value, setValue] = useState<string[]>([])
   const { placeholder1, placeholder2 } = props
-  const dropDownChange = (v: string) => {
-    setValue([...value, v])
-    console.log(value)
-  }
   return (
     <>
       <Box className={classes.outerBox}>
@@ -80,22 +75,19 @@ const SearchBar: React.FC<SearchProps> = (props) => {
           id="size-small-filled-multi"
           size="small"
           options={top100Films}
-          onChange={(e, v) => {
-            dropDownChange(v)
-          }}
           getOptionLabel={(option) => option}
-          renderTags={(value, getTagProps) =>
-            value.map((option, index) => (
-              <>
-                <Chip
-                  variant="filled"
-                  label={option}
-                  size="small"
-                  {...getTagProps({ index })}
-                />
-              </>
-            ))
-          }
+          // renderTags={(value, getTagProps) =>
+          //   value.map((option, index) => (
+          //     <>
+          //       <Chip
+          //         variant="filled"
+          //         label={option}
+          //         size="small"
+          //         {...getTagProps({ index })}
+          //       />
+          //     </>
+          //   ))
+          // }
           renderInput={(params) => (
             <>
               <InputBase

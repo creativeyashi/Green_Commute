@@ -1,12 +1,12 @@
 import { Story } from '@storybook/react'
-import Button, { ButtonIconProps } from './index'
+import Button from './index'
 
 export default {
   title: 'Atom/Button',
   component: Button,
 }
 
-const Template: Story<ButtonIconProps> = (args) => <Button {...args} />
+const Template: Story = (args) => <Button {...args} />
 
 export const Save = Template.bind({})
 Save.args = {
