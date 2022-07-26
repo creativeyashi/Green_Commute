@@ -13,3 +13,7 @@ const Template: ComponentStory<typeof ViewGreenCommutes> = (args) => (
 )
 
 export const GreenComponent = Template.bind({})
+GreenComponent.args = {
+  source: 'E Marredpally, Hyderabad',
+  destination: 'Hi-tech city, Hyderabad',
+}
