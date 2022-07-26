@@ -79,13 +79,13 @@ const CommonRotes: React.FC<CommonRoutesProps> = (props) => {
   const classes = useStyles()
   return (
     <>
-      <Button
+      {/* <Button
         startIcon={<ArrowBackIcon sx={{ color: EXTRA_COLORS.text.primary }} />}
       >
         <Typography variant="body1" className={classes.body}>
           {COMMON_ROUTES}
         </Typography>
-      </Button>
+      </Button> */}
 
       <Paper className={classes.root}>
         <Grid container sx={{ paddingY: '18px', paddingLeft: '12px' }}>
