@@ -29,6 +29,9 @@ const useStyles = makeStyles({
     minWidth: '571px',
     textOverflow: 'ellipsis',
   },
+  timecolor: {
+    color: `theme.palette.text.secondary`,
+  },
   grid: {
     height: '18px',
     width: '15px',
@@ -148,7 +151,7 @@ const JobCard: React.FC<CardProps> = (props) => {
             <MoreHorizIcon />
           </Grid>
           <Grid item className={classes.cardalign}>
-            <Typography variant="caption" className={classes.typography}>
+            <Typography variant="caption" className={classes.timecolor}>
               {time}
             </Typography>
           </Grid>
