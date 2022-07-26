@@ -3,7 +3,6 @@ import { StyledEngineProvider } from '@mui/styled-engine'
 
 import React from 'react'
 import theme from './theme/theme'
-
 export function App() {
   return (
     <StyledEngineProvider injectFirst>

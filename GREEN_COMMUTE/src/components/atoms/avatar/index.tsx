@@ -1,11 +1,16 @@
-import MuiAvatar from '@mui/material/Avatar';
+import MuiAvatar from '@mui/material/Avatar'
 import React from 'react'
-import avatar from '../../../assets/icons/Avatar.svg';
+import avatar from '../../../assets/icons/Avatar.svg'
 
-
-function Avatar({name}:any) {
-    return (
-        <MuiAvatar src={avatar} data-testid="avatar" >{name}</MuiAvatar>
-    );
- }
+interface Props {
+  name?: string
+}
+const Avatar: React.FC<Props> = (props) => {
+  const { name } = props
+  return (
+    <MuiAvatar src={avatar} data-testid="avatar">
+      {name}
+    </MuiAvatar>
+  )
+}
 export default Avatar
