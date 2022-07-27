@@ -11,9 +11,7 @@ export default {
 const Template: ComponentStory<typeof CommonRoutes> = (args) => (
   <CommonRoutes {...args} />
 )
-
 export const Primary = Template.bind({})
-
 Primary.args = {
   location1: Location1,
   location2: Location2,

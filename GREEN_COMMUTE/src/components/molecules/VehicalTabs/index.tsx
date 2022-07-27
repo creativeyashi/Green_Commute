@@ -1,41 +1,40 @@
-import { Tabs } from "@mui/material";
-import Tab from "@mui/material/Tab";
-import React, { useState } from "react";
+import { Tabs } from '@mui/material'
+import Tab from '@mui/material/Tab'
+import React, { useState } from 'react'
 import { makeStyles } from '@mui/styles'
 
-
 const useStyles = makeStyles({
-  default:{
-    minWidth: "0px"
+  default: {
+    minWidth: '0px',
   },
   root: {
-    width: "inherit"
+    width: 'inherit',
   },
   typography: {
-    backgroundColor: "transparent",
-  }
+    backgroundColor: 'transparent',
+  },
 })
 
 interface TabsProps {
-  value: number;
-  label: string;
-  icon?: any;
-  disabled?: boolean;
-  alticon?: any;
+  value: number
+  label: string
+  icon?: any
+  disabled?: boolean
+  alticon?: any
 }
 
 interface CustomTabProps {
-  tabs: Array<TabsProps>;
-  stateHandler: Function;
+  tabs: Array<TabsProps>
+  stateHandler: Function
 }
 
 export default ({ tabs, stateHandler }: CustomTabProps) => {
-  const [value, setValue] = useState(tabs && tabs[1].value);
+  const [value, setValue] = useState(tabs && tabs[1].value)
   const classes = useStyles()
   const handleChange = (_event: React.SyntheticEvent, val: number) => {
-    setValue(val);
-    stateHandler(val);
-  };
+    setValue(val)
+    stateHandler(val)
+  }
   return (
     <Tabs
       value={value}
@@ -44,7 +43,7 @@ export default ({ tabs, stateHandler }: CustomTabProps) => {
       className={classes.root}
       TabIndicatorProps={{
         style: {
-          backgroundColor: "transparent",
+          backgroundColor: 'transparent',
         },
       }}
     >
@@ -59,8 +58,8 @@ export default ({ tabs, stateHandler }: CustomTabProps) => {
               className={classes.default}
               disabled={curr.disabled}
             ></Tab>
-          );
+          )
         })}
     </Tabs>
-  );
-};
+  )
+}
