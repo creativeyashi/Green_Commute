@@ -154,23 +154,33 @@
   "userLocation": [
     {
       "id": 1,
-      "location": "Mumbai",
+      "name": "Mumbai",
       "AQI": 894
     },
     {
       "id": 2,
-      "location": "Hyderabad",
-      "AQI": 938
+      "name": "Hyderabad",
+      "AQI": 953
     },
     {
       "id": 3,
-      "location": "Delhi",
+      "name": "Delhi",
       "AQI": 872
     },
     {
       "id": 4,
-      "location": "Chennai",
+      "name": "Chennai",
       "AQI": 902
+    }
+  ],
+  "skills": [
+    {
+      "id": 1,
+      "name": "Product Designer"
+    },
+    {
+      "id": 2,
+      "name": "UI/UX Designer"
     }
   ]
 }
