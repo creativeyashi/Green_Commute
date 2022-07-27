@@ -43,17 +43,46 @@ const classes = makeStyles(() => ({
 const SideNav: React.FC = () => {
   const styles = classes()
   const buttons = [
-    { icon: <DashboardIcon className="hoveredIcon" />, label: DASHBOARD },
-    { icon: <FindJobsIcon className="hoveredIcon" />, label: FIND_JOBS },
-    { icon: <SavedJobsIcon className="hoveredIcon" />, label: SAVED_JOBS },
+    {
+      icon: <DashboardIcon className="hoveredIcon" />,
+      label: DASHBOARD,
+      path: 'dashboard',
+    },
+    {
+      icon: <FindJobsIcon className="hoveredIcon" />,
+      label: FIND_JOBS,
+      path: 'findJobs',
+    },
+    {
+      icon: <SavedJobsIcon className="hoveredIcon" />,
+      label: SAVED_JOBS,
+      path: 'savedJobCard',
+    },
     {
       icon: <PractiseTestIcon className="hoveredIcon" />,
       label: PRACTICE_TEST,
+      path: 'practiceTest',
     },
-    { icon: <NewsIcon className="hoveredIcon" />, label: NEWS_EVENTS },
-    { icon: <HelpIcon className="hoveredIcon" />, label: NEED_HELP },
-    { icon: <ContactIcon className="hoveredIcon" />, label: CONTACT_US },
-    { icon: <SettingsIcon className="hoveredIcon" />, label: SETTINGS },
+    {
+      icon: <NewsIcon className="hoveredIcon" />,
+      label: NEWS_EVENTS,
+      path: 'newsEvents',
+    },
+    {
+      icon: <HelpIcon className="hoveredIcon" />,
+      label: NEED_HELP,
+      path: 'needHelp',
+    },
+    {
+      icon: <ContactIcon className="hoveredIcon" />,
+      label: CONTACT_US,
+      path: 'contactUs',
+    },
+    {
+      icon: <SettingsIcon className="hoveredIcon" />,
+      label: SETTINGS,
+      path: 'settings',
+    },
   ]
 
   return (
@@ -62,8 +91,12 @@ const SideNav: React.FC = () => {
         <Grid item className={styles.item}>
           {buttons.map((button) => {
             return (
-              // eslint-disable-next-line react/jsx-key
-              <MenuButton icon={button.icon} label={button.label} />
+              <MenuButton
+                key={button.label}
+                icon={button.icon}
+                label={button.label}
+                path={`/${button.path}`}
+              />
             )
           })}
         </Grid>
