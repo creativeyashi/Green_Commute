@@ -198,6 +198,9 @@ const useStyles = makeStyles({
     color: 'white',
     backgroundColor: '#30A193',
   },
+  menu: {
+    color: `${theme.palette.text.primary}`,
+  },
 })
 
 export const FilterPopUp = ({ onApply, onClear, onClose }: Props) => {
@@ -239,7 +242,9 @@ export const FilterPopUp = ({ onApply, onClear, onClose }: Props) => {
         <Box className={style.firstBox}>
           <Box className={style.first}>
             <div className={style.check}>
-              <Typography variant="body1">{menu1}</Typography>
+              <Typography variant="body1" className={style.menu}>
+                {menu1}
+              </Typography>
             </div>
             {distanceData.map((element, index) => {
               switch (element.name) {
@@ -271,7 +276,7 @@ export const FilterPopUp = ({ onApply, onClear, onClose }: Props) => {
           </Box>
           <Box>
             <div className={style.check}>
-              <Typography>{menu2}</Typography>
+              <Typography className={style.menu}>{menu2}</Typography>
             </div>
             {datePosted.map((element, index) => {
               return (
@@ -286,7 +291,7 @@ export const FilterPopUp = ({ onApply, onClear, onClose }: Props) => {
           </Box>
           <Box>
             <div className={style.check}>
-              <Typography>{menu3}</Typography>
+              <Typography className={style.menu}>{menu3}</Typography>
             </div>
             {greenCommute.map((element, index) => {
               return (
@@ -305,7 +310,7 @@ export const FilterPopUp = ({ onApply, onClear, onClose }: Props) => {
             return (
               <Box className={style.first} key={index}>
                 <div className={style.check}>
-                  <Typography>{element.name}</Typography>
+                  <Typography className={style.menu}>{element.name}</Typography>
                 </div>
                 {element.menu.map((element, index) => {
                   return (
