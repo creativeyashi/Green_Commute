@@ -73,7 +73,6 @@ const FindJobsPage: React.FC = () => {
   }
 
   const applyFilter = (distance: string[]) => {
-    console.log(distance)
     const tempJobs = jobs.filter((job: { distance: string }) =>
       distance.includes(job.distance)
     )

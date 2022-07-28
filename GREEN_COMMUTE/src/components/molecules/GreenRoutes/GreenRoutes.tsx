@@ -5,8 +5,8 @@ import Icon from '../../atoms/Icon/index'
 import arrowright from '../../../assets/logos/arrow-right.svg'
 import { GREEN_ROUTES } from '../../utils/constant'
 export interface GreenRoutesProps {
-  jobDescription: string | undefined
-  aboutTheCompany: string | undefined
+  jobDescription: string
+  aboutTheCompany: string
   onClickHandler: any
 }
 const GreenRoutes = ({

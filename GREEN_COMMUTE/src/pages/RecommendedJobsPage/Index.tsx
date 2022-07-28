@@ -6,6 +6,14 @@ import { EXTRA_COLORS } from '../../theme/theme'
 import Chips from '../../components/atoms/Chips/index'
 import Button from '../../components/atoms/Button/index'
 
+interface Job {
+  id: number
+  companyName: string
+  location: string
+  time: string
+  companyIcon: string
+  title: string
+}
 const buttonStyle = {
   display: 'inline-block',
   padding: '0px 0px 10px 0px',
@@ -48,14 +56,7 @@ const subHeading = 'Based on your profile, skills and search history'
 const chipsData = ['Past 24 hrs', 'Full time', 'Fresher']
 
 const Index = (props: {
-  jobs: {
-    id: number
-    companyName: string
-    location: string
-    time: string
-    companyIcon: string
-    title: string
-  }[]
+  jobs: Job[]
   showFilter: boolean
   setShowFilter: (arg0: boolean) => void
   distanceFilter: string[]
