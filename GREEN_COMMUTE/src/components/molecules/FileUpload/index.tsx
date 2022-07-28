@@ -7,19 +7,15 @@ import theme, { EXTRA_COLORS } from '../../../theme/theme'
 import Modal from '@mui/material/Modal'
 import Fade from '@mui/material/Fade'
 const useStyles = makeStyles({
-  outerBox: {
-    top: '50%',
-    left: '50%',
-    position: 'absolute',
-  },
+  outerBox: {},
   root: {
     width: 700,
     height: 400,
     backgroundColor: `${EXTRA_COLORS.shade[700]}`,
     borderRadius: '12px',
     position: 'absolute',
-    top: '10%',
-    left: '20%',
+    left: '35%',
+    top: '25%',
   },
   title: {
     left: '54px',
@@ -80,10 +76,11 @@ const useStyles = makeStyles({
 export type Props = {
   setSelectedFile: (file: File) => void
   setIsFilePicked: (isFilePicked: boolean) => void
+  setModal: (setDialog: boolean) => void
 }
 
 const FileUpload: React.FC<Props> = (props) => {
-  const { setSelectedFile, setIsFilePicked } = props
+  const { setSelectedFile, setIsFilePicked, setModal } = props
   const classes = useStyles()
   const hiddenFileInput: React.RefObject<HTMLInputElement> = React.useRef(null)
 
@@ -95,10 +92,14 @@ const FileUpload: React.FC<Props> = (props) => {
     if (fileUpload) {
       setSelectedFile(fileUpload)
       setIsFilePicked(true)
+      setOpen(false)
     }
   }
   const [open, setOpen] = React.useState(true)
-  const handleClose = () => setOpen(false)
+  const handleClose = () => {
+    setOpen(false)
+    setModal(false)
+  }
   return (
     <Box className={classes.outerBox}>
       <Modal

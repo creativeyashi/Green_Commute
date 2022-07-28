@@ -15,6 +15,7 @@ export function App() {
         <Typography variant="h1" color="primary.main">
           Hello,This is BC47 GREEN_COMMUTE
         </Typography>
+
         <Router>
           <Routes>
             <Route path="/" element={<SideNav />} />

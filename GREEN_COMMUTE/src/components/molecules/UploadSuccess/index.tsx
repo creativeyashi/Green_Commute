@@ -11,6 +11,8 @@ import theme, { EXTRA_COLORS } from '../../../theme/theme'
 
 export type UploadSuccessProps = {
   name: string
+  setModal: (dialog: boolean) => void
+  setPicked: (picked: boolean) => void
 }
 const useStyles = makeStyles({
   root: {
@@ -29,6 +31,10 @@ const useStyles = makeStyles({
   btn: {
     background: `${theme.palette.primary.light}`,
     width: '156px',
+    '&:hover': {
+      backgroundColor: `${EXTRA_COLORS.primary[400]}`,
+      color: theme.palette.text.primary,
+    },
   },
   btnTxt: {
     color: `${EXTRA_COLORS.shade[700]}`,
@@ -37,8 +43,12 @@ const useStyles = makeStyles({
 
 const UploadSuccess: React.FC<UploadSuccessProps> = (props) => {
   const [open, setOpen] = React.useState(true)
-  const handleClose = () => setOpen(false)
-  const { name } = props
+  const handleClose = () => {
+    setOpen(false)
+    setModal(false)
+    setPicked(false)
+  }
+  const { name, setModal, setPicked } = props
   const classes = useStyles()
 
   return (

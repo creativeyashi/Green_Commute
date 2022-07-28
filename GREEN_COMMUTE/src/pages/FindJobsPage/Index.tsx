@@ -87,6 +87,7 @@ const FindJobsPage: React.FC = () => {
   const [showFilter, setShowFilter] = useState(false)
 
   const classes = useStyles()
+
   return (
     <HomeScreenTemplate
       Header={<Header text="Hitech city, Hyderabad, India" />}

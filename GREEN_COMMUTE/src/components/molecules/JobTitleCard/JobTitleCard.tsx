@@ -1,14 +1,13 @@
 // eslint-disable-next-line eslint-comments/disable-enable-pair
 /* eslint-disable react/no-children-prop */
-import React from 'react'
-
+import React, { useState } from 'react'
 import { Box, Typography, Stack } from '@mui/material'
 import theme from '../../../theme/theme'
 import moreIcon from '../../../assets/icons/more.svg'
 import Icon from '../../atoms/Icon/index'
 import Button from '../../atoms/Button/index'
-import logo from '../../../assets/logos/myntra.svg'
-
+import FileUpload from '../../../components/molecules/FileUpload'
+import UploadSuccess from '../../../components/molecules/UploadSuccess'
 export interface JobTitleProps {
   id: number
   jobTitle: string
@@ -23,6 +22,7 @@ const JobTitleCard: React.FC<JobTitleProps> = ({
   companyName,
   companyAddress,
   jobUploadedTime,
+  companyLogo,
 }: JobTitleProps) => {
   const companyAndAddressStyle = {
     fontSize: '12px',
@@ -37,7 +37,21 @@ const JobTitleCard: React.FC<JobTitleProps> = ({
     marginTop: '4px',
   }
 
-  const moreIconStyles = { marginTop: '12px' }
+  const moreIconStyles = {
+    paddingLeft: '55px',
+    marginLeft: '-660px',
+    marginTop: '32px',
+  }
+  const handleSave = () => {
+    console.log('clicked on save')
+  }
+  const handleApply = () => {
+    setDialog(!dialog)
+    console.log(file)
+  }
+  const [file, setFile] = useState<File>()
+  const [picked, setPicked] = useState<boolean>(false)
+  const [dialog, setDialog] = useState<boolean>(false)
   return (
     <div data-testid="jobTitleCard">
       <Stack
@@ -63,8 +77,8 @@ const JobTitleCard: React.FC<JobTitleProps> = ({
               paddingLeft: '2px',
               marginTop: '5px',
             }}
-            src={logo}
-            alt={logo}
+            src={companyLogo}
+            alt={companyLogo}
           />
         </Box>
 
@@ -103,6 +117,7 @@ const JobTitleCard: React.FC<JobTitleProps> = ({
                     width: '99px',
                     height: '32px',
                   }}
+                  onClick={handleSave}
                 />
               </Box>
               <Box minWidth="10px"></Box>
@@ -115,6 +130,7 @@ const JobTitleCard: React.FC<JobTitleProps> = ({
                     width: '99px',
                     height: '32px',
                   }}
+                  onClick={handleApply}
                 />
               </Box>
             </Stack>
@@ -124,6 +140,21 @@ const JobTitleCard: React.FC<JobTitleProps> = ({
           <Icon source={moreIcon} />
         </Box>
       </Stack>
+
+      {dialog &&
+        (!picked ? (
+          <FileUpload
+            setIsFilePicked={setPicked}
+            setSelectedFile={setFile}
+            setModal={setDialog}
+          />
+        ) : (
+          <UploadSuccess
+            name="sohail"
+            setModal={setDialog}
+            setPicked={setPicked}
+          />
+        ))}
     </div>
   )
 }
