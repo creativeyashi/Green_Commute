@@ -5,11 +5,15 @@ import Icon from '../../atoms/Icon/index'
 import arrowright from '../../../assets/logos/arrow-right.svg'
 import { GREEN_ROUTES } from '../../utils/constant'
 export interface GreenRoutesProps {
-  jobDescription: string
-  aboutTheCompany: string
+  jobDescription: string | undefined
+  aboutTheCompany: string | undefined
   onClickHandler: any
 }
-const GreenRoutes = ({ onClickHandler }: GreenRoutesProps) => {
+const GreenRoutes = ({
+  jobDescription,
+  aboutTheCompany,
+  onClickHandler,
+}: GreenRoutesProps) => {
   const descContent = {
     height: '198px',
     width: '354px',
@@ -46,7 +50,7 @@ const GreenRoutes = ({ onClickHandler }: GreenRoutesProps) => {
               {GREEN_ROUTES.DESCRIPTION}
             </Typography>
             <Typography variant="body2" sx={descContent}>
-              {GREEN_ROUTES.JOB_DESCRIPTION}
+              {jobDescription}
             </Typography>
           </Box>
           <Box sx={subtitleBoxStyles}>
@@ -54,7 +58,7 @@ const GreenRoutes = ({ onClickHandler }: GreenRoutesProps) => {
               {GREEN_ROUTES.ABOUT_COMPANY}
             </Typography>
             <Typography variant="body2" sx={descContent}>
-              {GREEN_ROUTES.ABOUT_THE_COMPANY}...{' '}
+              {aboutTheCompany}
               <span style={{ color: '#4ABAAD' }}>{GREEN_ROUTES.SEE_MORE}</span>
             </Typography>{' '}
           </Box>

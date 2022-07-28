@@ -16,6 +16,7 @@ export type Props = {
   companyName: string
   location: string
   timeElapsed: string
+  onClick: (jobid: number) => void
 }
 
 const useStyles = makeStyles({
@@ -23,7 +24,7 @@ const useStyles = makeStyles({
     display: 'flex',
     width: '571px',
     height: '135px',
-    ':hover': {
+    '&:hover': {
       border: '2px solid #77EDDF',
     },
     padding: '16px 19px',
@@ -47,7 +48,7 @@ const SaveJobCard: React.FC<Props> = (props) => {
   const routes = [Bus, Car, Metro]
   const classes = useStyles()
   return (
-    <Card className={classes.root}>
+    <Card className={classes.root} onClick={() => props.onClick(props.id)}>
       <Grid container spacing={2}>
         <Grid item xs={2}>
           <img src={logo} alt="company-logo" className={classes.img} />

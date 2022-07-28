@@ -1,5 +1,5 @@
 import * as React from 'react'
-import { Box, Button, Grid, Typography } from '@mui/material'
+import { Box, Button, Grid, IconButton, Typography } from '@mui/material'
 import { makeStyles } from '@mui/styles'
 import CheckBoxComponent from '../../atoms/CheckBox'
 import RadioButton from '../../atoms/radioButton'
@@ -10,6 +10,7 @@ import Icon from '../../atoms/Icon/index'
 interface Props {
   onApply: (selectedFilters: any) => void
   onClear: () => void
+  onClose: () => void
 }
 
 interface Distance {
@@ -152,6 +153,7 @@ const useStyles = makeStyles({
     height: 530,
     margin: 'auto',
     borderRadius: '8px',
+    background: '#FFFFFF',
   },
   firstBox: {
     display: 'flex',
@@ -198,8 +200,25 @@ const useStyles = makeStyles({
   },
 })
 
-export const FilterPopUp = ({ onApply, onClear }: Props) => {
+export const FilterPopUp = ({ onApply, onClear, onClose }: Props) => {
   const [distance, setDistance] = React.useState<Distance>(initialState)
+
+  const prepareArray = (distance: Distance) => {
+    const arr = []
+    if (distance.closest === true) {
+      arr.push('0 - 10 Kms')
+    }
+    if (distance.nearest === true) {
+      arr.push('10 - 20 Kms')
+    }
+    if (distance.intermediate === true) {
+      arr.push('21 - 30 Kms')
+    }
+    if (distance.far === true) {
+      arr.push('31 - 40 Kms')
+    }
+    return arr
+  }
 
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setDistance({
@@ -213,116 +232,117 @@ export const FilterPopUp = ({ onApply, onClear }: Props) => {
   const style = useStyles()
   return (
     <Grid className={style.MainContainer}>
-      <div className={style.iconstyle}>
+      <IconButton className={style.iconstyle} onClick={onClose}>
         <Icon source={close} />
-      </div>
-
-      <Box className={style.firstBox}>
-        <Box className={style.first}>
-          <div className={style.check}>
-            <Typography variant="body1">{menu1}</Typography>
-          </div>
-          {distanceData.map((element, index) => {
-            switch (element.name) {
-              case 'closest':
-                element.value = closest
-                break
-              case 'nearest':
-                element.value = nearest
-                break
-              case 'intermediate':
-                element.value = intermediate
-                break
-              case 'far':
-                element.value = far
-            }
+      </IconButton>
+      <Grid sx={{ marginLeft: '40px' }}>
+        <Box className={style.firstBox}>
+          <Box className={style.first}>
+            <div className={style.check}>
+              <Typography variant="body1">{menu1}</Typography>
+            </div>
+            {distanceData.map((element, index) => {
+              switch (element.name) {
+                case 'closest':
+                  element.value = closest
+                  break
+                case 'nearest':
+                  element.value = nearest
+                  break
+                case 'intermediate':
+                  element.value = intermediate
+                  break
+                case 'far':
+                  element.value = far
+              }
+              return (
+                <div className={style.check} key={index}>
+                  <CheckBoxComponent
+                    checked={element.value}
+                    onChange={handleChange}
+                    name={element.name}
+                  />
+                  <Typography variant="body2" className={style.typography}>
+                    {element.label}
+                  </Typography>
+                </div>
+              )
+            })}
+          </Box>
+          <Box>
+            <div className={style.check}>
+              <Typography>{menu2}</Typography>
+            </div>
+            {datePosted.map((element, index) => {
+              return (
+                <div className={style.check} key={index}>
+                  <CheckBoxComponent checked={element.checked} />
+                  <Typography variant="body2" className={style.typography}>
+                    {element.name}
+                  </Typography>
+                </div>
+              )
+            })}
+          </Box>
+          <Box>
+            <div className={style.check}>
+              <Typography>{menu3}</Typography>
+            </div>
+            {greenCommute.map((element, index) => {
+              return (
+                <div className={style.check} key={index}>
+                  <RadioButton checked={element.checked} />
+                  <Typography variant="body2" className={style.typography}>
+                    {element.name}
+                  </Typography>
+                </div>
+              )
+            })}
+          </Box>
+        </Box>
+        <Box className={style.firstBox}>
+          {lowerMenu.map((element, index) => {
             return (
-              <div className={style.check} key={index}>
-                <CheckBoxComponent
-                  checked={element.value}
-                  onChange={handleChange}
-                  name={element.name}
-                />
-                <Typography variant="body2" className={style.typography}>
-                  {element.label}
-                </Typography>
-              </div>
+              <Box className={style.first} key={index}>
+                <div className={style.check}>
+                  <Typography>{element.name}</Typography>
+                </div>
+                {element.menu.map((element, index) => {
+                  return (
+                    <div className={style.check} key={index}>
+                      <CheckBoxComponent checked={element.checked} />
+                      <Typography variant="body2" className={style.typography}>
+                        {element.name}
+                      </Typography>
+                    </div>
+                  )
+                })}
+              </Box>
             )
           })}
         </Box>
-        <Box>
-          <div className={style.check}>
-            <Typography>{menu2}</Typography>
-          </div>
-          {datePosted.map((element, index) => {
-            return (
-              <div className={style.check} key={index}>
-                <CheckBoxComponent checked={element.checked} />
-                <Typography variant="body2" className={style.typography}>
-                  {element.name}
-                </Typography>
-              </div>
-            )
-          })}
-        </Box>
-        <Box>
-          <div className={style.check}>
-            <Typography>{menu3}</Typography>
-          </div>
-          {greenCommute.map((element, index) => {
-            return (
-              <div className={style.check} key={index}>
-                <RadioButton checked={element.checked} />
-                <Typography variant="body2" className={style.typography}>
-                  {element.name}
-                </Typography>
-              </div>
-            )
-          })}
-        </Box>
-      </Box>
-      <Box className={style.firstBox}>
-        {lowerMenu.map((element, index) => {
-          return (
-            <Box className={style.first} key={index}>
-              <div className={style.check}>
-                <Typography>{element.name}</Typography>
-              </div>
-              {element.menu.map((element, index) => {
-                return (
-                  <div className={style.check} key={index}>
-                    <CheckBoxComponent checked={element.checked} />
-                    <Typography variant="body2" className={style.typography}>
-                      {element.name}
-                    </Typography>
-                  </div>
-                )
-              })}
-            </Box>
-          )
-        })}
-      </Box>
-      <div className={style.footer}>
-        <Button
-          variant="outlined"
-          className={style.clearButton}
-          onClick={() => {
-            setDistance(initialState)
-            onClear()
-          }}
-        >
-          Clear All
-        </Button>
-        <Button
-          variant="contained"
-          className={style.applyButton}
-          onClick={() => {
-            onApply(distance)
-          }}
-        >
-          Apply
-        </Button>
-      </div>
+        <div className={style.footer}>
+          <Button
+            variant="outlined"
+            className={style.clearButton}
+            onClick={() => {
+              setDistance(initialState)
+              onClear()
+            }}
+          >
+            Clear All
+          </Button>
+          <Button
+            variant="contained"
+            className={style.applyButton}
+            onClick={() => {
+              onApply(prepareArray(distance))
+            }}
+          >
+            Apply
+          </Button>
+        </div>
+      </Grid>
     </Grid>
   )
 }
