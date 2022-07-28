@@ -9,13 +9,14 @@ import Chips from '../../components/atoms/Chips/index'
 import Button from '../../components/atoms/Button/index'
 import { url } from '../../dbServer'
 import axios from 'axios'
+import ViewGreenCommutes from '../../components/organisms/ViewGreenCommutes/index'
 
 interface Job {
   id: number
   title: string
   logo: string
   companyName: string
-  companyLogo: string
+  companyIcon: string
   location: string
   time: string
   description: string
@@ -81,6 +82,8 @@ const Index = (props: {
   const classes = useStyles()
 
   const [jobDetail, setJobDetail] = useState(props.jobs[0])
+
+  const [showDescription, setshowDescription] = useState(true)
 
   const handleClick = async (jobid: number) => {
     console.log(jobid)
@@ -173,17 +176,27 @@ const Index = (props: {
           <JobTitleCard
             id={jobDetail.id}
             jobTitle={jobDetail.title}
-            companyLogo={jobDetail.companyLogo}
+            companyLogo={jobDetail.companyIcon}
             companyName={jobDetail.companyName}
             companyAddress={jobDetail.location}
             jobUploadedTime={jobDetail.time}
           />
           <Box className={classes.divider} />
-          <DescriptionCard
-            jobDescription={jobDetail.description}
-            aboutTheCompany={jobDetail.aboutTheCompany}
-            onClickHandler={undefined}
-          />
+          {showDescription ? (
+            <DescriptionCard
+              jobDescription={jobDetail.description}
+              aboutTheCompany={jobDetail.aboutTheCompany}
+              onClickHandler={() => {
+                setshowDescription(false)
+              }}
+            />
+          ) : (
+            <ViewGreenCommutes
+              source="E Marredpally, Hyderabad"
+              destination={jobDetail.location}
+              onClick={() => setshowDescription(true)}
+            />
+          )}
         </Grid>
       </Grid>
     </Grid>
