@@ -243,6 +243,7 @@ export const EXTRA_COLORS = {
   },
   text: {
     primary: '#373C38',
+    secondary: '#656E66',
   },
   grey: {
     '400': '#D6D6D6',
