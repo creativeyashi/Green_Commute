@@ -8,4 +8,4 @@ export default {
 const Template: ComponentStory<typeof FindJobsPage> = (args) => (
   <FindJobsPage {...args} />
 )
-export const SavedPage = Template.bind({})
+export const FindJobPage = Template.bind({})

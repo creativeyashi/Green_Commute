@@ -3,7 +3,7 @@ import CloseIcon from '@mui/icons-material/Close'
 import MuiChip from '@mui/material/Chip'
 import { makeStyles } from '@mui/styles'
 import Typography from '@mui/material/Typography'
-import theme, { EXTRA_COLORS } from '../../../theme/theme'
+import theme from '../../../theme/theme'
 
 export type MuiChipProp = {
   onClick?: () => void
@@ -16,7 +16,8 @@ export type MuiChipProp = {
 const useStyles = makeStyles({
   root: {
     borderRadius: '8px',
-    background: `${EXTRA_COLORS.shade[400]}`,
+    background: `${theme.palette.structural.main}`,
+    border: 'none',
   },
   label: {
     color: `${theme.palette.text.primary}`,
