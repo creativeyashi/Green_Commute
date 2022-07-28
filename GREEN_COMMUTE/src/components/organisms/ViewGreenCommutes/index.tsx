@@ -26,8 +26,10 @@ const useStyles = makeStyles({
   },
   text: {
     color: `${EXTRA_COLORS.text.primary}`,
-    height: '16px',
-    fontWeight: 500,
+    height: '22px',
+    fontWeight: 600,
+    fontSize: '14px',
+    lineHeight: '22px',
   },
   arrow: {
     color: EXTRA_COLORS.text.primary,
@@ -36,6 +38,7 @@ const useStyles = makeStyles({
 interface Props {
   source: string
   destination: string
+  onClick: () => void
 }
 const ViewGreenCommutes: React.FC<Props> = (props) => {
   const { source, destination } = props
@@ -43,7 +46,10 @@ const ViewGreenCommutes: React.FC<Props> = (props) => {
   return (
     <>
       <Box className={classes.root}>
-        <Button startIcon={<ArrowBackIcon className={classes.arrow} />}>
+        <Button
+          startIcon={<ArrowBackIcon className={classes.arrow} />}
+          onClick={props.onClick}
+        >
           <Typography variant="body1" className={classes.text}>
             {COMMON_ROUTES}
           </Typography>

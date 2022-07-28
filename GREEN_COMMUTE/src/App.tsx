@@ -6,6 +6,7 @@ import theme from './theme/theme'
 import SideNav from './components/organisms/SideNavBar'
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 import SavedJobsPage from './pages/SavedJobsPage'
+import FindJobsPage from './pages/FindJobsPage/Index'
 
 export function App() {
   return (
@@ -18,7 +19,7 @@ export function App() {
           <Routes>
             <Route path="/" element={<SideNav />} />
             <Route path="/savedjobcard" element={<SavedJobsPage />} />
-            <Route path="/findJobs" element={<SavedJobsPage />} />
+            <Route path="/findJobs" element={<FindJobsPage />} />
           </Routes>
         </Router>
       </ThemeProvider>
