@@ -146,11 +146,23 @@
   "skills": [
     {
       "id": 1,
-      "name": "Product Designer"
+      "name": "Product Deisgner"
     },
     {
       "id": 2,
-      "name": "UI/UX Designer"
+      "name": "Senior Software Developer"
+    },
+    {
+      "id": 3,
+      "name": "User Interface Deisgner"
+    },
+    {
+      "id": 4,
+      "name": "Product Deisgner"
+    },
+    {
+      "id": 5,
+      "name": "User Experience Deisgner"
     }
   ]
 }

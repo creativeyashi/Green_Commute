@@ -53,15 +53,54 @@ const useStyles = makeStyles({
 
 const FindJobsPage: React.FC = () => {
   const [showRecommendedJobs, setShow] = useState(true)
-  let tempJobs:any[] = [];
+  let tempJobs: any[] = []
 
-  const [jobs, setJobs] = useState([] as any);
-  const [data, setData] = useState([] as any);
+  const [data, setData] = useState([] as any)
+
+  const [skills, setSkills] = useState<string[] | null>([])
+  const [locations, setLocations] = useState<string[] | null>([])
+  const [jobs, setJobs] = useState([] as any)
+  const fetchSkillsLocations = async () => {
+    console.log('hello')
+
+    let response = await axios.get('http://localhost:5000/skills')
+    let data = response.data
+    data = data.map((skill: { name: any }) => {
+      return skill.name
+    })
+    setSkills(data)
+    console.log(skills)
+    response = await axios.get('http://localhost:5000/userLocation')
+    data = response.data
+    data = data.map((location: { name: any }) => {
+      return location.name
+    })
+    setLocations(data)
+  }
+  const fetchData = async () => {
+    const response = await axios.get(`${url}Joblist`)
+    const data = response.data
+    setJobs(data)
+    return data
+  }
+  const filter = async (location: string | null, skill: string | null) => {
+    let result = await fetchData()
+    if (location) {
+      result = result.filter((job: { location: string }) => {
+        return job.location.toLowerCase().includes(location.toLowerCase())
+      })
+    }
+    if (skill) {
+      result = result.filter((job: { title: string }) => {
+        return job.title.toLowerCase().includes(skill.toLowerCase())
+      })
+      setJobs(result)
+    }
+  }
 
   useEffect(() => {
-    axios.get(`${url}Joblist`)
-    .then((res) => {setJobs(res.data)
-    setData(res.data)})
+    fetchData()
+    fetchSkillsLocations()
   }, [])
 
   const [distance, setDistance] = React.useState([])
@@ -78,21 +117,19 @@ const FindJobsPage: React.FC = () => {
     applyFilter(newDistance)
   }
 
-
-
   const applyFilter = (distance: string[]) => {
-    if(distance.length===0){
-      setJobs(data);
-      return;
+    if (distance.length === 0) {
+      setJobs(data)
+      return
     }
-     tempJobs = jobs.filter((job: { distance: string }) =>
+    tempJobs = jobs.filter((job: { distance: string }) =>
       distance.includes(job.distance)
     )
-    if(tempJobs.length===0){
+    if (tempJobs.length === 0) {
       tempJobs = data.filter((job: { distance: string }) =>
-      distance.includes(job.distance)
+        distance.includes(job.distance)
       )
- }
+    }
     console.log(tempJobs)
     setJobs(tempJobs)
   }
@@ -102,7 +139,6 @@ const FindJobsPage: React.FC = () => {
   }
 
   const [showFilter, setShowFilter] = useState(false)
-  
 
   const classes = useStyles()
 
@@ -136,7 +172,12 @@ const FindJobsPage: React.FC = () => {
               {FINDJOBS_HEADING}
             </Typography>
             <Grid item container>
-              <SearchBar placeholder1="Skills" placeholder2="Location" />
+              <SearchBar
+                options1={skills}
+                options2={locations}
+                onChange={filter}
+                // onSkillChange={setSkill}
+              />
               <Button
                 startIcon={<FilterAltOutlinedIcon />}
                 className={classes.filterButton}
@@ -151,8 +192,7 @@ const FindJobsPage: React.FC = () => {
               <RecommendedJobsPage
                 showFilter={showFilter}
                 setShowFilter={setShowFilter}
-
-                jobs={tempJobs.length?tempJobs:jobs}
+                jobs={tempJobs.length ? tempJobs : jobs}
                 distanceFilter={distance}
                 onClearAll={onClear}
                 onCardClick={() => setShow(false)}
@@ -161,7 +201,7 @@ const FindJobsPage: React.FC = () => {
               <SearchJobsPage
                 showFilter={showFilter}
                 setShowFilter={setShowFilter}
-                jobs={tempJobs.length?tempJobs:jobs}
+                jobs={tempJobs.length ? tempJobs : jobs}
                 distanceFilter={distance}
                 onClearAll={onClear}
               />
