@@ -23,9 +23,9 @@ const useStyles = makeStyles({
   root: {
     boxSizing: 'border-box',
     borderRadius: '12px',
-    height: '280px',
-    width: '400px',
-    padding: '17.5px 17.5px 17.5px 30px',
+    height: '271px',
+    width: '320px',
+    padding: '16px 16px 16px 16px',
     cursor: 'pointer',
     backgroundColor: `${EXTRA_COLORS.shade['700']} !important`,
   },
@@ -47,8 +47,8 @@ const useStyles = makeStyles({
     alignItems: 'flex-start',
     justifyContent: 'flex-start',
   },
-  threeDotAndTimeBox: {
-    height: '100%',
+  threeDot: {
+    float: 'right',
   },
   innerBox: {
     marginTop: '41px',
@@ -88,6 +88,11 @@ const useStyles = makeStyles({
   routeGrid: {
     marginTop: '20px',
   },
+  typo: {
+    float: 'right',
+    paddingTop: '198px',
+    color: theme.palette.text.secondary,
+  },
 })
 
 const FindJobsCard: React.FC<CardProps> = (props) => {
@@ -104,74 +109,73 @@ const FindJobsCard: React.FC<CardProps> = (props) => {
           onClick()
         }}
       >
-        <Grid container direction="column">
-          <Grid item>
-            <Grid container spacing={2}>
+        <Grid container>
+          <Grid item container direction="column" xs={8}>
+            <Grid item>
               <Grid item className={styles.iconBox} xs={10}>
                 <img className={styles.icon} src={companyIcon} alt={'logo'} />
               </Grid>
-              <Grid item xs={1}>
-                <MoreHorizIcon />
+            </Grid>
+            <Grid item className={styles.innerBox}>
+              <Grid container direction="column" rowGap="4px">
+                <Grid item>
+                  <Typography
+                    data-testid="title"
+                    variant="subtitle1"
+                    className={styles.title}
+                  >
+                    {title}
+                  </Typography>
+                </Grid>
+
+                <Grid item>
+                  <Typography
+                    data-testid="company"
+                    variant="caption2"
+                    className={styles.companyName}
+                  >
+                    {companyName}
+                  </Typography>
+                </Grid>
+
+                <Grid item>
+                  <Typography
+                    data-testid="address"
+                    variant="caption2"
+                    className={styles.location}
+                  >
+                    {location}
+                  </Typography>
+                </Grid>
+              </Grid>
+            </Grid>
+
+            <Grid item className={styles.routeGrid}>
+              <Typography variant="caption2" className={styles.route}>
+                {ROUTES}
+              </Typography>
+            </Grid>
+
+            <Grid item className={styles.vehicleTab}>
+              <Grid container columnGap="20px" spacing={2}>
+                {routes.map((route, id) => {
+                  return (
+                    <Grid item xs={1} key={id}>
+                      <img src={route} alt="rote-icon" />
+                    </Grid>
+                  )
+                })}
               </Grid>
             </Grid>
           </Grid>
-          <Grid item className={styles.innerBox}>
-            <Grid container direction="column" rowGap="4px">
-              <Grid item>
-                <Typography
-                  data-testid="title"
-                  variant="subtitle1"
-                  className={styles.title}
-                >
-                  {title}
-                </Typography>
-              </Grid>
-
-              <Grid item>
-                <Typography
-                  data-testid="company"
-                  variant="caption2"
-                  className={styles.companyName}
-                >
-                  {companyName}
-                </Typography>
-              </Grid>
-
-              <Grid item>
-                <Typography
-                  data-testid="address"
-                  variant="caption2"
-                  className={styles.location}
-                >
-                  {location}
-                </Typography>
-              </Grid>
+          <Grid item container direction="column" xs={4}>
+            <Grid item>
+              <MoreHorizIcon className={styles.threeDot} />
             </Grid>
-          </Grid>
-
-          <Grid item className={styles.routeGrid}>
-            <Typography variant="caption2" className={styles.route}>
-              {ROUTES}
-            </Typography>
-          </Grid>
-
-          <Grid item className={styles.vehicleTab}>
-            <Grid container columnGap="20px" spacing={2}>
-              {routes.map((route, id) => {
-                return (
-                  <Grid item xs={1} key={id}>
-                    <img src={route} alt="rote-icon" />
-                  </Grid>
-                )
-              })}
-              <Grid item className={styles.time}>
-                <Typography
-                  variant="caption2"
-                  color={`${theme.palette.text.secondary}`}
-                >
-                  {time}
-                </Typography>
-              </Grid>
+            <Grid item>
+              <Typography variant="caption2" className={styles.typo}>
+                {time}
+              </Typography>
             </Grid>
           </Grid>
         </Grid>
