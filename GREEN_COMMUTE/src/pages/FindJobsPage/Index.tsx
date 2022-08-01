@@ -61,8 +61,6 @@ const FindJobsPage: React.FC = () => {
   const [locations, setLocations] = useState<string[] | null>([])
   const [jobs, setJobs] = useState([] as any)
   const fetchSkillsLocations = async () => {
-    console.log('hello')
-
     let response = await axios.get('http://localhost:5000/skills')
     let data = response.data
     data = data.map((skill: { name: any }) => {
@@ -176,7 +174,6 @@ const FindJobsPage: React.FC = () => {
                 options1={skills}
                 options2={locations}
                 onChange={filter}
-                // onSkillChange={setSkill}
               />
               <Button
                 startIcon={<FilterAltOutlinedIcon />}
