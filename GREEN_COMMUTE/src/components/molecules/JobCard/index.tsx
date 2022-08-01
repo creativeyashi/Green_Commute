@@ -8,7 +8,6 @@ import Bike from '../../../assets/icons/bike.svg'
 import Car from '../../../assets/icons/cab.svg'
 import Bus from '../../..//assets/icons/bus.svg'
 import { JobContext } from '../../utils/context'
-import logo from '../../../assets/logos/myntra.svg'
 export type CardProps = {
   id: number
   companyName: string
@@ -91,7 +90,7 @@ const useStyles = makeStyles({
 })
 
 const FindJobsCard: React.FC<CardProps> = (props) => {
-  const { id, companyName, location, time, title, onClick } = props
+  const { id, companyName, location, time, title, companyIcon, onClick } = props
   const cardContext = useContext(JobContext)
   const styles = useStyles()
   const routes = [Bike, Bus, Car, Metro]
@@ -108,7 +107,7 @@ const FindJobsCard: React.FC<CardProps> = (props) => {
           <Grid item>
             <Grid container spacing={2}>
               <Grid item className={styles.iconBox} xs={10}>
-                <img className={styles.icon} src={logo} alt={'logo'} />
+                <img className={styles.icon} src={companyIcon} alt={'logo'} />
               </Grid>
               <Grid item xs={1}>
                 <MoreHorizIcon />

@@ -164,7 +164,7 @@ const Index = (props: {
                   companyName={job.companyName}
                   location={job.location}
                   timeElapsed={job.time}
-                  logo={require(`../../assets/logos/myntra.svg`)}
+                  logo={job.companyIcon}
                   title={job.title}
                   onClick={handleClick}
                 />

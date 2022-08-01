@@ -1,6 +1,7 @@
 // eslint-disable-next-line eslint-comments/disable-enable-pair
 /* eslint-disable react/no-children-prop */
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
+
 import { Box, Typography, Stack } from '@mui/material'
 import theme from '../../../theme/theme'
 import moreIcon from '../../../assets/icons/more.svg'
@@ -8,6 +9,9 @@ import Icon from '../../atoms/Icon/index'
 import Button from '../../atoms/Button/index'
 import FileUpload from '../../../components/molecules/FileUpload'
 import UploadSuccess from '../../../components/molecules/UploadSuccess'
+import axios from 'axios'
+import { url } from '../../../dbServer'
+
 export interface JobTitleProps {
   id: number
   jobTitle: string
@@ -18,6 +22,7 @@ export interface JobTitleProps {
 }
 
 const JobTitleCard: React.FC<JobTitleProps> = ({
+  id,
   jobTitle,
   companyName,
   companyAddress,
@@ -37,14 +42,6 @@ const JobTitleCard: React.FC<JobTitleProps> = ({
     marginTop: '4px',
   }
 
-  const moreIconStyles = {
-    paddingLeft: '55px',
-    marginLeft: '-660px',
-    marginTop: '32px',
-  }
-  const handleSave = () => {
-    console.log('clicked on save')
-  }
   const handleApply = () => {
     setDialog(!dialog)
     console.log(file)
@@ -52,6 +49,26 @@ const JobTitleCard: React.FC<JobTitleProps> = ({
   const [file, setFile] = useState<File>()
   const [picked, setPicked] = useState<boolean>(false)
   const [dialog, setDialog] = useState<boolean>(false)
+  const moreIconStyles = { marginTop: '12px' }
+  const [saved, setSaved] = useState<boolean>(false)
+
+  const handleSave = async () => {
+    const response = await axios.patch(
+      `${url}Joblist/${id}`,
+      {
+        saved: !saved,
+      },
+      {
+        headers: { 'Content-type': 'application/json; charset=UTF-8' },
+      }
+    )
+    setSaved(!saved)
+    console.log(response)
+  }
+
+  useEffect(() => {
+    axios.get(`${url}Joblist/${id}`).then((res) => setSaved(res.data.saved))
+  }, [id])
   return (
     <div data-testid="jobTitleCard">
       <Stack
@@ -72,10 +89,10 @@ const JobTitleCard: React.FC<JobTitleProps> = ({
           <img
             style={{
               position: 'static',
-              width: '100px',
-              height: '62px',
-              paddingLeft: '2px',
-              marginTop: '5px',
+              width: '45px',
+              height: '45px',
+              paddingLeft: '28px',
+              paddingTop: '29px',
             }}
             src={companyLogo}
             alt={companyLogo}
@@ -110,7 +127,7 @@ const JobTitleCard: React.FC<JobTitleProps> = ({
             <Stack direction={'row'}>
               <Box sx={{ marginTop: '20px', marginBottom: '25px' }}>
                 <Button
-                  children="Save"
+                  children={!saved ? 'Save' : 'Unsave'}
                   variant="outlined"
                   style={{
                     background: '#FFFFFF',

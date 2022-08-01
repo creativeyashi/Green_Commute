@@ -1,7 +1,7 @@
 import { Typography } from '@mui/material'
 import Card from '@mui/material/Card'
 import Grid from '@mui/material/Grid'
-import * as React from 'react'
+import React from 'react'
 import Metro from '../../../assets/icons/trainIcon.svg'
 import Car from '../../../assets/icons/CabNew.svg'
 import Bus from '../../../assets/icons/BusNew.svg'
@@ -30,11 +30,11 @@ const useStyles = makeStyles({
     padding: '16px 19px',
   },
   img: {
-    marginTop: '21px',
+    paddingTop: '5px',
+    width: '45px',
+    height: '45px',
   },
-  innerGrid: {
-    marginTop: '16px',
-  },
+  innerGrid: { paddingLeft: '21px' },
   moreIcon: {
     float: 'right',
   },
@@ -47,14 +47,20 @@ const SaveJobCard: React.FC<Props> = (props) => {
   const { logo, title, companyName, location, timeElapsed } = props
   const routes = [Bus, Car, Metro]
   const classes = useStyles()
+  console.log(logo)
   return (
     <Card className={classes.root} onClick={() => props.onClick(props.id)}>
-      <Grid container spacing={2}>
-        <Grid item xs={2}>
+      <Grid container spacing={1}>
+        <Grid item xs={1}>
           <img src={logo} alt="company-logo" className={classes.img} />
         </Grid>
-        <Grid item xs={8} className={classes.innerGrid}>
-          <Grid container direction="column" spacing={6}>
+        <Grid item xs={9}>
+          <Grid
+            container
+            direction="column"
+            spacing={6}
+            className={classes.innerGrid}
+          >
             <Grid item>
               <Grid item>
                 <Typography variant="h3" color={`${EXTRA_COLORS.text.primary}`}>

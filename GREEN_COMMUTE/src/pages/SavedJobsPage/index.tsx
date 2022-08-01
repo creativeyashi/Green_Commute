@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import HomeScreenTemplate from '../../components/templates/homeScreen/Index'
 import Header from '../../components/organisms/header'
 import SideNav from '../../components/organisms/SideNavBar'
@@ -7,8 +7,21 @@ import { makeStyles } from '@mui/styles'
 import { Grid, Typography } from '@mui/material'
 import theme from '../../theme/theme'
 import SaveJobCard from '../../components/molecules/SaveJobCard'
-import Myntra from '../../assets/icons/myntra.svg'
+import { url } from '../../dbServer'
+import axios from 'axios'
 
+interface Job {
+  id: number
+  title: string
+  logo: string
+  companyName: string
+  companyIcon: string
+  location: string
+  time: string
+  description: string
+  aboutTheCompany: string
+  saved: boolean
+}
 const useStyles = makeStyles({
   root: {
     paddingLeft: 45,
@@ -25,6 +38,18 @@ const useStyles = makeStyles({
 })
 const SavedJobsPage: React.FC = () => {
   const classes = useStyles()
+  const [jobs, setJobs] = useState<Job[]>([])
+
+  const fetchData = async () => {
+    const res = await axios.get(`${url}JobList`)
+    let data: Job[] = res.data
+    data = data.filter((job) => job.saved)
+    setJobs(data)
+  }
+
+  useEffect(() => {
+    fetchData()
+  }, [])
   return (
     <HomeScreenTemplate
       Header={<Header text="Hitech city, Hyderabad, India" />}
@@ -37,26 +62,21 @@ const SavedJobsPage: React.FC = () => {
             </Typography>
             <Box className={classes.innerBox}>
               <Grid container spacing={6} direction="column">
-                <Grid item>
-                  <SaveJobCard
-                    companyName="Myntra"
-                    location="Hitech city, Hyderabad - 507003"
-                    logo={Myntra}
-                    timeElapsed="36 mins"
-                    title="User Experience Designer"
-                    id={1}
-                  />
-                </Grid>
-                <Grid item>
-                  <SaveJobCard
-                    companyName="Myntra"
-                    location="Hitech city, Hyderabad - 507003"
-                    logo={Myntra}
-                    timeElapsed="36 mins"
-                    title="User Experience Designer"
-                    id={1}
-                  />
-                </Grid>
+                {jobs.map((job) => {
+                  return (
+                    <Grid item key={job.id}>
+                      <SaveJobCard
+                        id={job.id}
+                        companyName={job.companyName}
+                        location={job.location}
+                        logo={job.companyIcon}
+                        timeElapsed={job.time}
+                        title={job.title}
+                        onClick={() => console.log(job.id)}
+                      />
+                    </Grid>
+                  )
+                })}
               </Grid>
             </Box>
           </Box>
