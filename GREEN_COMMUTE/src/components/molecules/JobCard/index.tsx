@@ -8,6 +8,7 @@ import Bike from '../../../assets/icons/bike.svg'
 import Car from '../../../assets/icons/cab.svg'
 import Bus from '../../..//assets/icons/bus.svg'
 import { JobContext } from '../../utils/context'
+import { ROUTES } from '../../utils/constant'
 export type CardProps = {
   id: number
   companyName: string
@@ -150,7 +151,7 @@ const FindJobsCard: React.FC<CardProps> = (props) => {
 
           <Grid item className={styles.routeGrid}>
             <Typography variant="caption2" className={styles.route}>
-              Commute routes available :
+              {ROUTES}
             </Typography>
           </Grid>
 
