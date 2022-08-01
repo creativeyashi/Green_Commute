@@ -5,7 +5,6 @@
 /* eslint-disable no-undef */
 
 import { Box, Grid, Typography } from '@mui/material'
-import React, { ReactElement } from 'react'
 import logo from '../../../assets/icons/logo2.svg'
 import Icon from '../../atoms/Icon'
 import StepperComponent from '../../molecules/stepper'
@@ -15,6 +14,14 @@ import theme from '../../../theme/theme'
 import stayIcon from '../../../assets/image/Stay.png'
 import AirQualityIndex from '../../molecules/AQI'
 import { makeStyles } from '@mui/styles'
+import { url } from "../../../dbServer";
+import axios from "axios";
+import AutoComplete from '../../molecules/MultipleInputAutoField'
+import jobLocationIcon from '../../../assets/image/Work.png'
+import React, { ReactElement, useEffect } from "react";
+import skillIcon from '../../../assets/image/Skills.png'
+import { useNavigate } from "react-router-dom";
+
 
 const steps = [
   <Typography variant="subtitle1">Your Location</Typography>,
@@ -57,7 +64,7 @@ const useStyles = makeStyles({
   },
   svg: {
     background: 'linear-gradient(155.94deg, #EFFEFF 6.2%, #E9FFF4 52.61%)',
-    height: '720px',
+    height: '750px',
     width: '100%',
     display: 'flex',
     justifyContent: 'center',
@@ -68,6 +75,9 @@ const useStyles = makeStyles({
     marginTop: '36px',
     display: 'flex',
     flexDirection: 'row',
+  },
+  autoSuggestion:{
+    marginTop: '64px'
   },
   aqititle: {
     marginTop: '30px',
@@ -81,16 +91,66 @@ const useStyles = makeStyles({
   userlocation: {
     marginTop: '40px',
   },
+  aqipos:{
+    display: "flex", alignItems: "center"
+  },
+  aqivalue:{
+    marginLeft: "32px" ,color:"#FF725E"
+  },
+  buttoncolor:{
+    color:"#4ABAAD"
+  },
+  singleaqi:{
+    marginTop: "32px"
+  },
+  hovercolor:{
+    borderBottom: `2px solid #4ABAAD`
+  }
 })
 
 const LandingPage: React.FC = () => {
   const [activeStep, setActiveStep] = React.useState(0)
   const [userLocation, setUserLocation] = React.useState<string | null>()
 
+  const [jobLocation, setJobLocation] = React.useState<any[]>();
+  const [states, setState] = React.useState([]);
+
+  const [skills, setSkills] = React.useState<any[]>();
+  const [position, setPosition] = React.useState([]);
+
+  useEffect(() => {
+    const getstates = async () => {
+      const res = await axios.get(`${url}userLocation`);
+      const location = await res.data;
+      setState(location);
+      console.log(location);
+    };
+    const getSkills = async () => {
+      const res = await axios.get(`${url}skills`);
+      const location = await res.data;
+      setPosition(location);
+      console.log(location);
+    };
+    getstates();
+    getSkills();
+  }, []);
+
   let aqi: JSX.Element | ReactElement<any, any> | JSX.Element[] | null = null,
     autocomplete: JSX.Element | null = null
-
-  const handleNext = () => {
+    const navigate = useNavigate(); 
+    let set=0;
+    const handleNext = () => {
+    if(set=== 1){
+    if (activeStep === 2) {
+      navigate("/findJobs");
+    }
+    setActiveStep((prevActiveStep) => prevActiveStep + 1)
+  }
+  }
+  const handleSkip = () => {
+    if (activeStep === 2) {
+      navigate("/findJobs");
+    }
     setActiveStep((prevActiveStep) => prevActiveStep + 1)
   }
 
@@ -123,6 +183,7 @@ const LandingPage: React.FC = () => {
       )
     } else {
       if (userLocation) {
+        set=1;
         aqi = (
           <>
             <AirQualityIndex AQIIndex={894} />
@@ -136,6 +197,99 @@ const LandingPage: React.FC = () => {
       }
     }
   }
+  else if (activeStep === 1) {
+    autocomplete = (
+      <>
+        <AutoComplete
+          title="Where do you want to work?"
+          placeholder="Enter your job location"
+          option={states}
+          setValue={setJobLocation}
+        />
+      </>
+    );
+
+    if (jobLocation?.length === 0) {
+      set=0;
+      aqi = (
+        <>
+          <Icon source={jobLocationIcon} />
+
+          <Typography className={classes.userlocation} variant="h2">
+          &nbsp; &nbsp;
+          Enter Location to know 
+            <br/> 
+            Time Air Quality Index (AQI)
+          </Typography>
+        </>
+      );
+    } else {
+      if (jobLocation) {
+        set=1;
+        aqi = <> {jobLocation.map((value) => {
+          return (
+            
+            <Box className={classes.aqipos}>
+              <AirQualityIndex AQIIndex={value.AQI} />
+              <Typography variant="h2" className={classes.aqivalue}>
+                {value.name}
+              </Typography>
+            </Box>
+            
+          );
+        })}
+       <Typography className={classes.userlocation} variant="h2">
+              Real Time Air Quality Index(AQI) 
+              <br/>
+              &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+              in this location
+        </Typography>
+        </>
+        
+      }
+    }
+  }
+  else if (activeStep === 2) {
+    
+    autocomplete = (
+      <>
+        <AutoComplete
+        key={'1'}
+          title="What do you want to do?"
+          placeholder="Enter your skills"
+          option={position}
+          setValue={setSkills}
+        />
+      </>
+    );
+
+    if (skills?.length === 0 || skills === undefined) {
+      set=0;
+      aqi = (
+        <>
+          <Icon source={skillIcon} />
+
+          <Typography className={classes.userlocation} variant="h2">
+            Enter your Skills to know how many 
+            <br/>
+            &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;jobs are in this Location
+          </Typography>
+        </>
+      );
+    } else {
+      if (skills && skills?.length > 0) {
+        set=1;
+        aqi = (
+          <>
+            <AirQualityIndex AQIIndex={1500} />
+            <Typography variant="h2" className={classes.singleaqi}>
+              {"Jobs found in Hyderabad & Mumbai."}
+            </Typography>
+          </>
+        );
+      }
+    }
+  } 
   return (
     <>
       <Box>
@@ -151,7 +305,7 @@ const LandingPage: React.FC = () => {
                   More than 2000 people are using <br /> Green Commute
                 </Typography>
               </Box>
-              <Box sx={{ marginTop: '64px' }}>
+              <Box className={classes.autoSuggestion}>
                 {autocomplete ? autocomplete : null}
               </Box>
               <Box className={classes.buttoncontainer}>
@@ -175,12 +329,11 @@ const LandingPage: React.FC = () => {
                 </Button>
               </Box>
               <Box className={classes.skipbutton}>
-                <Button sx={{ color: `${theme.palette.primary[300]}` }}>
+                <Button className={classes.buttoncolor}
+                 onClick={handleSkip}>
                   <Typography
                     variant="subtitle1"
-                    sx={{
-                      borderBottom: `2px solid ${theme.palette.primary[300]}`,
-                    }}
+                   className={classes.hovercolor}
                   >
                     Skip
                   </Typography>
