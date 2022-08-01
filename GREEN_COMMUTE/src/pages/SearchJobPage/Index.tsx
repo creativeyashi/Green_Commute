@@ -1,16 +1,14 @@
 import { Box, Grid, Typography } from '@mui/material'
 import React, { useEffect, useState } from 'react'
 import { makeStyles } from '@mui/styles'
-import { EXTRA_COLORS } from '../../theme/theme'
+import theme, { EXTRA_COLORS } from '../../theme/theme'
 import SaveJobCard from '../../components/molecules/SaveJobCard/index'
 import JobTitleCard from '../../components/molecules/JobTitleCard/JobTitleCard'
 import DescriptionCard from '../../components/molecules/GreenRoutes/GreenRoutes'
 import Chips from '../../components/atoms/Chips/index'
 import Button from '../../components/atoms/Button/index'
-import { url } from '../../dbServer'
-import axios from 'axios'
 import ViewGreenCommutes from '../../components/organisms/ViewGreenCommutes/index'
-
+import { getJob } from '../../services/services'
 interface Job {
   id: number
   title: string
@@ -29,7 +27,7 @@ const buttonStyle = {
   textTransform: 'none',
   borderBottom: '1px solid #30A193',
   fontFamily: 'Montserrat',
-  color: '#30A193',
+  color: theme.palette.primary.light,
   fontWeight: '600',
   fontSize: '14px',
   lineHeight: '2px',
@@ -89,12 +87,9 @@ const Index = (props: {
   const [select, setSelect] = useState(0)
 
   const handleClick = async (jobid: number) => {
-    console.log(jobid)
+    const data = await getJob(jobid)
     setSelect(jobid)
-
-    await axios
-      .get(`${url}Joblist/${jobid}`)
-      .then((res) => setJobDetail(res.data))
+    setJobDetail(data)
   }
   useEffect(() => {
     handleClick(props.jobs[0].id)
