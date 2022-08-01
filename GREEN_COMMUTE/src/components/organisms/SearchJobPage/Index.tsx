@@ -1,26 +1,33 @@
 import { Box, Grid, Typography } from '@mui/material'
-import React from 'react'
-import FindJobsCard from '../../components/molecules/JobCard'
+import React, { useEffect, useState } from 'react'
 import { makeStyles } from '@mui/styles'
-import { EXTRA_COLORS } from '../../theme/theme'
-import Chips from '../../components/atoms/Chips/index'
-import Button from '../../components/atoms/Button/index'
-
+import theme, { EXTRA_COLORS } from '../../../theme/theme'
+import SaveJobCard from '../../molecules/SaveJobCard/index'
+import JobTitleCard from '../../molecules/JobTitleCard/JobTitleCard'
+import DescriptionCard from '../../molecules/GreenRoutes/GreenRoutes'
+import Chips from '../../atoms/Chips/index'
+import Button from '../../atoms/Button/index'
+import ViewGreenCommutes from '../ViewGreenCommutes/index'
+import { getJob } from '../../../services/services'
 interface Job {
   id: number
+  title: string
+  logo: string
   companyName: string
+  companyIcon: string
   location: string
   time: string
-  companyIcon: string
-  title: string
+  description: string
+  aboutTheCompany: string
 }
+
 const buttonStyle = {
   display: 'inline-block',
   padding: '0px 0px 10px 0px',
   textTransform: 'none',
   borderBottom: '1px solid #30A193',
   fontFamily: 'Montserrat',
-  color: '#30A193',
+  color: theme.palette.primary.light,
   fontWeight: '600',
   fontSize: '14px',
   lineHeight: '2px',
@@ -47,23 +54,46 @@ const useStyles = makeStyles({
     marginRight: '8px',
   },
   displayGrid: {
-    marginTop: '15px',
+    marginTop: '28px',
+  },
+  descriptionGrid: {
+    background: '#FFFFFF',
+    width: '404px',
+    height: '740px',
+  },
+  divider: {
+    margin: 'auto',
+    border: '0.1px solid #D6D6D6',
+    width: '360px',
   },
 })
-
-const heading = 'Recommended for you'
-const subHeading = 'Based on your profile, skills and search history'
+const heading = 'Job list'
+const subHeading = 'Based on your search'
 const chipsData = ['Past 24 hrs', 'Full time', 'Fresher']
 
 const Index = (props: {
-  jobs: Job[]
   showFilter: boolean
   setShowFilter: (arg0: boolean) => void
+  jobs: Job[]
   distanceFilter: string[]
   onClearAll: () => void
-  onCardClick: () => void
 }) => {
   const classes = useStyles()
+
+  const [jobDetail, setJobDetail] = useState(props.jobs[0])
+  console.log(jobDetail)
+
+  const [showDescription, setshowDescription] = useState(true)
+  const [select, setSelect] = useState(0)
+
+  const handleClick = async (jobid: number) => {
+    const data = await getJob(jobid)
+    setSelect(jobid)
+    setJobDetail(data)
+  }
+  useEffect(() => {
+    handleClick(props.jobs[0].id)
+  }, [props.jobs])
 
   return (
     <Grid>
@@ -127,41 +157,56 @@ const Index = (props: {
           </Grid>
         </>
       )}
-      <Grid
-        item
-        container
-        rowSpacing={1}
-        columnSpacing={1}
-        className={classes.displayGrid}
-        direction="row"
-      >
-        {props.jobs.map(
-          (
-            job: {
-              id: number
-              companyName: string
-              location: string
-              time: string
-              companyIcon: string
-              title: string
-            },
-            index: React.Key | null | undefined
-          ) => {
+      <Grid container direction="row" className={classes.displayGrid}>
+        <Grid item rowSpacing={1} columnSpacing={1}>
+          {props.jobs.map((job: Job, index: React.Key | null | undefined) => {
             return (
               <Grid key={index} className={classes.jobsCard}>
-                <FindJobsCard
+                <SaveJobCard
                   id={job.id}
                   companyName={job.companyName}
                   location={job.location}
-                  time={job.time}
-                  companyIcon={job.companyIcon}
+                  timeElapsed={job.time}
+                  logo={job.companyIcon}
                   title={job.title}
-                  onClick={props.onCardClick}
+                  //select={select === index ? true : false}
+                  //style = {select && {{border: '2px solid #77EDDF'}}}
+                  style={
+                    select === job.id ? { border: '2px solid #77EDDF' } : null
+                  }
+                  onClick={handleClick}
                 />
               </Grid>
             )
-          }
-        )}
+          })}
+        </Grid>
+        <Grid className={classes.descriptionGrid}>
+          <JobTitleCard
+            key={jobDetail.id}
+            id={jobDetail.id}
+            jobTitle={jobDetail.title}
+            companyLogo={jobDetail.companyIcon}
+            companyName={jobDetail.companyName}
+            companyAddress={jobDetail.location}
+            jobUploadedTime={jobDetail.time}
+          />
+          <Box className={classes.divider} />
+          {showDescription ? (
+            <DescriptionCard
+              jobDescription={jobDetail.description}
+              aboutTheCompany={jobDetail.aboutTheCompany}
+              onClickHandler={() => {
+                setshowDescription(false)
+              }}
+            />
+          ) : (
+            <ViewGreenCommutes
+              source="E Marredpally, Hyderabad"
+              destination={jobDetail.location}
+              onClick={() => setshowDescription(true)}
+            />
+          )}
+        </Grid>
       </Grid>
     </Grid>
   )
