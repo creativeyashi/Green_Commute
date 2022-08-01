@@ -1,5 +1,5 @@
 import { Box, Grid, Typography } from '@mui/material'
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { makeStyles } from '@mui/styles'
 import { EXTRA_COLORS } from '../../theme/theme'
 import SaveJobCard from '../../components/molecules/SaveJobCard/index'
@@ -60,6 +60,7 @@ const useStyles = makeStyles({
   },
   descriptionGrid: {
     background: '#FFFFFF',
+    width: '404px',
     height: '740px',
   },
   divider: {
@@ -82,15 +83,22 @@ const Index = (props: {
   const classes = useStyles()
 
   const [jobDetail, setJobDetail] = useState(props.jobs[0])
+  console.log(jobDetail)
 
   const [showDescription, setshowDescription] = useState(true)
+  const [select, setSelect] = useState(0)
 
   const handleClick = async (jobid: number) => {
     console.log(jobid)
+    setSelect(jobid)
+
     await axios
       .get(`${url}Joblist/${jobid}`)
       .then((res) => setJobDetail(res.data))
   }
+  useEffect(() => {
+    handleClick(props.jobs[0].id)
+  }, [props.jobs])
 
   return (
     <Grid>
@@ -166,6 +174,11 @@ const Index = (props: {
                   timeElapsed={job.time}
                   logo={job.companyIcon}
                   title={job.title}
+                  //select={select === index ? true : false}
+                  //style = {select && {{border: '2px solid #77EDDF'}}}
+                  style={
+                    select === job.id ? { border: '2px solid #77EDDF' } : null
+                  }
                   onClick={handleClick}
                 />
               </Grid>
@@ -174,6 +187,7 @@ const Index = (props: {
         </Grid>
         <Grid className={classes.descriptionGrid}>
           <JobTitleCard
+            key={jobDetail.id}
             id={jobDetail.id}
             jobTitle={jobDetail.title}
             companyLogo={jobDetail.companyIcon}

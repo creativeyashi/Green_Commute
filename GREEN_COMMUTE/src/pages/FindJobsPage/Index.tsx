@@ -16,6 +16,8 @@ import { FilterPopUp } from '../../components/organisms/filter'
 import axios from 'axios'
 import { url } from '../../dbServer'
 import SearchJobsPage from '../SearchJobPage/Index'
+import { join } from 'path'
+import { on } from 'events'
 
 const useStyles = makeStyles({
   root: {
@@ -51,11 +53,15 @@ const useStyles = makeStyles({
 
 const FindJobsPage: React.FC = () => {
   const [showRecommendedJobs, setShow] = useState(true)
+  let tempJobs:any[] = [];
 
-  const [jobs, setJobs] = useState([] as any)
+  const [jobs, setJobs] = useState([] as any);
+  const [data, setData] = useState([] as any);
 
   useEffect(() => {
-    axios.get(`${url}Joblist`).then((res) => setJobs(res.data))
+    axios.get(`${url}Joblist`)
+    .then((res) => {setJobs(res.data)
+    setData(res.data)})
   }, [])
 
   const [distance, setDistance] = React.useState([])
@@ -72,10 +78,21 @@ const FindJobsPage: React.FC = () => {
     applyFilter(newDistance)
   }
 
+
+
   const applyFilter = (distance: string[]) => {
-    const tempJobs = jobs.filter((job: { distance: string }) =>
+    if(distance.length===0){
+      setJobs(data);
+      return;
+    }
+     tempJobs = jobs.filter((job: { distance: string }) =>
       distance.includes(job.distance)
     )
+    if(tempJobs.length===0){
+      tempJobs = data.filter((job: { distance: string }) =>
+      distance.includes(job.distance)
+      )
+ }
     console.log(tempJobs)
     setJobs(tempJobs)
   }
@@ -85,6 +102,7 @@ const FindJobsPage: React.FC = () => {
   }
 
   const [showFilter, setShowFilter] = useState(false)
+  
 
   const classes = useStyles()
 
@@ -133,7 +151,8 @@ const FindJobsPage: React.FC = () => {
               <RecommendedJobsPage
                 showFilter={showFilter}
                 setShowFilter={setShowFilter}
-                jobs={jobs}
+
+                jobs={tempJobs.length?tempJobs:jobs}
                 distanceFilter={distance}
                 onClearAll={onClear}
                 onCardClick={() => setShow(false)}
@@ -142,7 +161,7 @@ const FindJobsPage: React.FC = () => {
               <SearchJobsPage
                 showFilter={showFilter}
                 setShowFilter={setShowFilter}
-                jobs={jobs}
+                jobs={tempJobs.length?tempJobs:jobs}
                 distanceFilter={distance}
                 onClearAll={onClear}
               />

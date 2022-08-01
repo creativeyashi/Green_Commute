@@ -16,17 +16,17 @@ export type Props = {
   companyName: string
   location: string
   timeElapsed: string
+  select?: boolean
+  style?: React.CSSProperties | null
   onClick: (jobid: number) => void
 }
 
 const useStyles = makeStyles({
   root: {
     display: 'flex',
-    width: '571px',
+    width: '950px',
     height: '135px',
-    '&:hover': {
-      border: '2px solid #77EDDF',
-    },
+
     padding: '16px 19px',
   },
   img: {
@@ -44,12 +44,12 @@ const useStyles = makeStyles({
 })
 
 const SaveJobCard: React.FC<Props> = (props) => {
-  const { logo, title, companyName, location, timeElapsed } = props
+  const { logo, title, companyName, location, timeElapsed ,style} = props
   const routes = [Bus, Car, Metro]
   const classes = useStyles()
   console.log(logo)
   return (
-    <Card className={classes.root} onClick={() => props.onClick(props.id)}>
+    <Card className={classes.root} onClick={() => props.onClick(props.id)} sx = {style}>
       <Grid container spacing={1}>
         <Grid item xs={1}>
           <img src={logo} alt="company-logo" className={classes.img} />
