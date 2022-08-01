@@ -76,6 +76,9 @@ const useStyles = makeStyles({
     display: 'flex',
     flexDirection: 'row',
   },
+  autoSuggestion:{
+    marginTop: '64px'
+  },
   aqititle: {
     marginTop: '30px',
   },
@@ -88,6 +91,21 @@ const useStyles = makeStyles({
   userlocation: {
     marginTop: '40px',
   },
+  aqipos:{
+    display: "flex", alignItems: "center"
+  },
+  aqivalue:{
+    marginLeft: "32px" ,color:"#FF725E"
+  },
+  buttoncolor:{
+    color:"#4ABAAD"
+  },
+  singleaqi:{
+    marginTop: "32px"
+  },
+  hovercolor:{
+    borderBottom: `2px solid #4ABAAD`
+  }
 })
 
 const LandingPage: React.FC = () => {
@@ -197,7 +215,7 @@ const LandingPage: React.FC = () => {
         <>
           <Icon source={jobLocationIcon} />
 
-          <Typography sx={{ marginTop: "40px" }} variant="h2">
+          <Typography className={classes.userlocation} variant="h2">
           &nbsp; &nbsp;
           Enter Location to know 
             <br/> 
@@ -211,16 +229,16 @@ const LandingPage: React.FC = () => {
         aqi = <> {jobLocation.map((value) => {
           return (
             
-            <Box sx={{ display: "flex", alignItems: "center" }}>
+            <Box className={classes.aqipos}>
               <AirQualityIndex AQIIndex={value.AQI} />
-              <Typography variant="h2" sx={{ marginLeft: "32px" ,color:"#FF725E" }}>
+              <Typography variant="h2" className={classes.aqivalue}>
                 {value.name}
               </Typography>
             </Box>
             
           );
         })}
-       <Typography sx={{ marginTop: "40px" , marginLeft:"1px"}} variant="h2">
+       <Typography className={classes.userlocation} variant="h2">
               Real Time Air Quality Index(AQI) 
               <br/>
               &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
@@ -251,7 +269,7 @@ const LandingPage: React.FC = () => {
         <>
           <Icon source={skillIcon} />
 
-          <Typography sx={{ marginTop: "40px" }} variant="h2">
+          <Typography className={classes.userlocation} variant="h2">
             Enter your Skills to know how many 
             <br/>
             &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;jobs are in this Location
@@ -264,7 +282,7 @@ const LandingPage: React.FC = () => {
         aqi = (
           <>
             <AirQualityIndex AQIIndex={1500} />
-            <Typography variant="h2" sx={{ marginTop: "32px" }}>
+            <Typography variant="h2" className={classes.singleaqi}>
               {"Jobs found in Hyderabad & Mumbai."}
             </Typography>
           </>
@@ -287,7 +305,7 @@ const LandingPage: React.FC = () => {
                   More than 2000 people are using <br /> Green Commute
                 </Typography>
               </Box>
-              <Box sx={{ marginTop: '64px' }}>
+              <Box className={classes.autoSuggestion}>
                 {autocomplete ? autocomplete : null}
               </Box>
               <Box className={classes.buttoncontainer}>
@@ -311,13 +329,11 @@ const LandingPage: React.FC = () => {
                 </Button>
               </Box>
               <Box className={classes.skipbutton}>
-                <Button sx={{ color: `${theme.palette.primary[300]}` }}
+                <Button className={classes.buttoncolor}
                  onClick={handleSkip}>
                   <Typography
                     variant="subtitle1"
-                    sx={{
-                      borderBottom: `2px solid ${theme.palette.primary[300]}`,
-                    }}
+                   className={classes.hovercolor}
                   >
                     Skip
                   </Typography>
