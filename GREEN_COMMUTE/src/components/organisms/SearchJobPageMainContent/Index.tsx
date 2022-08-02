@@ -91,8 +91,18 @@ const Index = (props: {
     setSelect(jobid)
     setJobDetail(data)
   }
+  const [showAllData, setShowAllData] = useState(true);
+
+
   useEffect(() => {
-    handleClick(props.jobs[0].id)
+    if(props.jobs.length>0){
+      handleClick(props.jobs[0].id)
+      setShowAllData(true);
+    }
+    else{
+      setShowAllData(false);
+    }
+    
   }, [props.jobs])
 
   return (
@@ -178,6 +188,7 @@ const Index = (props: {
             )
           })}
         </Grid>
+      {showAllData && 
         <Grid className={classes.descriptionGrid}>
           <JobTitleCard
             key={jobDetail.id}
@@ -205,6 +216,7 @@ const Index = (props: {
             />
           )}
         </Grid>
+}
       </Grid>
     </Grid>
   )
