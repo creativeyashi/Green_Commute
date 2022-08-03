@@ -169,8 +169,6 @@ const Index = (props: {
                   timeElapsed={job.time}
                   logo={job.companyIcon}
                   title={job.title}
-                  //select={select === index ? true : false}
-                  //style = {select && {{border: '2px solid #77EDDF'}}}
                   style={
                     select === job.id ? { border: '2px solid #77EDDF' } : null
                   }

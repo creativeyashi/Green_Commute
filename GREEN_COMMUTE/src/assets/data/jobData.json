@@ -2,7 +2,7 @@
   "JobList": [
     {
       "id": 1,
-      "title": "User Experience Deisgner",
+      "title": "User Experience Designer",
       "companyName": "Myntra",
       "companyIcon": "https://s3-alpha-sig.figma.com/img/d654/94fc/7f4c9a0f51caaf2851135dc8bdc34945?Expires=1659916800&Signature=IXhZuZppysjcd7XwdmLeTDr2LZ3gsp3XYrxbu1rtZM41eWZ3p0nm8~52Gp5S2pRZKFiX7jrkeF6289rqqhnLYcbq9AOvEW3NchzwBOb0VQkgTRksEZxeMbKNxdRQPMJUAvcCO5K9jFLY0iIj1qCzqUtNtMblkUgHFZElND~kVtThFGbTiDBe9Zcfd~htnx1f4974EdgTVmsH~OuvvSdh6jEVGdCZe4Name8NLGB~82KI3qVhZehGNdm7QuQS1TCxtwqBeSC3jg0p2QlmeSQVuXMvX5qHDZZoG9KQlJPsImCtpdIg~1XwCUFUODyNmj5cm0pX6HAvGbqLdM3goVEg5Q__&Key-Pair-Id=APKAINTVSUGEWH5XD5UA",
       "location": "Hitech city, Hyderabad - 500072",
@@ -32,7 +32,7 @@
     },
     {
       "id": 3,
-      "title": "User Experience Deisgner",
+      "title": "User Experience Designer",
       "companyName": "Instagram",
       "companyIcon": "https://s3-alpha-sig.figma.com/img/3a21/ec9d/5a7aed8007ea392bc44bb4f07741cfc4?Expires=1659916800&Signature=JRnQLXTTfE0s4KrvGq1yCIOlO4UZCQH0j2O47~~n6JygpYM9geRxV5ookN04BcDMh4tX9285DUCALnCprsSSTsaQx3WPn4UVCHJ2h8iCOz8XOnnxnE9ExSo8kOxykiZ06nQqo8ZUknWFxKwI5slMdjzU3K7OfmEtzmIr-v7-id6hH5yYGjqUzFFFGx4Hr6LFQCQ~3qI2e0jfpUMpF2ZOgbG9eKuz0qoWe8PlZ2jkRsmrcKUR7tZ~rZt9DBJZw7SbqZv1Cv2ATS~KY5Q19o4X-zwEmbl0GJfdaNxtAqMjAHoPXbc-AFBXsWeEhrQTyTLY8raiExP-UdpNTVoe4KQ3Qg__&Key-Pair-Id=APKAINTVSUGEWH5XD5UA",
       "location": "Hitech city, Hyderabad - 500072",
@@ -47,7 +47,7 @@
     },
     {
       "id": 4,
-      "title": "User Experience Deisgner",
+      "title": "User Experience Designer",
       "companyName": "Hp",
       "companyIcon": "https://s3-alpha-sig.figma.com/img/a83c/7ee7/f01eee34e634aefc7a7c66cc11c5ddf8?Expires=1659916800&Signature=cfG6RSwBvDGkLhX790H9Vx0NxQMUNNGlNI3h4cjK5EaDEevmobPkpJRf2g782rOmiMoLbkMOj-SKpLmllUUIGPTZEu~wwvwhjDSfpvAGPWQbgs7Pfl6hL7RUYh9piL49tUklm~TwgQZdvMPnSViSiwfxPq01HQPlSm9y6HYlaqwywJR94TSM2x07Rpd6QxRbXDspb-Y9Ao0T6aoMcb1wVNXrwYv-o4otNl~QvjP-ajmq07nmNR-6zo6y~RCk~MGKFCnGviACh1QKpz4csbJqdK5O4zO9RDumcH4eD2vNHo8Itum~vvC6NCa0qKa-z25XHaAZ40HdAvzaR3ZO-oFFsQ__&Key-Pair-Id=APKAINTVSUGEWH5XD5UA",
       "location": "Hitech city, Hyderabad - 500072",
@@ -56,13 +56,13 @@
       "distance": "10 - 20 Kms",
       "role": "Full time",
       "category": "UI/UX Designer",
-      "saved": false,
+      "saved": true,
       "description": "We are seeking a Product Designer with a passion for finding solutions that allow customers to intuitively use our products. The ideal candidate will be skilled at each stage of the design process but always focused on the needs of the customer. You will work with other designers and cross-functional team members and will rely heavily on both qualitative and quantitative data to make informed decisions.",
       "aboutTheCompany": "We are a technology company born of the belief that companies should do more than just make a profit. They should make the world a better place.Our efforts in climate action, human rights, and digital equity prove that we are doing everything in our power to make it so. With over 80 years of actions that prove our intentions, we have the confidence to envision a world where innovation drives extraordinary contributions to humanity."
     },
     {
       "id": 5,
-      "title": "User Experience Deisgner",
+      "title": "User Experience Designer",
       "companyName": "Twitter",
       "companyIcon": "https://s3-alpha-sig.figma.com/img/2a29/bac9/122eabd5af134c666102d05490fef37d?Expires=1659916800&Signature=YySZ~-h0RwnfHCbQU43O~WW7zAeQRYrT1eraJfY6dS0DWX3n2gQNbEi~RKCNeSfqClrF~d8S8x06~SiOcftIF4hYBcBJWWOhfuYIgDjsiOp23UgFFooOP2GNUKZ~Iewj-sBm70ntd5oA9Viv7uvQXQp8~KAKTqpIADcloE0n9FOn2yBsEeHtNVwdj53cF4yaaAPrqZwz5Gj0hTnUPNml0M~RzTUG93driSieNnWIa8WEGFPq~iMaYq1LtM5spDGbLUBkJ7xoDXcAXUQG0NAI1dpVbfSiXJ2XFsDLn4Jun0~ZiNjG~FLbUiqmZZY3oIOtQgOluEwGDObYs~nT4MlFzg__&Key-Pair-Id=APKAINTVSUGEWH5XD5UA",
       "location": "Hitech city, Hyderabad - 500072",
@@ -77,7 +77,7 @@
     },
     {
       "id": 6,
-      "title": "User Experience Deisgner",
+      "title": "User Experience Designer",
       "companyName": "Wipro",
       "companyIcon": "https://s3-alpha-sig.figma.com/img/2f66/4b2d/5ab2d9404899748ffe973614ae0fb20f?Expires=1659916800&Signature=HM~GC6kKjdXcQyzEfGMIQT~Enn4JqncpHiuRN1Va3OkDpH9E5Suaw96czBXscYfScRZJQwoB7ro7M07dmA~Xypo2epGyeJSeUlAqQcliSMnfM5867PYtUbDczqoYHlRsIRUE15xEp~JaXBmSJIF6MMInM1tQaMuCIIeBEQwlxbZGUmNkC8RFEYlf2pfMoZinO2icPketS9okzzZYsbfwt5sviSbOji71DbqpsJCEYy0eaVOFMjBNXdPDjEregBze72pcI~hja~GWz9zyh7L-43nniCCFxAhgRn9vtwa0U811JomtXlYuATf7YBMcOHKnWBxgF-fjM8sr1uhfIQBYig__&Key-Pair-Id=APKAINTVSUGEWH5XD5UA",
       "location": "Hitech city, Hyderabad - 500072",
@@ -92,7 +92,7 @@
     },
     {
       "id": 7,
-      "title": "User Interface Deisgner",
+      "title": "User Interface Designer",
       "companyName": "Ola",
       "companyIcon": "https://s3-alpha-sig.figma.com/img/f9b9/d1e8/28997b749909e3d747016f6cc21e3177?Expires=1659916800&Signature=ZfvqYRtwLk~gJBH77Uww79RiG2JtkpOz0M0ypPR7WV~uR3aF-WsuZqOxDNxSRxg0XkPw2tb2Y9AIFQgqizO3as~cNkzZq9NFlbSHJNsojTzdLFLJTjc~aPIsoYrn24kHj5m3tYVvSPKQjhEznJmOduMbXlRiu5UghFu~CsyPdDVwYquyrVrySb0rtEqQ51iDFZWtZziVLvLrRyVErM8qqPfpfs34nVUdflz-lyHVT8GIgT4eWwkAv4vauhgp9ZJhaN6g2dGLB8QOyY6Hea6Eig7VJUXJ3wgs39VSzRcMwWdu10ABj34JfTIVqX8015zUhZjXD6QFpDHPxIf4ZBEzeg__&Key-Pair-Id=APKAINTVSUGEWH5XD5UA",
       "location": "Hitech city, Hyderabad - 500072",
@@ -107,7 +107,7 @@
     },
     {
       "id": 8,
-      "title": "Senior Deisgner",
+      "title": "Senior Designer",
       "companyName": "Uber",
       "companyIcon": "https://s3-alpha-sig.figma.com/img/843d/f23e/3b268e83208a7c81b92d8ab7b0c60f8c?Expires=1659916800&Signature=Pk2t18-yoKJgFBqujF8lUsA1c92JremOx8ZReJIlPLzh2f~IzRsAF-zLMH~SeyYysBuFkircr1FEMnIExs0ypUCjuJmc85icNvwXHbQdF9u5bfVHPWZdGTsUwVWcLj-NEkZEaQv2RKPtxR7n1TWnVAsuQYf2LONvTnk290OerfATpfFK9FHi0pWrrvjgPiW4JKztiG8XTuJVscam~reFmWo52R4HjZqy4qG~2UzZ9EkBZj2WYvwvV7ge9FJqH1pyTRrQ-44rZ-zXK8~cXUyqCn3LIZ~44Sm93dGDKRBUcEFByQRIfnwuYvZlZT6mjc5~sdTuc1X1AMts0jiJsLFc4Q__&Key-Pair-Id=APKAINTVSUGEWH5XD5UA",
       "location": "Hitech city, Hyderabad - 500072",
@@ -146,23 +146,19 @@
   "skills": [
     {
       "id": 1,
-      "name": "Product Designer"
+      "name": "User Experience Designer"
     },
     {
       "id": 2,
-      "name": "Senior Software Developer"
+      "name": "Product Designer"
     },
     {
       "id": 3,
-      "name": "User Interface Deisgner"
+      "name": "User Interface Designer"
     },
     {
       "id": 4,
-      "name": "Product Deisgner"
-    },
-    {
-      "id": 5,
-      "name": "User Experience Deisgner"
+      "name": "Senior Designer"
     }
   ]
 }

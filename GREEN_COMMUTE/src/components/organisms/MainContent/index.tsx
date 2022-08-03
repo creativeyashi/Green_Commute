@@ -10,7 +10,7 @@ import RecommendedJobsPage from '../RecommendedJobsPage/Index'
 import { FilterPopUp } from '../filter'
 import axios from 'axios'
 import { url } from '../../../dbServer'
-import SearchJobsPage from '../SearchJobPage/Index'
+import SearchJobsPage from '../SearchJobPageMainContent/Index'
 
 const useStyles = makeStyles({
   root: {
