@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react'
-
 import { Backdrop, Button, Grid, Typography } from '@mui/material'
 import { makeStyles } from '@mui/styles'
 import SearchBar from '../SearchBar/index'
@@ -8,8 +7,7 @@ import FilterAltOutlinedIcon from '@mui/icons-material/FilterAltOutlined'
 import { FINDJOBS_HEADING, FINJOBS_FILTER } from '../../utils/constant'
 import RecommendedJobsPage from '../RecommendedJobsPage/Index'
 import { FilterPopUp } from '../filter'
-import axios from 'axios'
-import { url } from '../../../dbServer'
+import { getJobs, getLocations, getSkills } from '../../../services/services'
 import SearchJobsPage from '../SearchJobPageMainContent/Index'
 
 const useStyles = makeStyles({
@@ -48,40 +46,45 @@ function MainContent() {
   const [skills, setSkills] = useState<string[] | null>([])
   const [locations, setLocations] = useState<string[] | null>([])
   const [jobs, setJobs] = useState([] as any)
+
+  let tempJobs: any[] = []
+
   const fetchSkillsLocations = async () => {
-    let response = await axios.get('http://localhost:5000/skills')
-    let data = response.data
+    let data = await getSkills()
     data = data.map((skill: { name: any }) => {
       return skill.name
     })
     setSkills(data)
-    console.log(skills)
-    response = await axios.get('http://localhost:5000/userLocation')
-    data = response.data
+    data = await getLocations()
     data = data.map((location: { name: any }) => {
       return location.name
     })
     setLocations(data)
   }
   const fetchData = async () => {
-    const response = await axios.get(`${url}Joblist`)
-    const data = response.data
+    const data = await getJobs()
     setJobs(data)
+
     return data
   }
   const filter = async (location: string | null, skill: string | null) => {
     let result = await fetchData()
-    if (location) {
-      result = result.filter((job: { location: string }) => {
-        return job.location.toLowerCase().includes(location.toLowerCase())
-      })
+    if (location && skill) {
+      result = result.filter(
+        (job: any) =>
+          job.title.toLowerCase().includes(skill.toLowerCase()) &&
+          job.location.toLowerCase().includes(location.toLowerCase())
+      )
+    } else if (location) {
+      result = result.filter((job: any) =>
+        job.location.toLowerCase().includes(location.toLowerCase())
+      )
+    } else if (skill) {
+      result = result.filter((job: any) =>
+        job.title.toLowerCase().includes(skill.toLowerCase())
+      )
     }
-    if (skill) {
-      result = result.filter((job: { title: string }) => {
-        return job.title.toLowerCase().includes(skill.toLowerCase())
-      })
-      setJobs(result)
-    }
+    setJobs(result)
   }
 
   useEffect(() => {
@@ -104,15 +107,25 @@ function MainContent() {
   }
 
   const applyFilter = (distance: string[]) => {
-    const tempJobs = jobs.filter((job: { distance: string }) =>
+    if (distance.length === 0) {
+      setJobs(jobs)
+      return
+    }
+    tempJobs = jobs.filter((job: { distance: string }) =>
       distance.includes(job.distance)
     )
+    if (tempJobs.length === 0) {
+      tempJobs = jobs.filter((job: { distance: string }) =>
+        distance.includes(job.distance)
+      )
+    }
     console.log(tempJobs)
     setJobs(tempJobs)
   }
 
   const onClear = async () => {
-    await axios.get(`${url}Joblist`).then((res) => setJobs(res.data))
+    const data = await getJobs()
+    setJobs(data)
   }
 
   const [showFilter, setShowFilter] = useState(false)
