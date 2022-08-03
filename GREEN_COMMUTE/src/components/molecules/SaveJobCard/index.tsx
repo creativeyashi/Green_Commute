@@ -26,7 +26,6 @@ const useStyles = makeStyles({
     display: 'flex',
     width: '950px',
     height: '135px',
-
     padding: '16px 19px',
   },
   img: {
@@ -44,12 +43,16 @@ const useStyles = makeStyles({
 })
 
 const SaveJobCard: React.FC<Props> = (props) => {
-  const { logo, title, companyName, location, timeElapsed ,style} = props
+  const { logo, title, companyName, location, timeElapsed, style } = props
   const routes = [Bus, Car, Metro]
   const classes = useStyles()
   console.log(logo)
   return (
-    <Card className={classes.root} onClick={() => props.onClick(props.id)} sx = {style}>
+    <Card
+      className={classes.root}
+      onClick={() => props.onClick(props.id)}
+      sx={style}
+    >
       <Grid container spacing={1}>
         <Grid item xs={1}>
           <img src={logo} alt="company-logo" className={classes.img} />

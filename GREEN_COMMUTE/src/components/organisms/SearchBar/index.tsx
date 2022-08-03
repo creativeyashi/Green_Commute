@@ -1,16 +1,16 @@
 import { Box, Divider, InputBase, Autocomplete } from '@mui/material'
-import React from 'react'
+import React, { useState } from 'react'
 import theme, { EXTRA_COLORS } from '../../../theme/theme'
 import SearchSkillIcon from '../../../assets/icons/searchSkill.png'
 import SearchIcon from '@mui/icons-material/Search'
 import LocationOnOutlinedIcon from '@mui/icons-material/LocationOnOutlined'
-
 import { makeStyles } from '@mui/styles'
-// import { Chip } from '../../atoms/Chips/index.stories'
 export type SearchProps = {
-  placeholder1: string
-  placeholder2: string
+  options1: string[] | null
+  options2: string[] | null
+  onChange: (location: string | null, skill: string | null) => void
 }
+
 const styles = makeStyles(() => ({
   outerBox: {
     marginTop: '8px',
@@ -21,7 +21,6 @@ const styles = makeStyles(() => ({
     border: `1px solid ${theme.palette.grey['100']}`,
     display: 'flex',
     flexDirection: 'row',
-
     width: '843px',
     height: '56px',
     justifyContent: 'center',
@@ -31,9 +30,7 @@ const styles = makeStyles(() => ({
   },
   searchBox: {
     width: '50%',
-
     height: '50%',
-
     display: 'flex',
   },
   searchIcon: {
@@ -65,56 +62,52 @@ const styles = makeStyles(() => ({
 
 const SearchBar: React.FC<SearchProps> = (props) => {
   const classes = styles()
-  const { placeholder1, placeholder2 } = props
+  const [location, setLocation] = useState<string | null>('')
+  const [skill, setSkill] = useState<string | null>('')
+
   return (
     <>
       <Box className={classes.outerBox}>
         <Autocomplete
-          multiple
+          data-testid="autocomplete2"
+          id="location"
+          disablePortal
+          options={props.options1}
+          filterSelectedOptions
           classes={{ paper: classes.paper, root: classes.searchBox }}
-          id="size-small-filled-multi"
-          size="small"
-          options={top100Films}
-          getOptionLabel={(option) => option}
-          // renderTags={(value, getTagProps) =>
-          //   value.map((option, index) => (
-          //     <>
-          //       <Chip
-          //         variant="filled"
-          //         label={option}
-          //         size="small"
-          //         {...getTagProps({ index })}
-          //       />
-          //     </>
-          //   ))
-          // }
-          renderInput={(params) => (
-            <>
-              <InputBase
-                placeholder={placeholder1}
-                className={classes.inputBase}
-                ref={params.InputProps.ref}
-                inputProps={params.inputProps}
-                startAdornment={
-                  <Box sx={{ padding: '20px' }}>
-                    <img src={SearchSkillIcon} alt="" />
-                  </Box>
-                }
-                endAdornment={<Divider orientation="vertical" />}
-              />
-            </>
+          value={skill}
+          onChange={(event, newValue: string | null) => {
+            setSkill(newValue)
+          }}
+          renderInput={(params: any) => (
+            <InputBase
+              placeholder={'skills'}
+              className={classes.inputBase}
+              ref={params.InputProps.ref}
+              inputProps={params.inputProps}
+              startAdornment={
+                <Box sx={{ padding: '20px' }}>
+                  <img src={SearchSkillIcon} alt="" />
+                </Box>
+              }
+              endAdornment={<Divider orientation="vertical" />}
+            />
           )}
         />
-
         <Autocomplete
           data-testid="autocomplete2"
           id="location"
           disablePortal
+          options={props.options2}
           filterSelectedOptions
+          value={location}
+          onChange={(event, newValue: string | null) => {
+            setLocation(newValue)
+          }}
           classes={{ paper: classes.paper, root: classes.searchBox }}
           renderInput={(params: any) => (
             <InputBase
-              placeholder={placeholder2}
+              placeholder={'Location'}
               className={classes.inputBase}
               ref={params.InputProps.ref}
               inputProps={params.inputProps}
@@ -123,15 +116,20 @@ const SearchBar: React.FC<SearchProps> = (props) => {
                   <LocationOnOutlinedIcon />
                 </Box>
               }
-              endAdornment={<SearchIcon className={classes.searchIcon} />}
+              endAdornment={
+                <SearchIcon
+                  className={classes.searchIcon}
+                  onClick={() => {
+                    props.onChange(location, skill)
+                  }}
+                  style={{ cursor: 'pointer' }}
+                />
+              }
             />
           )}
-          options={[]}
         />
       </Box>
     </>
   )
 }
-const top100Films: string[] = ['sohail', 'shaik', 'sonu']
-
 export default SearchBar

@@ -1,10 +1,10 @@
 import { Box, Grid, Typography } from '@mui/material'
 import React from 'react'
-import FindJobsCard from '../../components/molecules/JobCard'
+import FindJobsCard from '../../molecules/JobCard'
 import { makeStyles } from '@mui/styles'
-import { EXTRA_COLORS } from '../../theme/theme'
-import Chips from '../../components/atoms/Chips/index'
-import Button from '../../components/atoms/Button/index'
+import { EXTRA_COLORS } from '../../../theme/theme'
+import Chips from '../../atoms/Chips/index'
+import Button from '../../atoms/Button/index'
 
 interface Job {
   id: number
