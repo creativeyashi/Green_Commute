@@ -91,8 +91,14 @@ const Index = (props: {
     setSelect(jobid)
     setJobDetail(data)
   }
+  const [showAllData, setShowAllData] = useState(true)
   useEffect(() => {
-    handleClick(props.jobs[0].id)
+    if (props.jobs.length > 0) {
+      handleClick(props.jobs[0].id)
+      setShowAllData(true)
+    } else {
+      setShowAllData(false)
+    }
   }, [props.jobs])
 
   return (
@@ -178,33 +184,35 @@ const Index = (props: {
             )
           })}
         </Grid>
-        <Grid className={classes.descriptionGrid}>
-          <JobTitleCard
-            key={jobDetail.id}
-            id={jobDetail.id}
-            jobTitle={jobDetail.title}
-            companyLogo={jobDetail.companyIcon}
-            companyName={jobDetail.companyName}
-            companyAddress={jobDetail.location}
-            jobUploadedTime={jobDetail.time}
-          />
-          <Box className={classes.divider} />
-          {showDescription ? (
-            <DescriptionCard
-              jobDescription={jobDetail.description}
-              aboutTheCompany={jobDetail.aboutTheCompany}
-              onClickHandler={() => {
-                setshowDescription(false)
-              }}
+        {showAllData && (
+          <Grid className={classes.descriptionGrid}>
+            <JobTitleCard
+              key={jobDetail.id}
+              id={jobDetail.id}
+              jobTitle={jobDetail.title}
+              companyLogo={jobDetail.companyIcon}
+              companyName={jobDetail.companyName}
+              companyAddress={jobDetail.location}
+              jobUploadedTime={jobDetail.time}
             />
-          ) : (
-            <ViewGreenCommutes
-              source="E Marredpally, Hyderabad"
-              destination={jobDetail.location}
-              onClick={() => setshowDescription(true)}
-            />
-          )}
-        </Grid>
+            <Box className={classes.divider} />
+            {showDescription ? (
+              <DescriptionCard
+                jobDescription={jobDetail.description}
+                aboutTheCompany={jobDetail.aboutTheCompany}
+                onClickHandler={() => {
+                  setshowDescription(false)
+                }}
+              />
+            ) : (
+              <ViewGreenCommutes
+                source="E Marredpally, Hyderabad"
+                destination={jobDetail.location}
+                onClick={() => setshowDescription(true)}
+              />
+            )}
+          </Grid>
+        )}
       </Grid>
     </Grid>
   )

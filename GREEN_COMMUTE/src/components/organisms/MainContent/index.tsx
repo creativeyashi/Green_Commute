@@ -48,6 +48,7 @@ function MainContent() {
   const [jobs, setJobs] = useState([] as any)
 
   let tempJobs: any[] = []
+  const [data, setData] = useState([] as any)
 
   const fetchSkillsLocations = async () => {
     let data = await getSkills()
@@ -64,23 +65,23 @@ function MainContent() {
   const fetchData = async () => {
     const data = await getJobs()
     setJobs(data)
-
+    setData(data)
     return data
   }
   const filter = async (location: string | null, skill: string | null) => {
     let result = await fetchData()
     if (location && skill) {
-      result = result.filter(
+      result = data.filter(
         (job: any) =>
           job.title.toLowerCase().includes(skill.toLowerCase()) &&
           job.location.toLowerCase().includes(location.toLowerCase())
       )
     } else if (location) {
-      result = result.filter((job: any) =>
+      result = data.filter((job: any) =>
         job.location.toLowerCase().includes(location.toLowerCase())
       )
     } else if (skill) {
-      result = result.filter((job: any) =>
+      result = data.filter((job: any) =>
         job.title.toLowerCase().includes(skill.toLowerCase())
       )
     }
@@ -108,14 +109,14 @@ function MainContent() {
 
   const applyFilter = (distance: string[]) => {
     if (distance.length === 0) {
-      setJobs(jobs)
+      setJobs(data)
       return
     }
     tempJobs = jobs.filter((job: { distance: string }) =>
       distance.includes(job.distance)
     )
     if (tempJobs.length === 0) {
-      tempJobs = jobs.filter((job: { distance: string }) =>
+      tempJobs = data.filter((job: { distance: string }) =>
         distance.includes(job.distance)
       )
     }
@@ -124,8 +125,9 @@ function MainContent() {
   }
 
   const onClear = async () => {
-    const data = await getJobs()
-    setJobs(data)
+    const fetchData = await getJobs()
+    setJobs(fetchData)
+    setData(fetchData)
   }
 
   const [showFilter, setShowFilter] = useState(false)
@@ -178,7 +180,7 @@ function MainContent() {
             <RecommendedJobsPage
               showFilter={showFilter}
               setShowFilter={setShowFilter}
-              jobs={jobs}
+              jobs={tempJobs.length ? tempJobs : jobs}
               distanceFilter={distance}
               onClearAll={onClear}
               onCardClick={() => setShow(false)}
@@ -187,7 +189,7 @@ function MainContent() {
             <SearchJobsPage
               showFilter={showFilter}
               setShowFilter={setShowFilter}
-              jobs={jobs}
+              jobs={tempJobs.length ? tempJobs : jobs}
               distanceFilter={distance}
               onClearAll={onClear}
             />

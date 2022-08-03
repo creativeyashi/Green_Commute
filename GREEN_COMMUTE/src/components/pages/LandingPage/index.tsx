@@ -36,7 +36,7 @@ const useStyles = makeStyles({
     letterSpacing: '.4px',
     color: '#373C38',
     font: 'Montserrat',
-    width: '900px',
+    width: '56rem',
   },
   icon: {
     marginTop: '10px',
@@ -64,7 +64,7 @@ const useStyles = makeStyles({
   },
   svg: {
     background: 'linear-gradient(155.94deg, #EFFEFF 6.2%, #E9FFF4 52.61%)',
-    height: '750px',
+    height: '102vh',
     width: '100%',
     display: 'flex',
     justifyContent: 'center',
@@ -83,7 +83,7 @@ const useStyles = makeStyles({
     marginTop: '30px',
   },
   root: {
-    padding: '60px 270px 25px 150px',
+    padding: '8vh 36vh 4vh 20vh',
   },
   skipbutton: {
     marginTop: '80px',
@@ -101,7 +101,7 @@ const useStyles = makeStyles({
     color:"#4ABAAD"
   },
   singleaqi:{
-    marginTop: "32px"
+    marginTop: "30px"
   },
   hovercolor:{
     borderBottom: `2px solid #4ABAAD`
