@@ -1,4 +1,4 @@
-package com.greencommute.jobmicroservice.controller;
+ package com.greencommute.jobmicroservice.controller;
 
 import com.greencommute.jobmicroservice.converter.JobsConverter;
 import com.greencommute.jobmicroservice.dto.JobsDTO;
