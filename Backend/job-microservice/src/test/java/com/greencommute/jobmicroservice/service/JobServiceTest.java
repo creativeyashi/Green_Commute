@@ -5,7 +5,6 @@ import com.greencommute.jobmicroservice.dto.JobsDTO;
 import com.greencommute.jobmicroservice.entity.Jobs;
 import com.greencommute.jobmicroservice.repository.JobRepository;
 import org.junit.jupiter.api.Test;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
 
@@ -18,7 +17,7 @@ import org.mockito.InjectMocks;
 import org.mockito.Mock;
 
 
-@SpringBootTest
+@SpringBootTest(classes = {JobServiceTest.class})
 public class JobServiceTest {
     @InjectMocks
     private JobServiceImpl jobService;
