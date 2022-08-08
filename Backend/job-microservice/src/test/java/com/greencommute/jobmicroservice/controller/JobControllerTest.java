@@ -1,4 +1,4 @@
-/* package com.greencommute.jobmicroservice.controller;
+ package com.greencommute.jobmicroservice.controller;
 
 import com.greencommute.jobmicroservice.converter.JobsConverter;
 import com.greencommute.jobmicroservice.dto.JobsDTO;
@@ -28,7 +28,7 @@ public class JobControllerTest {
     @InjectMocks
     private  JobController jobController;
 
-    @Mock
+    @Autowired
     private JobsConverter jobsConverter;
 
     @Mock
@@ -71,6 +71,6 @@ public class JobControllerTest {
         jobController.deleteSavedJobs(100);
     }
 }
-*/
+
 
 
