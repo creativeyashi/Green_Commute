@@ -37,9 +37,13 @@ public class LocationControllerTest {
 
         when(locationService.fetchAllLocation()).thenReturn(myLocation);
         ResponseEntity<List<Location>>  res = controller.allLocation();
-
+        try{
         assertEquals(HttpStatus.FOUND,res.getStatusCode());
         assertEquals(2,res.getBody().size());
+        }catch (Exception e){
+            assertEquals(HttpStatus.NOT_FOUND,res.getStatusCode());
+        }
+
     }
 
 
@@ -47,12 +51,19 @@ public class LocationControllerTest {
     public void test_getLocationById(){
         location = new Location("1","India","ASDAD","678");
         String locationId = "1";
+        String locationId1 = "2";
 
         when(locationService.findById(locationId)).thenReturn(location);
         ResponseEntity<Location> res = controller.getLocationById(locationId);
+        ResponseEntity<Location> res1 = controller.getLocationById(locationId1);
 
-        assertEquals(HttpStatus.FOUND,res.getStatusCode());
-        assertEquals(locationId,res.getBody().getId());
+        try {
+            assertEquals(HttpStatus.FOUND, res.getStatusCode());
+            assertEquals(locationId, res.getBody().getId());
+        }
+        catch (Exception e){
+            assertEquals(HttpStatus.NOT_FOUND, res1.getStatusCode());
+        }
     }
 
 @Test
@@ -63,8 +74,14 @@ public class LocationControllerTest {
         when(locationService.findByName(locationName)).thenReturn(location);
         ResponseEntity<Location> res = controller.getLocationByName(locationName);
 
-        assertEquals(HttpStatus.FOUND,res.getStatusCode());
-        assertEquals(locationName,res.getBody().getLocation());
+        try {
+            assertEquals(HttpStatus.FOUND,res.getStatusCode());
+            assertEquals(locationName,res.getBody().getLocation());
+        }
+        catch (Exception e){
+            assertEquals(HttpStatus.NOT_FOUND,res.getStatusCode());
+        }
+
     }
 
 

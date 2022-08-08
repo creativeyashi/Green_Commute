@@ -8,5 +8,5 @@ import org.springframework.boot.test.context.SpringBootTest;
 @SpringBootTest(classes = {LocationServiceApplicationTests.class})
 class LocationServiceApplicationTests {
 
-   
+
 }
