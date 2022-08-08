@@ -24,8 +24,7 @@
 		<java.version>11</java.version>
 		<spring-cloud.version>2021.0.3</spring-cloud.version>
 		<sonar.exclusions>
-
-			
+			**/com/prakhar/locationService/LocationServiceApplication.java
 		</sonar.exclusions>
 	</properties>
 
