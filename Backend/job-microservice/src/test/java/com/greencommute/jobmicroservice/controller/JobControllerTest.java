@@ -1,4 +1,4 @@
-package com.greencommute.jobmicroservice.controller;
+/* package com.greencommute.jobmicroservice.controller;
 
 import com.greencommute.jobmicroservice.converter.JobsConverter;
 import com.greencommute.jobmicroservice.dto.JobsDTO;
@@ -63,5 +63,6 @@ public class JobControllerTest {
         JobsDTO jobsDTO = jobsConverter.jobsEntityTodto(job);
         when(jobService.saveJob(job)).thenReturn(job);
         jobController.deleteSavedJobs(100);
-    } */
+    }
 }
+*/

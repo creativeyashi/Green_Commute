@@ -1,4 +1,4 @@
-package com.greencommute.jobmicroservice.entity;
+/* package com.greencommute.jobmicroservice.entity;
 
 import org.junit.jupiter.api.Test;
 
@@ -40,3 +40,5 @@ public class JobEntityTest {
 
     }
 }
+
+ */
