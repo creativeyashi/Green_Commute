@@ -39,9 +39,9 @@ public class JobController {
     }
 
     @PutMapping("/{id}")
-    public ResponseEntity<Jobs> saveJob(@RequestBody JobsDTO jobsDTO )
+    public ResponseEntity<Jobs> saveJob(@RequestBody Jobs job )
     {
-        Jobs job= jobsConverter.jobsDtoEntityTojobs(jobsDTO);
+
         return new ResponseEntity<>(jobService.saveJob(job), HttpStatus.OK);
     }
 
