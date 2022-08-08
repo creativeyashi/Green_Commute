@@ -20,10 +20,6 @@ public class LocationController {
     @Autowired
     private LocationRepository locationRepository;
 
-    @PostMapping("/")
-    public Location savelocation(@RequestBody Location location){
-        return locationService.savelocation(location);
-    }
 
     @GetMapping("/")
     public ResponseEntity<List<Location>>allLocation(){

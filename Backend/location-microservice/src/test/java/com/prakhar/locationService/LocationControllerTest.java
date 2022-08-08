@@ -60,8 +60,8 @@ public class LocationControllerTest {
         location = new Location("1","India","ASDAD","678");
         String locationName = "India";
 
-        when(locationService.findById(locationName)).thenReturn(location);
-        ResponseEntity<Location> res = controller.getLocationById(locationName);
+        when(locationService.findByName(locationName)).thenReturn(location);
+        ResponseEntity<Location> res = controller.getLocationByName(locationName);
 
         assertEquals(HttpStatus.FOUND,res.getStatusCode());
         assertEquals(locationName,res.getBody().getLocation());

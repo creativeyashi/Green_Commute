@@ -14,9 +14,6 @@ public class LocationServiceImpl implements LocationService {
     @Autowired
     private LocationRepository locationRepository;
 
-    public Location savelocation(Location location) {
-        return locationRepository.save(location);
-    }
 
     @Override
     public List<Location> fetchAllLocation() {
