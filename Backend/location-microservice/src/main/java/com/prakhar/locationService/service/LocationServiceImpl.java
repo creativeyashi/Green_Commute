@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class LocationServiceImpl implements LocationService {
@@ -21,28 +22,16 @@ public class LocationServiceImpl implements LocationService {
                 locationRepository.findAll();
     }
     public Location findById(String id) {
-        List<Location> locations = locationRepository.findAll();
-        Location location = null;
+        Optional<Location> locations = locationRepository.findById(id);
+        Location location = locations.get();
 
-        for(Location loc :locations) {
-            if (loc.getId().equals(id)) {
-                location = loc;
-            }
-        }
         return location;
 
     }
 
     @Override
     public Location findByName(String name) {
-        List<Location> locations = locationRepository.findAll();
-        Location location = null;
-
-        for(Location loc:locations){
-            if (loc.getLocation().equals(name)){
-                location = loc;
-            }
-        }
+        Location location =  locationRepository.findByName(name);
         return location;
     }
 

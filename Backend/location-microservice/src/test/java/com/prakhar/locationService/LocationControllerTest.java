@@ -3,21 +3,33 @@ package com.prakhar.locationService;
 import com.prakhar.locationService.controller.LocationController;
 import com.prakhar.locationService.dto.Location;
 import com.prakhar.locationService.service.LocationServiceImpl;
+//import jdk.internal.jshell.tool.ConsoleIOContext;
 import junit.framework.Assert;
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.test.web.servlet.MockMvc;
+import org.springframework.test.web.servlet.RequestBuilder;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
+import static org.assertj.core.internal.bytebuddy.matcher.ElementMatchers.is;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.mockito.Mockito.when;
+import static org.springframework.test.web.client.match.MockRestRequestMatchers.jsonPath;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
 @SpringBootTest(classes = {LocationControllerTest.class})
+@AutoConfigureMockMvc
 public class LocationControllerTest {
 
     @Mock
@@ -27,7 +39,11 @@ public class LocationControllerTest {
     LocationController controller;
 
     List<Location> myLocation;
-    Location location;
+    Optional<Location> location;
+
+    @Autowired
+    private MockMvc mockMvc;
+
 
     @Test
     public void test_allLocation() throws Exception{
@@ -48,28 +64,23 @@ public class LocationControllerTest {
     }
 
 
+
     @Test
-    public void test_getLocationById() throws Exception{
-        location = new Location("1","India","ASDAD","678");
-        String locationId = "1";
-        String locationId1 = "2";
+    void getLocationById() throws Exception {
+       Location location = new Location("1", "India", "ASDAD", "678");
+        String id="1";
 
-        when(locationService.findById(locationId)).thenReturn(location);
-        ResponseEntity<Location> res = controller.getLocationById(locationId);
-        ResponseEntity<Location> res1 = controller.getLocationById(locationId1);
+        when(locationService.findById(id)).thenReturn((location))
+        ;
 
-        try {
-            assertEquals(HttpStatus.FOUND, res.getStatusCode());
-            assertEquals(locationId, res.getBody().getId());
-        }
-        catch (Exception e){
-            Assert.fail("Exception " + e);
-        }
+        Assertions.assertEquals("India", locationService.findById(id).getLocation());
     }
 
-@Test
+
+
+    @Test
     public void test_getLocationByName() throws Exception{
-        location = new Location("1","India","ASDAD","678");
+        Location location = new Location("1","India","ASDAD","678");
         String locationName = "India";
 
         when(locationService.findByName(locationName)).thenReturn(location);
