@@ -43,7 +43,7 @@ public class LocationController {
         }
     }
 
-    @GetMapping("/")
+    @GetMapping("/name")
     public ResponseEntity<Location> getLocationByName(@RequestParam(value = "location") String locationName){
         try{
             Location location = locationService.findByName(locationName);

@@ -3,6 +3,7 @@ package com.prakhar.locationService;
 import com.prakhar.locationService.controller.LocationController;
 import com.prakhar.locationService.dto.Location;
 import com.prakhar.locationService.service.LocationServiceImpl;
+import junit.framework.Assert;
 import org.junit.jupiter.api.Test;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
@@ -29,7 +30,7 @@ public class LocationControllerTest {
     Location location;
 
     @Test
-    public void test_allLocation(){
+    public void test_allLocation() throws Exception{
 
         myLocation = new ArrayList<Location>();
         myLocation.add(new Location("1","India","ASDAD","678"));
@@ -41,14 +42,14 @@ public class LocationControllerTest {
         assertEquals(HttpStatus.FOUND,res.getStatusCode());
         assertEquals(2,res.getBody().size());
         }catch (Exception e){
-            assertEquals(HttpStatus.NOT_FOUND,res.getStatusCode());
+            Assert.fail("Exception " + e);
         }
 
     }
 
 
     @Test
-    public void test_getLocationById(){
+    public void test_getLocationById() throws Exception{
         location = new Location("1","India","ASDAD","678");
         String locationId = "1";
         String locationId1 = "2";
@@ -62,12 +63,12 @@ public class LocationControllerTest {
             assertEquals(locationId, res.getBody().getId());
         }
         catch (Exception e){
-            assertEquals(HttpStatus.NOT_FOUND, res1.getStatusCode());
+            Assert.fail("Exception " + e);
         }
     }
 
 @Test
-    public void test_getLocationByName(){
+    public void test_getLocationByName() throws Exception{
         location = new Location("1","India","ASDAD","678");
         String locationName = "India";
 
@@ -79,7 +80,7 @@ public class LocationControllerTest {
             assertEquals(locationName,res.getBody().getLocation());
         }
         catch (Exception e){
-            assertEquals(HttpStatus.NOT_FOUND,res.getStatusCode());
+            Assert.fail("Exception " + e);
         }
 
     }
