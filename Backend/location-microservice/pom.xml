@@ -67,12 +67,12 @@
 			<artifactId>jacoco-maven-plugin</artifactId>
 			<version>0.8.8</version>
 		</dependency>
-
 		<dependency>
-			<groupId>org.flywaydb</groupId>
-			<artifactId>flyway-mysql</artifactId>
-			<version>8.5.13</version>
+			<groupId>org.springframework.cloud</groupId>
+			<artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
 		</dependency>
+
+
 		<!-- https://mvnrepository.com/artifact/io.rest-assured/spring-mock-mvc -->
 		<dependency>
 			<groupId>io.rest-assured</groupId>
@@ -80,9 +80,18 @@
 			<version>3.0.0</version>
 			<scope>test</scope>
 		</dependency>
-
-
 	</dependencies>
+	<dependencyManagement>
+		<dependencies>
+			<dependency>
+				<groupId>org.springframework.cloud</groupId>
+				<artifactId>spring-cloud-dependencies</artifactId>
+				<version>${spring-cloud.version}</version>
+				<type>pom</type>
+				<scope>import</scope>
+			</dependency>
+		</dependencies>
+	</dependencyManagement>
 
 	<build>
 		<plugins>

@@ -1,5 +1,6 @@
 package com.greencommute.jobmicroservice.service;
 
+import com.greencommute.jobmicroservice.VO.ResposneTemplateVO;
 import com.greencommute.jobmicroservice.dto.JobsDTO;
 import com.greencommute.jobmicroservice.entity.Jobs;
 
@@ -13,6 +14,8 @@ public interface JobService {
 
     public Jobs saveJob(Jobs job);
 
-    public void deleteJobs(int id);
-    public Optional<Jobs> findById(int id);
+    public void deleteJobs(String id);
+    public Optional<Jobs> findById(String id);
+
+    ResposneTemplateVO getAllDetails(String id);
 }

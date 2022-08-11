@@ -1,5 +1,6 @@
  package com.greencommute.jobmicroservice.controller;
 
+import com.greencommute.jobmicroservice.VO.ResposneTemplateVO;
 import com.greencommute.jobmicroservice.converter.JobsConverter;
 import com.greencommute.jobmicroservice.dto.JobsDTO;
 import com.greencommute.jobmicroservice.entity.Jobs;
@@ -53,10 +54,15 @@ public class JobController {
     }
 
     @DeleteMapping("/{id}")
-    public void deleteSavedJobs(@PathVariable int id)
+    public void deleteSavedJobs(@PathVariable String id)
     {
         Optional<Jobs> job= jobService.findById(id);
          jobService.deleteJobs(id);
+    }
+
+    @GetMapping("/{id}")
+    public ResposneTemplateVO getUserWithOtherDetails(@PathVariable("id") String id){
+        return jobService.getAllDetails(id);
     }
 
 }

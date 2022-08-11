@@ -8,8 +8,9 @@ import lombok.NoArgsConstructor;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class LocationTemplateResponseVO {
+public class ResposneTemplateVO {
 
     private Jobs job;
     private Location location;
+    private Skill skill;
 }
