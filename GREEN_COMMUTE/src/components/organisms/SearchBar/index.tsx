@@ -3,7 +3,7 @@ import React, { useState } from 'react'
 import theme, { EXTRA_COLORS } from '../../../theme/theme'
 import SearchSkillIcon from '../../../assets/icons/searchSkill.png'
 import SearchIcon from '@mui/icons-material/Search'
-import LocationOnOutlinedIcon from '@mui/icons-material/LocationOnOutlined'
+import PlaceOutlinedIcon from '@mui/icons-material/PlaceOutlined'
 import { makeStyles } from '@mui/styles'
 export type SearchProps = {
   options1: string[] | null
@@ -36,8 +36,8 @@ const styles = makeStyles(() => ({
   searchIcon: {
     backgroundColor: EXTRA_COLORS.primary['400'],
     color: EXTRA_COLORS.shade['700'],
-    width: '44px !important',
-    height: '44px !important',
+    width: '38px !important',
+    height: '38px !important',
     borderRadius: '50%',
     padding: '4px',
     border: `1px solid ${EXTRA_COLORS.shade['700']}`,
@@ -81,7 +81,7 @@ const SearchBar: React.FC<SearchProps> = (props) => {
           }}
           renderInput={(params: any) => (
             <InputBase
-              placeholder={'skills'}
+              placeholder={'Search Skills'}
               className={classes.inputBase}
               ref={params.InputProps.ref}
               inputProps={params.inputProps}
@@ -113,7 +113,7 @@ const SearchBar: React.FC<SearchProps> = (props) => {
               inputProps={params.inputProps}
               startAdornment={
                 <Box sx={{ padding: '8px' }}>
-                  <LocationOnOutlinedIcon />
+                  <PlaceOutlinedIcon />
                 </Box>
               }
               endAdornment={

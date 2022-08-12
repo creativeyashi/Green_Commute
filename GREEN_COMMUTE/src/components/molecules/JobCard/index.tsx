@@ -23,8 +23,8 @@ const useStyles = makeStyles({
   root: {
     boxSizing: 'border-box',
     borderRadius: '12px',
-    height: '271px',
-    width: '320px',
+    height: '280px',
+    width: '360px',
     padding: '16px 16px 16px 16px',
     cursor: 'pointer',
     backgroundColor: `${EXTRA_COLORS.shade['700']} !important`,
@@ -51,7 +51,7 @@ const useStyles = makeStyles({
     float: 'right',
   },
   innerBox: {
-    marginTop: '41px',
+    marginTop: '25px',
   },
   title: {
     fontFamily: 'Montserrat',
@@ -86,11 +86,11 @@ const useStyles = makeStyles({
     color: theme.palette.text.secondary,
   },
   routeGrid: {
-    marginTop: '20px',
+    marginTop: '45px',
   },
   typo: {
     float: 'right',
-    paddingTop: '198px',
+    paddingTop: '205px',
     color: theme.palette.text.secondary,
   },
 })

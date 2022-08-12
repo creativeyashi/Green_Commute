@@ -24,7 +24,7 @@ export type Props = {
 const useStyles = makeStyles({
   root: {
     display: 'flex',
-    width: '950px',
+    width: '680px',
     height: '135px',
     padding: '16px 19px',
   },
@@ -40,6 +40,9 @@ const useStyles = makeStyles({
   time: {
     marginTop: '80px',
   },
+  vehical: {
+    marginTop: '0px',
+  },
 })
 
 const SaveJobCard: React.FC<Props> = (props) => {
@@ -53,7 +56,7 @@ const SaveJobCard: React.FC<Props> = (props) => {
       onClick={() => props.onClick(props.id)}
       sx={style}
     >
-      <Grid container spacing={1}>
+      <Grid container spacing={1} xs={12}>
         <Grid item xs={1}>
           <img src={logo} alt="company-logo" className={classes.img} />
         </Grid>
@@ -88,7 +91,13 @@ const SaveJobCard: React.FC<Props> = (props) => {
               </Grid>
             </Grid>
 
-            <Grid item container direction="row" spacing={6}>
+            <Grid
+              item
+              container
+              direction="row"
+              spacing={6}
+              className={classes.vehical}
+            >
               {routes.map((route, id) => {
                 return (
                   <Grid item xs={1} key={id}>

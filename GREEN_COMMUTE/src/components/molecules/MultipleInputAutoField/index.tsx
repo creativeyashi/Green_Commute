@@ -5,32 +5,32 @@
 import {
   useAutocomplete,
   AutocompleteGetTagProps,
-} from "@mui/base/AutocompleteUnstyled";
-import CheckIcon from "@mui/icons-material/Check";
-import CloseIcon from "@mui/icons-material/Close";
-import { Typography } from "@mui/material";
-import { styled } from "@mui/material/styles";
-import { useEffect } from "react";
-const Root = styled("div")(
+} from '@mui/base/AutocompleteUnstyled'
+import CheckIcon from '@mui/icons-material/Check'
+import CloseIcon from '@mui/icons-material/Close'
+import { Typography } from '@mui/material'
+import { styled } from '@mui/material/styles'
+import { useEffect } from 'react'
+const Root = styled('div')(
   ({ theme }) => `
   color: ${
-    theme.palette.mode === "dark" ? "rgba(255,255,255,0.65)" : "rgba(0,0,0,.85)"
+    theme.palette.mode === 'dark' ? 'rgba(255,255,255,0.65)' : 'rgba(0,0,0,.85)'
   };
   font-size: 14px;
 `
-);
+)
 
-const Label = styled("label")`
+const Label = styled('label')`
   padding: 0 0 4px;
   line-height: 1.5;
   display: block;
-`;
+`
 
-const InputWrapper = styled("div")(
+const InputWrapper = styled('div')(
   ({ theme }) => `
   width: 400px;
   border: 1px solid #D6D6D6;
-  background-color: ${theme.palette.mode === "dark" ? "#141414" : "#fff"};
+  background-color: ${theme.palette.mode === 'dark' ? '#141414' : '#fff'};
   border-radius: 8px;
   padding: 1px;
   display: flex;
@@ -50,11 +50,11 @@ const InputWrapper = styled("div")(
   }
 
   & input {
-    background-color: ${theme.palette.mode === "dark" ? "#141414" : "#fff"};
+    background-color: ${theme.palette.mode === 'dark' ? '#141414' : '#fff'};
     color: ${
-      theme.palette.mode === "dark"
-        ? "rgba(255,255,255,0.65)"
-        : "rgba(0,0,0,.85)"
+      theme.palette.mode === 'dark'
+        ? 'rgba(255,255,255,0.65)'
+        : 'rgba(0,0,0,.85)'
     };
     border-radius:8px;
     height: 48px;
@@ -77,27 +77,27 @@ const InputWrapper = styled("div")(
   
 }
 `
-);
+)
 
 interface TagProps extends ReturnType<AutocompleteGetTagProps> {
-  label: string;
+  label: string
 }
 
 function Tag(props: TagProps) {
-  const { label, onDelete, ...other } = props;
+  const { label, onDelete, ...other } = props
   return (
     <div {...other}>
       <span>{label}</span>
       <CloseIcon onClick={onDelete} />
     </div>
-  );
+  )
 }
 
 const StyledTag = styled(Tag)<TagProps>(
   () => `
   display: flex;
   align-items: center;
-  width:150px;
+  width:160px;
   margin: 2px;
   font-family: 'Montserrat';
   font-style: normal;
@@ -138,9 +138,9 @@ const StyledTag = styled(Tag)<TagProps>(
   
   }
 `
-);
+)
 
-const Listbox = styled("ul")(
+const Listbox = styled('ul')(
   ({ theme }) => `
   width: 350px;
   margin: 2px 0 0;
@@ -152,7 +152,7 @@ const Listbox = styled("ul")(
   font-size: 12px;
   line-height: 16px;
   list-style: none;
-  background-color: ${theme.palette.mode === "dark" ? "#141414" : "#fff"};
+  background-color: ${theme.palette.mode === 'dark' ? '#141414' : '#fff'};
   overflow: auto;
   max-height: 250px;
   border-radius: 4px;
@@ -173,7 +173,7 @@ const Listbox = styled("ul")(
   }
 
   & li[aria-selected='true'] {
-    background-color: ${theme.palette.mode === "dark" ? "#2b2b2b" : "#fafafa"};
+    background-color: ${theme.palette.mode === 'dark' ? '#2b2b2b' : '#fafafa'};
     font-weight: 600;
 
     & svg {
@@ -182,7 +182,7 @@ const Listbox = styled("ul")(
   }
 
   & li[data-focus='true'] {
-    background-color: ${theme.palette.mode === "dark" ? "#003b57" : "#e6f7ff"};
+    background-color: ${theme.palette.mode === 'dark' ? '#003b57' : '#e6f7ff'};
     cursor: pointer;
 
     & svg {
@@ -190,16 +190,16 @@ const Listbox = styled("ul")(
     }
   }
 `
-);
+)
 interface Props {
-  title: string;
-  option: any[];
-  placeholder: string;
-  setValue: React.Dispatch<React.SetStateAction<any[] | undefined>>;
+  title: string
+  option: any[]
+  placeholder: string
+  setValue: React.Dispatch<React.SetStateAction<any[] | undefined>>
 }
 
 const AutoComplete: React.FC<Props> = (props) => {
-  const { title, placeholder, option, setValue } = props;
+  const { title, placeholder, option, setValue } = props
   const {
     getRootProps,
     getInputLabelProps,
@@ -216,10 +216,10 @@ const AutoComplete: React.FC<Props> = (props) => {
     multiple: true,
     options: option,
     getOptionLabel: (labelOption) => labelOption.title,
-  });
+  })
   useEffect(() => {
-    setValue(value);
-  }, [value]);
+    setValue(value)
+  }, [value])
 
   return (
     <Root>
@@ -231,22 +231,18 @@ const AutoComplete: React.FC<Props> = (props) => {
         </Label>
         <InputWrapper
           ref={setAnchorEl}
-          className={focused ? "focused" : ""}
+          className={focused ? 'focused' : ''}
           id="autoCompleteInput"
         >
-          
           {value.map((selectedOption: any, index: number) => (
-            
             <StyledTag
-
               label={selectedOption.name}
               {...getTagProps({ index })}
             />
           ))}
           <input
             {...getInputProps()}
-            
-            placeholder={value.length === 0 ? placeholder : ""}
+            placeholder={value.length === 0 ? placeholder : ''}
             data-testid="autocompleteInput"
           />
         </InputWrapper>
@@ -254,18 +250,16 @@ const AutoComplete: React.FC<Props> = (props) => {
       {groupedOptions.length > 0 ? (
         <Listbox {...getListboxProps()} data-testid="autocompleteList">
           {groupedOptions.map((listOption, index) => (
-           
             <li {...getOptionProps({ option, index })}>
-
               {/* change here */}
-              <span>{listOption.name}</span>      
+              <span>{listOption.name}</span>
               <CheckIcon fontSize="small" />
             </li>
           ))}
         </Listbox>
       ) : null}
     </Root>
-  );
-};
+  )
+}
 
-export default AutoComplete;
+export default AutoComplete

@@ -121,7 +121,10 @@ const JobTitleCard: React.FC<JobTitleProps> = ({
               {companyAddress}
             </Typography>
 
-            <Typography variant="caption" sx={{ marginTop: '4px' }}>
+            <Typography
+              variant="caption"
+              sx={{ marginTop: '4px', color: '#656E66' }}
+            >
               {jobUploadedTime}
             </Typography>
             <Stack direction={'row'}>
