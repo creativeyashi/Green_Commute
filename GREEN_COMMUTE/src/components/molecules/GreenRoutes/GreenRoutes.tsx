@@ -49,7 +49,11 @@ const GreenRoutes = ({
             <Typography variant="body1" sx={descHeading}>
               {GREEN_ROUTES.DESCRIPTION}
             </Typography>
-            <Typography variant="body2" sx={descContent}>
+            <Typography
+              variant="body2"
+              sx={descContent}
+              style={{ lineHeight: 1.5 }}
+            >
               {jobDescription}
             </Typography>
           </Box>
@@ -57,7 +61,11 @@ const GreenRoutes = ({
             <Typography variant="body1">
               {GREEN_ROUTES.ABOUT_COMPANY}
             </Typography>
-            <Typography variant="body2" sx={descContent}>
+            <Typography
+              variant="body2"
+              sx={descContent}
+              style={{ lineHeight: 1.5 }}
+            >
               {aboutTheCompany}
               <span style={{ color: '#4ABAAD' }}>{GREEN_ROUTES.SEE_MORE}</span>
             </Typography>{' '}

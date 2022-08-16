@@ -8,7 +8,7 @@ export const GREEN_ROUTES = {
   DESCRIPTION: 'Description',
   ABOUT_COMPANY: 'About the Company',
   GREEN_COMMUTE_ROUTES: 'Green Commute Routes',
-  SEE_MORE: 'See More',
+  SEE_MORE: ' SEE MORE',
 }
 
 export const JOB_TITLE_CARD = {
