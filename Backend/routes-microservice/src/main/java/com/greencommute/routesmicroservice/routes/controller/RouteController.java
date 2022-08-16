@@ -10,6 +10,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/routes")
+@CrossOrigin
 public class RouteController {
 
     @Autowired
