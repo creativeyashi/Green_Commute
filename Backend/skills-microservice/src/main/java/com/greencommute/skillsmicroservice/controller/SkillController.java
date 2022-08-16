@@ -27,13 +27,13 @@ public class SkillController {
     @GetMapping("")
     public ResponseEntity<List<Skill>> getSkills(){
             List<Skill> skill=skillService.findAll();
-            return new ResponseEntity<List<Skill>>(skill,HttpStatus.FOUND);
+            return new ResponseEntity<List<Skill>>(skill,HttpStatus.OK);
     }
 
     @GetMapping(path="/{skillId}")
     public ResponseEntity<Skill> getSkillById(@PathVariable int skillId){
             Skill skill = skillService.findById(skillId);
-            return new ResponseEntity<Skill>(skill, HttpStatus.FOUND);
+            return new ResponseEntity<Skill>(skill, HttpStatus.OK);
     }
 
 
