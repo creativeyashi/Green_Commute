@@ -27,7 +27,7 @@ public class LocationController {
     public ResponseEntity<List<Location>>allLocation(){
         try{
             List<Location> locations = locationService.fetchAllLocation();
-            return new ResponseEntity<List<Location>>(locations, HttpStatus.FOUND);
+            return new ResponseEntity<List<Location>>(locations, HttpStatus.OK);
         }
         catch(Exception e){
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
@@ -37,7 +37,7 @@ public class LocationController {
     public ResponseEntity<Location> getLocationById(@PathVariable(value = "id") String locationId){
         try{
             Location location = locationService.findById(locationId);
-            return new ResponseEntity<Location>(location,HttpStatus.FOUND);
+            return new ResponseEntity<Location>(location,HttpStatus.OK);
 
         }
         catch (Exception e) {
@@ -49,7 +49,7 @@ public class LocationController {
     public ResponseEntity<Location> getLocationByName(@RequestParam(value = "location") String locationName){
         try{
             Location location = locationService.findByName(locationName);
-            return new ResponseEntity<Location>(location,HttpStatus.FOUND);
+            return new ResponseEntity<Location>(location,HttpStatus.OK);
 
         }
         catch (Exception e) {
