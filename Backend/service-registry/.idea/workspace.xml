@@ -4,34 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e5d5cf23-79c8-4ca1-8378-ac4c69d89d1f" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/../routes-microservice/src/main/resources/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../job-microservice/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../job-microservice/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../job-microservice/src/main/java/com/greencommute/jobmicroservice/JobMicroserviceApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/../job-microservice/src/main/java/com/greencommute/jobmicroservice/JobMicroserviceApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../job-microservice/src/main/java/com/greencommute/jobmicroservice/VO/Location.java" beforeDir="false" afterPath="$PROJECT_DIR$/../job-microservice/src/main/java/com/greencommute/jobmicroservice/VO/Location.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../job-microservice/src/main/java/com/greencommute/jobmicroservice/VO/LocationTemplateResponseVO.java" beforeDir="false" afterPath="$PROJECT_DIR$/../job-microservice/src/main/java/com/greencommute/jobmicroservice/VO/ResposneTemplateVO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../job-microservice/src/main/java/com/greencommute/jobmicroservice/controller/JobController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../job-microservice/src/main/java/com/greencommute/jobmicroservice/controller/JobController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../job-microservice/src/main/java/com/greencommute/jobmicroservice/repository/JobRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/../job-microservice/src/main/java/com/greencommute/jobmicroservice/repository/JobRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../job-microservice/src/main/java/com/greencommute/jobmicroservice/service/JobService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../job-microservice/src/main/java/com/greencommute/jobmicroservice/service/JobService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../job-microservice/src/main/java/com/greencommute/jobmicroservice/service/JobServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/../job-microservice/src/main/java/com/greencommute/jobmicroservice/service/JobServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../job-microservice/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../job-microservice/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../job-microservice/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/../job-microservice/src/main/resources/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../job-microservice/src/test/java/com/greencommute/jobmicroservice/controller/JobControllerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/../job-microservice/src/test/java/com/greencommute/jobmicroservice/controller/JobControllerTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../job-microservice/src/test/java/com/greencommute/jobmicroservice/service/JobServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/../job-microservice/src/test/java/com/greencommute/jobmicroservice/service/JobServiceTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../location-microservice/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../location-microservice/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../location-microservice/src/main/java/com/prakhar/locationService/LocationServiceApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/../location-microservice/src/main/java/com/prakhar/locationService/LocationServiceApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../location-microservice/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../location-microservice/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../location-microservice/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/../location-microservice/src/main/resources/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../location-microservice/src/main/resources/db/migration/V1__createTable.sql" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../routes-microservice/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../routes-microservice/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../routes-microservice/src/main/java/com/greencommute/routesmicroservice/routes/entity/Route.java" beforeDir="false" afterPath="$PROJECT_DIR$/../routes-microservice/src/main/java/com/greencommute/routesmicroservice/routes/entity/Route.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../routes-microservice/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../routes-microservice/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../skills-microservice/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../skills-microservice/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../skills-microservice/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../skills-microservice/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../skills-microservice/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/../skills-microservice/src/main/resources/application.yml" afterDir="false" />
-    </list>
+    <list default="true" id="e5d5cf23-79c8-4ca1-8378-ac4c69d89d1f" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -57,12 +30,12 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RunManager">
     <configuration name="ServiceRegistryApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.prakhar.serviceregistry.ServiceRegistryApplication" />

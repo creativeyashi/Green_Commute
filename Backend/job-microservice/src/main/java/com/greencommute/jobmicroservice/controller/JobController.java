@@ -39,6 +39,12 @@ public class JobController {
         return savedJobs;
     }
 
+    @GetMapping("/{id}")
+    public Optional<Jobs> findById(@PathVariable String id) {
+        Optional<Jobs> savedJobs = jobService.findById(id);
+        return savedJobs;
+    }
+
     @PutMapping("/{id}")
     public ResponseEntity<Jobs> saveJob(@RequestBody Jobs job )
     {
@@ -60,9 +66,9 @@ public class JobController {
          jobService.deleteJobs(id);
     }
 
-    @GetMapping("/{id}")
+   /* @GetMapping("/{id}")
     public ResposneTemplateVO getUserWithOtherDetails(@PathVariable("id") String id){
         return jobService.getAllDetails(id);
-    }
+    } */
 
 }

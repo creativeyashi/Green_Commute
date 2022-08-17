@@ -37,7 +37,7 @@ function SavedJobsMainContent() {
   const [jobs, setJobs] = useState<Job[]>([])
 
   const fetchData = async () => {
-    const res = await axios.get(`${url}JobList`)
+    const res = await axios.get(`http://3.134.81.172:9006/jobs/`)
     let data: Job[] = res.data
     data = data.filter((job) => job.saved)
     setJobs(data)

@@ -57,8 +57,9 @@ function MainContent() {
     })
     setSkills(data)
     data = await getLocations()
-    data = data.map((location: { name: any }) => {
-      return location.name
+    console.log(data)
+    data = data.map((locations: { location: any }) => {
+      return locations.location;
     })
     setLocations(data)
   }
