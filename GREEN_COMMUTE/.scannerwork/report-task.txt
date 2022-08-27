@@ -1,0 +1,7 @@
+organization=zemoso-int
+projectKey=greencommutee
+serverUrl=https://sonarcloud.io
+serverVersion=8.0.0.30401
+dashboardUrl=https://sonarcloud.io/dashboard?id=greencommutee
+ceTaskId=AYIkk7pfzv5b-sYHr8pu
+ceTaskUrl=https://sonarcloud.io/api/ce/task?id=AYIkk7pfzv5b-sYHr8pu

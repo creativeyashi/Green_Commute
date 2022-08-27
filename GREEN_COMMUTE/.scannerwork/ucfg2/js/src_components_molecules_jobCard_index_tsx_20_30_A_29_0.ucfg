@@ -1,0 +1,641 @@
+
+7src_components_molecules_jobCard_index_tsx_20_30_A_29_0n
+d/home/yashig/Music/bootcamp_47_greencommute/GREEN_COMMUTE/src/components/molecules/jobCard/index.tsx ($"s2_1*…h
+s2_1
+<synthetic> (K
+I
+
+__unknown_file (
+
+%sc-P_26_0"__id**
+
+%env"
+%scope-P_26O
+M
+
+__unknown_file (	
+%expr_0"__id* *
+
+
+%sc-P_26_0"
+EXTRA_COLORSE
+C
+
+__unknown_file (	
+%expr_1"__id**
+	
+%expr_0"
+shade°
+û
+n
+d/home/yashig/Music/bootcamp_47_greencommute/GREEN_COMMUTE/src/components/molecules/jobCard/index.tsx (>
+%fieldAccess_0"__id**
+	
+%expr_1"
+700Ø
+¨
+n
+d/home/yashig/Music/bootcamp_47_greencommute/GREEN_COMMUTE/src/components/molecules/jobCard/index.tsx (>
+	%concat_0"__concat*
+
+%fieldAccess_0*
+ !importantêç
+n
+d/home/yashig/Music/bootcamp_47_greencommute/GREEN_COMMUTE/src/components/molecules/jobCard/index.tsx (
+	%object_0Object"Object≠
+™
+n
+d/home/yashig/Music/bootcamp_47_greencommute/GREEN_COMMUTE/src/components/molecules/jobCard/index.tsx ("
+
+	%object_0Object"
+	boxSizing"__id*
+
+border-box™
+ß
+n
+d/home/yashig/Music/bootcamp_47_greencommute/GREEN_COMMUTE/src/components/molecules/jobCard/index.tsx (%
+
+	%object_0Object"
+borderRadius"__id*
+12px•
+¢
+n
+d/home/yashig/Music/bootcamp_47_greencommute/GREEN_COMMUTE/src/components/molecules/jobCard/index.tsx (
+
+	%object_0Object"
+height"__id*	
+280px§
+°
+n
+d/home/yashig/Music/bootcamp_47_greencommute/GREEN_COMMUTE/src/components/molecules/jobCard/index.tsx (
+
+	%object_0Object"
+width"__id*	
+400px∫
+∑
+n
+d/home/yashig/Music/bootcamp_47_greencommute/GREEN_COMMUTE/src/components/molecules/jobCard/index.tsx (( 
+
+	%object_0Object"	
+padding"__id*
+17.5px 17.5px 17.5px 30pxß
+§
+n
+d/home/yashig/Music/bootcamp_47_greencommute/GREEN_COMMUTE/src/components/molecules/jobCard/index.tsx (
+
+	%object_0Object"
+cursor"__id*	
+pointer≤
+Ø
+n
+d/home/yashig/Music/bootcamp_47_greencommute/GREEN_COMMUTE/src/components/molecules/jobCard/index.tsx (>(
+
+	%object_0Object"
+backgroundColor"__id*
+
+	%concat_0êç
+n
+d/home/yashig/Music/bootcamp_47_greencommute/GREEN_COMMUTE/src/components/molecules/jobCard/index.tsx !(
+	%object_1Object"Object¢
+ü
+n
+d/home/yashig/Music/bootcamp_47_greencommute/GREEN_COMMUTE/src/components/molecules/jobCard/index.tsx (
+
+	%object_1Object"
+width"__id*
+20%§
+°
+n
+d/home/yashig/Music/bootcamp_47_greencommute/GREEN_COMMUTE/src/components/molecules/jobCard/index.tsx   (
+
+	%object_1Object"
+height"__id*
+100%êç
+n
+d/home/yashig/Music/bootcamp_47_greencommute/GREEN_COMMUTE/src/components/molecules/jobCard/index.tsx" ((
+	%object_2Object"Object®
+•
+n
+d/home/yashig/Music/bootcamp_47_greencommute/GREEN_COMMUTE/src/components/molecules/jobCard/index.tsx# #(!
+
+	%object_2Object"
+
+position"__id*
+
+static£
+†
+n
+d/home/yashig/Music/bootcamp_47_greencommute/GREEN_COMMUTE/src/components/molecules/jobCard/index.tsx$ $(
+
+	%object_2Object"
+width"__id*
+45px§
+°
+n
+d/home/yashig/Music/bootcamp_47_greencommute/GREEN_COMMUTE/src/components/molecules/jobCard/index.tsx% %(
+
+	%object_2Object"
+height"__id*
+45pxß
+§
+n
+d/home/yashig/Music/bootcamp_47_greencommute/GREEN_COMMUTE/src/components/molecules/jobCard/index.tsx& &(#
+
+	%object_2Object"
+
+marginLeft"__id*
+8px¶
+£
+n
+d/home/yashig/Music/bootcamp_47_greencommute/GREEN_COMMUTE/src/components/molecules/jobCard/index.tsx' '("
+
+	%object_2Object"
+	marginTop"__id*
+8pxêç
+n
+d/home/yashig/Music/bootcamp_47_greencommute/GREEN_COMMUTE/src/components/molecules/jobCard/index.tsx) /(
+	%object_3Object"Object¢
+ü
+n
+d/home/yashig/Music/bootcamp_47_greencommute/GREEN_COMMUTE/src/components/molecules/jobCard/index.tsx* *(
+
+	%object_3Object"
+width"__id*
+60%§
+°
+n
+d/home/yashig/Music/bootcamp_47_greencommute/GREEN_COMMUTE/src/components/molecules/jobCard/index.tsx+ +(
+
+	%object_3Object"
+height"__id*
+100%≠
+™
+n
+d/home/yashig/Music/bootcamp_47_greencommute/GREEN_COMMUTE/src/components/molecules/jobCard/index.tsx, ,(&
+
+	%object_3Object"
+flexDirection"__id*
+
+columnÆ
+´
+n
+d/home/yashig/Music/bootcamp_47_greencommute/GREEN_COMMUTE/src/components/molecules/jobCard/index.tsx- -(#
+
+	%object_3Object"
+
+alignItems"__id*
+
+flex-start≤
+Ø
+n
+d/home/yashig/Music/bootcamp_47_greencommute/GREEN_COMMUTE/src/components/molecules/jobCard/index.tsx. .( '
+
+	%object_3Object"
+justifyContent"__id*
+
+flex-startêç
+n
+d/home/yashig/Music/bootcamp_47_greencommute/GREEN_COMMUTE/src/components/molecules/jobCard/index.tsx0 2(
+	%object_4Object"Object§
+°
+n
+d/home/yashig/Music/bootcamp_47_greencommute/GREEN_COMMUTE/src/components/molecules/jobCard/index.tsx1 1(
+
+	%object_4Object"
+height"__id*
+100%êç
+n
+d/home/yashig/Music/bootcamp_47_greencommute/GREEN_COMMUTE/src/components/molecules/jobCard/index.tsx3 5(
+	%object_5Object"Objectß
+§
+n
+d/home/yashig/Music/bootcamp_47_greencommute/GREEN_COMMUTE/src/components/molecules/jobCard/index.tsx4 4("
+
+	%object_5Object"
+	marginTop"__id*
+41pxêç
+n
+d/home/yashig/Music/bootcamp_47_greencommute/GREEN_COMMUTE/src/components/molecules/jobCard/index.tsx6	 ;(
+	%object_6Object"ObjectÆ
+´
+n
+d/home/yashig/Music/bootcamp_47_greencommute/GREEN_COMMUTE/src/components/molecules/jobCard/index.tsx7 7(#
+
+	%object_6Object"
+
+fontFamily"__id*
+
+Montserratß
+§
+n
+d/home/yashig/Music/bootcamp_47_greencommute/GREEN_COMMUTE/src/components/molecules/jobCard/index.tsx8 8(#
+
+	%object_6Object"
+
+fontWeight"__id*
+600¶
+£
+n
+d/home/yashig/Music/bootcamp_47_greencommute/GREEN_COMMUTE/src/components/molecules/jobCard/index.tsx9 9(!
+
+	%object_6Object"
+
+fontSize"__id*
+16px®
+•
+n
+d/home/yashig/Music/bootcamp_47_greencommute/GREEN_COMMUTE/src/components/molecules/jobCard/index.tsx: :(#
+
+	%object_6Object"
+
+lineHeight"__id*
+24pxK
+I
+
+__unknown_file (
+
+%sc-P_26_1"__id**
+
+%env"
+%scope-P_26O
+M
+
+__unknown_file (	
+%expr_2"__id* *
+
+
+%sc-P_26_1"
+EXTRA_COLORSF
+D
+
+__unknown_file (	
+%expr_3"__id**
+	
+%expr_2"
+accentõ
+ò
+n
+d/home/yashig/Music/bootcamp_47_greencommute/GREEN_COMMUTE/src/components/molecules/jobCard/index.tsxA A(#
+%var_0"__mapGet*
+	
+%expr_3*2»êç
+n
+d/home/yashig/Music/bootcamp_47_greencommute/GREEN_COMMUTE/src/components/molecules/jobCard/index.tsx< B(
+	%object_7Object"ObjectÆ
+´
+n
+d/home/yashig/Music/bootcamp_47_greencommute/GREEN_COMMUTE/src/components/molecules/jobCard/index.tsx= =(#
+
+	%object_7Object"
+
+fontFamily"__id*
+
+Montserratß
+§
+n
+d/home/yashig/Music/bootcamp_47_greencommute/GREEN_COMMUTE/src/components/molecules/jobCard/index.tsx> >(#
+
+	%object_7Object"
+
+fontWeight"__id*
+500¶
+£
+n
+d/home/yashig/Music/bootcamp_47_greencommute/GREEN_COMMUTE/src/components/molecules/jobCard/index.tsx? ?(!
+
+	%object_7Object"
+
+fontSize"__id*
+12px®
+•
+n
+d/home/yashig/Music/bootcamp_47_greencommute/GREEN_COMMUTE/src/components/molecules/jobCard/index.tsx@ @(#
+
+	%object_7Object"
+
+lineHeight"__id*
+16px•
+¢
+n
+d/home/yashig/Music/bootcamp_47_greencommute/GREEN_COMMUTE/src/components/molecules/jobCard/index.tsxA A(#
+
+	%object_7Object"
+color"__id*
+
+
+%var_0K
+I
+
+__unknown_file (
+
+%sc-P_26_2"__id**
+
+%env"
+%scope-P_26H
+F
+
+__unknown_file (	
+%expr_4"__id**
+
+
+%sc-P_26_2"
+themeG
+E
+
+__unknown_file (	
+%expr_5"__id**
+	
+%expr_4"	
+paletteD
+B
+
+__unknown_file (	
+%expr_6"__id**
+	
+%expr_5"
+textêç
+n
+d/home/yashig/Music/bootcamp_47_greencommute/GREEN_COMMUTE/src/components/molecules/jobCard/index.tsxC I(
+	%object_8Object"ObjectÆ
+´
+n
+d/home/yashig/Music/bootcamp_47_greencommute/GREEN_COMMUTE/src/components/molecules/jobCard/index.tsxD D(#
+
+	%object_8Object"
+
+fontFamily"__id*
+
+Montserratß
+§
+n
+d/home/yashig/Music/bootcamp_47_greencommute/GREEN_COMMUTE/src/components/molecules/jobCard/index.tsxE E(#
+
+	%object_8Object"
+
+fontWeight"__id*
+500¶
+£
+n
+d/home/yashig/Music/bootcamp_47_greencommute/GREEN_COMMUTE/src/components/molecules/jobCard/index.tsxF F(!
+
+	%object_8Object"
+
+fontSize"__id*
+12px®
+•
+n
+d/home/yashig/Music/bootcamp_47_greencommute/GREEN_COMMUTE/src/components/molecules/jobCard/index.tsxG G(#
+
+	%object_8Object"
+
+lineHeight"__id*
+16pxµ
+≤
+n
+d/home/yashig/Music/bootcamp_47_greencommute/GREEN_COMMUTE/src/components/molecules/jobCard/index.tsxH H('
+
+	%object_8Object"
+color"__id**
+	
+%expr_6"
+	secondaryêç
+n
+d/home/yashig/Music/bootcamp_47_greencommute/GREEN_COMMUTE/src/components/molecules/jobCard/index.tsxJ L(
+	%object_9Object"Object©
+¶
+n
+d/home/yashig/Music/bootcamp_47_greencommute/GREEN_COMMUTE/src/components/molecules/jobCard/index.tsxK K(#
+
+	%object_9Object"
+
+marginLeft"__id*	
+100pxëé
+n
+d/home/yashig/Music/bootcamp_47_greencommute/GREEN_COMMUTE/src/components/molecules/jobCard/index.tsxM O(
+
+%object_10Object"Object®
+•
+n
+d/home/yashig/Music/bootcamp_47_greencommute/GREEN_COMMUTE/src/components/molecules/jobCard/index.tsxN N(#
+
+
+%object_10Object"
+	marginTop"__id*
+12pxK
+I
+
+__unknown_file (
+
+%sc-P_26_3"__id**
+
+%env"
+%scope-P_26H
+F
+
+__unknown_file (	
+%expr_7"__id**
+
+
+%sc-P_26_3"
+themeG
+E
+
+__unknown_file (	
+%expr_8"__id**
+	
+%expr_7"	
+paletteD
+B
+
+__unknown_file (	
+%expr_9"__id**
+	
+%expr_8"
+textëé
+n
+d/home/yashig/Music/bootcamp_47_greencommute/GREEN_COMMUTE/src/components/molecules/jobCard/index.tsxP	 U(
+
+%object_11Object"Objectß
+§
+n
+d/home/yashig/Music/bootcamp_47_greencommute/GREEN_COMMUTE/src/components/molecules/jobCard/index.tsxQ Q("
+
+
+%object_11Object"
+
+fontSize"__id*
+12px©
+¶
+n
+d/home/yashig/Music/bootcamp_47_greencommute/GREEN_COMMUTE/src/components/molecules/jobCard/index.tsxR R($
+
+
+%object_11Object"
+
+lineHeight"__id*
+16px®
+•
+n
+d/home/yashig/Music/bootcamp_47_greencommute/GREEN_COMMUTE/src/components/molecules/jobCard/index.tsxS S($
+
+
+%object_11Object"
+
+fontWeight"__id*
+500∂
+≥
+n
+d/home/yashig/Music/bootcamp_47_greencommute/GREEN_COMMUTE/src/components/molecules/jobCard/index.tsxT T('
+
+
+%object_11Object"
+color"__id**
+	
+%expr_9"
+	secondaryëé
+n
+d/home/yashig/Music/bootcamp_47_greencommute/GREEN_COMMUTE/src/components/molecules/jobCard/index.tsxV X(
+
+%object_12Object"Object®
+•
+n
+d/home/yashig/Music/bootcamp_47_greencommute/GREEN_COMMUTE/src/components/molecules/jobCard/index.tsxW W(#
+
+
+%object_12Object"
+	marginTop"__id*
+20pxëé
+n
+d/home/yashig/Music/bootcamp_47_greencommute/GREEN_COMMUTE/src/components/molecules/jobCard/index.tsx$ Y(
+
+%object_13Object"Object∞
+≠
+n
+d/home/yashig/Music/bootcamp_47_greencommute/GREEN_COMMUTE/src/components/molecules/jobCard/index.tsx (
+
+
+%object_13Object"
+root"__id*
+
+	%object_0Object≥
+∞
+n
+d/home/yashig/Music/bootcamp_47_greencommute/GREEN_COMMUTE/src/components/molecules/jobCard/index.tsx !(!
+
+
+%object_13Object"	
+iconBox"__id*
+
+	%object_1Object∞
+≠
+n
+d/home/yashig/Music/bootcamp_47_greencommute/GREEN_COMMUTE/src/components/molecules/jobCard/index.tsx" ((
+
+
+%object_13Object"
+icon"__id*
+
+	%object_2Object∂
+≥
+n
+d/home/yashig/Music/bootcamp_47_greencommute/GREEN_COMMUTE/src/components/molecules/jobCard/index.tsx) /($
+
+
+%object_13Object"
+
+contentBox"__id*
+
+	%object_3Objectæ
+ª
+n
+d/home/yashig/Music/bootcamp_47_greencommute/GREEN_COMMUTE/src/components/molecules/jobCard/index.tsx0 2(,
+
+
+%object_13Object"
+threeDotAndTimeBox"__id*
+
+	%object_4Object¥
+±
+n
+d/home/yashig/Music/bootcamp_47_greencommute/GREEN_COMMUTE/src/components/molecules/jobCard/index.tsx3 5("
+
+
+%object_13Object"
+
+innerBox"__id*
+
+	%object_5Object±
+Æ
+n
+d/home/yashig/Music/bootcamp_47_greencommute/GREEN_COMMUTE/src/components/molecules/jobCard/index.tsx6 ;(
+
+
+%object_13Object"
+title"__id*
+
+	%object_6Object∑
+¥
+n
+d/home/yashig/Music/bootcamp_47_greencommute/GREEN_COMMUTE/src/components/molecules/jobCard/index.tsx< B(%
+
+
+%object_13Object"
+companyName"__id*
+
+	%object_7Object¥
+±
+n
+d/home/yashig/Music/bootcamp_47_greencommute/GREEN_COMMUTE/src/components/molecules/jobCard/index.tsxC I("
+
+
+%object_13Object"
+
+location"__id*
+
+	%object_8Object∞
+≠
+n
+d/home/yashig/Music/bootcamp_47_greencommute/GREEN_COMMUTE/src/components/molecules/jobCard/index.tsxJ L(
+
+
+%object_13Object"
+time"__id*
+
+	%object_9Object∑
+¥
+n
+d/home/yashig/Music/bootcamp_47_greencommute/GREEN_COMMUTE/src/components/molecules/jobCard/index.tsxM O($
+
+
+%object_13Object"
+
+vehicleTab"__id*
+
+
+%object_10Object≤
+Ø
+n
+d/home/yashig/Music/bootcamp_47_greencommute/GREEN_COMMUTE/src/components/molecules/jobCard/index.tsxP U(
+
+
+%object_13Object"
+route"__id*
+
+
+%object_11Object∂
+≥
+n
+d/home/yashig/Music/bootcamp_47_greencommute/GREEN_COMMUTE/src/components/molecules/jobCard/index.tsxV X(#
+
+
+%object_13Object"
+	routeGrid"__id*
+
+
+%object_12Object"à
+n
+d/home/yashig/Music/bootcamp_47_greencommute/GREEN_COMMUTE/src/components/molecules/jobCard/index.tsx$ Y(
+
+
+%object_13Object:
+%envB 
